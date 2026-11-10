@@ -2,1485 +2,663 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <meta name="description" content="miÓptica - Gafas, lentes y armazones en San Rafael, Valle de los Chillos.">
-  <title>miÓptica | Tu visión, nuestro compromiso</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --red: #e50924;
-      --red-dark: #a90019;
-      --black: #101010;
-      --dark: #181818;
-      --white: #ffffff;
-      --gray: #f4f4f4;
-      --text: #333333;
-      --muted: #777777;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #fff;
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button { font-family: inherit; }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    /* ENCABEZADO */
-
-    header {
-      background: rgba(12, 12, 12, .97);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 25px rgba(0,0,0,.18);
-    }
-
-    .navbar {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    /* LOGOTIPO CON BORDE ANIMADO */
-
-    .logo-frame {
-      position: relative;
-      width: 66px;
-      height: 66px;
-      padding: 3px;
-      border-radius: 50%;
-      isolation: isolate;
-      flex-shrink: 0;
-      background: linear-gradient(
-        135deg, #fff, #e50924, #fff, #850015, #fff
-      );
-      background-size: 300% 300%;
-      animation: borderFlow 5s ease infinite;
-      box-shadow:
-        0 0 10px rgba(229,9,36,.45),
-        0 0 25px rgba(229,9,36,.18);
-    }
-
-    .logo-frame::before {
-      content: "";
-      position: absolute;
-      inset: -5px;
-      border-radius: 50%;
-      background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        #e50924 70deg,
-        #fff 130deg,
-        transparent 190deg,
-        #e50924 260deg,
-        transparent 360deg
-      );
-      filter: blur(7px);
-      opacity: .7;
-      z-index: -1;
-      animation: rotateGlow 7s linear infinite;
-    }
-
-    .logo-frame::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.85);
-      pointer-events: none;
-    }
-
-    .logo-frame img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      background: #fff;
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes borderFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes rotateGlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .brand-name {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      line-height: 1;
-    }
-
-    .brand-name span { color: var(--red); }
-
-    .brand-subtitle {
-      color: #bbb;
-      font-size: 9px;
-      letter-spacing: 3px;
-      margin-top: 7px;
-      font-weight: 600;
-    }
-
-    nav {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-
-    nav a {
-      color: #eee;
-      font-size: 12px;
-      font-weight: 700;
-      transition: .3s;
-    }
-
-    nav a:hover { color: var(--red); }
-
-    .nav-cta {
-      background: var(--red);
-      padding: 13px 19px;
-      border-radius: 5px;
-      color: white !important;
-    }
-
-    .nav-cta:hover {
-      background: #bd001b;
-      transform: translateY(-2px);
-    }
-
-    /* PORTADA */
-
-    .hero {
-      background:
-        linear-gradient(110deg, rgba(0,0,0,.95), rgba(20,20,20,.83)),
-        radial-gradient(circle at 80% 50%, #5b0010, #111 55%);
-      color: white;
-      min-height: 590px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 1px solid rgba(229,9,36,.18);
-      border-radius: 50%;
-      right: -130px;
-      top: 40px;
-      box-shadow:
-        0 0 0 45px rgba(229,9,36,.035),
-        0 0 0 90px rgba(229,9,36,.025);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      align-items: center;
-      gap: 60px;
-      padding-top: 75px;
-      padding-bottom: 75px;
-    }
-
-    .eyebrow {
-      color: #ff5267;
-      text-transform: uppercase;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 5vw, 65px);
-      line-height: 1.08;
-      font-weight: 900;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span { color: var(--red); }
-
-    .hero p {
-      color: #ccc;
-      font-size: 15px;
-      line-height: 1.9;
-      max-width: 540px;
-      margin-bottom: 32px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 16px 23px;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: 800;
-      transition: .3s;
-      border: 1px solid transparent;
-    }
-
-    .btn-red {
-      background: var(--red);
-      color: white;
-    }
-
-    .btn-red:hover {
-      background: #bd001b;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(229,9,36,.3);
-    }
-
-    .btn-outline {
-      border-color: rgba(255,255,255,.5);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #111;
-    }
-
-    .hero-logo-area {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-logo-frame {
-      width: min(360px, 85vw);
-      aspect-ratio: 1;
-      padding: 7px;
-      border-radius: 28px;
-      position: relative;
-      isolation: isolate;
-      background: linear-gradient(
-        135deg, #fff, #e50924, #790012, #fff, #e50924
-      );
-      background-size: 300% 300%;
-      animation: borderFlow 5s ease infinite;
-      box-shadow:
-        0 0 18px rgba(229,9,36,.5),
-        0 0 55px rgba(229,9,36,.2);
-    }
-
-    .hero-logo-frame::before {
-      content: "";
-      position: absolute;
-      inset: -9px;
-      border-radius: 34px;
-      background: conic-gradient(
-        from 0deg, transparent, #e50924, #fff,
-        transparent, #e50924, transparent
-      );
-      filter: blur(14px);
-      opacity: .65;
-      z-index: -1;
-      animation: rotateGlow 9s linear infinite;
-    }
-
-    .hero-logo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 22px;
-      display: block;
-      background: white;
-    }
-
-    /* BENEFICIOS */
-
-    .benefits {
-      background: white;
-      padding: 28px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .benefit {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 13px;
-      text-align: left;
-    }
-
-    .benefit-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #fff0f2;
-      color: var(--red);
-      display: grid;
-      place-items: center;
-      font-size: 19px;
-    }
-
-    .benefit strong {
-      display: block;
-      font-size: 12px;
-      margin-bottom: 4px;
-    }
-
-    .benefit small {
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    /* NUEVO CARRUSEL DE MARCAS */
-
-    .brands-section {
-      padding: 38px 0 42px;
-      background: #fff;
-      border-bottom: 1px solid #eeeeee;
-      overflow: hidden;
-    }
-
-    .brands-heading {
-      text-align: center;
-      margin-bottom: 27px;
-    }
-
-    .brands-heading span {
-      display: block;
-      color: var(--red);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 9px;
-    }
-
-    .brands-heading h2 {
-      color: #171717;
-      font-size: clamp(18px, 3vw, 25px);
-      font-weight: 900;
-      letter-spacing: -.5px;
-    }
-
-    .brands-heading p {
-      color: #888;
-      font-size: 11px;
-      margin-top: 8px;
-    }
-
-    .brands-window {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 8%,
-        #000 92%,
-        transparent
-      );
-      mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 8%,
-        #000 92%,
-        transparent
-      );
-    }
-
-    .brands-track {
-      display: flex;
-      align-items: center;
-      width: max-content;
-      animation: brandsScroll 34s linear infinite;
-      will-change: transform;
-    }
-
-    .brands-window:hover .brands-track {
-      animation-play-state: paused;
-    }
-
-    .brand-item {
-      min-width: 190px;
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 28px;
-      position: relative;
-    }
-
-    .brand-item::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      width: 1px;
-      height: 25px;
-      background: #e8e8e8;
-    }
-
-    .brand-word {
-      color: #242424;
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      white-space: nowrap;
-      transition: .3s ease;
-      filter: grayscale(1);
-      opacity: .78;
-    }
-
-    .brand-item:hover .brand-word {
-      color: var(--red);
-      transform: scale(1.1);
-      filter: grayscale(0);
-      opacity: 1;
-    }
-
-    .brand-word.gucci {
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-
-    .brand-word.rayban {
-      font-family: Georgia, serif;
-      font-style: italic;
-      letter-spacing: -2px;
-    }
-
-    .brand-word.vogue {
-      font-family: Georgia, serif;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .brand-word.lacoste {
-      letter-spacing: 2px;
-      font-size: 20px;
-    }
-
-    .brand-word.police {
-      letter-spacing: 3px;
-      font-size: 21px;
-    }
-
-    .brand-word.oakley {
-      font-style: italic;
-      letter-spacing: -1px;
-    }
-
-    .brand-word.prada {
-      font-family: Georgia, serif;
-      letter-spacing: 3px;
-      font-weight: 700;
-    }
-
-    .brand-word.armani {
-      letter-spacing: 2px;
-      font-size: 20px;
-    }
-
-    @keyframes brandsScroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* SECCIONES GENERALES */
-
-    section { padding: 85px 0; }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .section-heading span {
-      color: var(--red);
-      text-transform: uppercase;
-      font-size: 10px;
-      letter-spacing: 4px;
-      font-weight: 800;
-    }
-
-    .section-heading h2 {
-      color: var(--black);
-      font-size: clamp(27px, 4vw, 40px);
-      font-weight: 900;
-      margin-top: 12px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 12px;
-      line-height: 1.8;
-    }
-
-    /* CATEGORÍAS */
-
-    .categories { background: #f8f8f8; }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .category-card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 7px 25px rgba(0,0,0,.06);
-      transition: .3s;
-    }
-
-    .category-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.12);
-    }
-
-    .category-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .category-info {
-      padding: 23px;
-      text-align: center;
-    }
-
-    .category-info h3 {
-      color: #151515;
-      font-size: 17px;
-      margin-bottom: 9px;
-    }
-
-    .category-info p {
-      color: #777;
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    /* CATÁLOGO */
-
-    .catalog { background: white; }
-
-    .catalog-tools {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .search-input {
-      padding: 13px 16px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-family: inherit;
-      min-width: min(100%, 260px);
-      outline: none;
-    }
-
-    .search-input:focus { border-color: var(--red); }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .filter-btn {
-      border: 1px solid #ddd;
-      padding: 10px 15px;
-      border-radius: 4px;
-      background: white;
-      font-size: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--red);
-      border-color: var(--red);
-      color: white;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 23px;
-    }
-
-    .product-card {
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: .3s;
-      background: white;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.09);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-      background: #f5f5f5;
-    }
-
-    .product-info { padding: 20px; }
-
-    .product-tag {
-      color: var(--red);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .product-info h3 {
-      font-size: 16px;
-      color: #151515;
-      margin: 9px 0;
-    }
-
-    .product-info p {
-      font-size: 11px;
-      color: #777;
-      line-height: 1.7;
-      min-height: 38px;
-    }
-
-    .product-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 17px;
-      gap: 10px;
-    }
-
-    .product-bottom strong {
-      color: #222;
-      font-size: 12px;
-    }
-
-    .product-bottom button {
-      background: var(--red);
-      color: white;
-      border: 0;
-      padding: 11px 13px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .product-bottom button:hover { background: #b9001a; }
-
-    .empty-products {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: #777;
-      padding: 30px;
-    }
-
-    /* NOSOTROS */
-
-    .about {
-      background: #111;
-      color: white;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .about-logo .hero-logo-frame {
-      width: min(300px, 80vw);
-    }
-
-    .about-copy span {
-      color: #ff5267;
-      font-size: 10px;
-      letter-spacing: 4px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .about-copy h2 {
-      font-size: 36px;
-      line-height: 1.2;
-      margin: 17px 0;
-      font-weight: 900;
-    }
-
-    .about-copy h2 em {
-      color: var(--red);
-      font-style: normal;
-    }
-
-    .about-copy p {
-      color: #bbb;
-      font-size: 13px;
-      line-height: 2;
-      margin-bottom: 18px;
-    }
-
-    /* CONTACTO */
-
-    .contact { background: #f8f8f8; }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .contact-card {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 5px 22px rgba(0,0,0,.05);
-    }
-
-    .contact-card h3 {
-      font-size: 17px;
-      margin-bottom: 15px;
-      color: #111;
-    }
-
-    .contact-card p {
-      color: #666;
-      font-size: 12px;
-      line-height: 2;
-    }
-
-    .contact-card a {
-      color: var(--red);
-      font-weight: 700;
-    }
-
-    .map {
-      margin-top: 25px;
-      overflow: hidden;
-      border-radius: 8px;
-      height: 300px;
-      background: #ddd;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* PIE DE PÁGINA */
-
-    footer {
-      background: #101010;
-      color: white;
-      padding: 35px 0;
-      text-align: center;
-    }
-
-    footer strong {
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    footer strong span { color: var(--red); }
-
-    footer p {
-      color: #999;
-      font-size: 10px;
-      margin-top: 12px;
-      line-height: 1.8;
-    }
-
-    /* WHATSAPP */
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 1500;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #25d366;
-      color: white;
-      font-size: 28px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.25);
-      transition: .3s;
-    }
-
-    .whatsapp-float:hover { transform: scale(1.1); }
-
-    /* MOVIMIENTO REDUCIDO */
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-      }
-    }
-
-    /* TABLETS */
-
-    @media(max-width: 850px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 50px;
-      }
-
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-actions { justify-content: center; }
-
-      .hero-logo-area { grid-row: 1; }
-
-      .hero-logo-frame { width: 260px; }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-      }
-
-      nav { gap: 13px; }
-      nav a { font-size: 10px; }
-    }
-
-    /* TELÉFONOS */
-
-    @media(max-width: 600px) {
-      .navbar {
-        min-height: 75px;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 12px 0;
-      }
-
-      .brand {
-        width: 100%;
-        justify-content: center;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        padding-bottom: 5px;
-      }
-
-      nav .nav-cta { padding: 9px 12px; }
-
-      .hero { min-height: auto; }
-
-      .hero-content {
-        padding-top: 55px;
-        padding-bottom: 65px;
-      }
-
-      .hero h1 { font-size: 38px; }
-
-      .hero-logo-frame { width: 220px; }
-
-      .benefit-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .benefit {
-        justify-content: flex-start;
-        max-width: 260px;
-        margin: auto;
-        width: 100%;
-      }
-
-      .brands-section { padding: 32px 0; }
-
-      .brand-item {
-        min-width: 150px;
-        height: 65px;
-        padding: 0 20px;
-      }
-
-      .brand-word { font-size: 20px; }
-
-      section { padding: 65px 0; }
-
-      .category-grid,
-      .product-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .catalog-tools { justify-content: center; }
-
-      .filters { justify-content: center; }
-
-      .search-input { width: 100%; }
-
-      .about-copy h2 { font-size: 29px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<title>miÓptica | Cuidamos tu visión, mejoramos tu vida</title>
+<meta name="description" content="miÓptica: más de 20 años cuidando la visión de los ecuatorianos. Óptica en San Rafael, Valle de los Chillos.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+ --red:#e50924;
+ --red-dark:#a90019;
+ --black:#101010;
+ --dark:#181818;
+ --white:#fff;
+ --gray:#b8b8b8;
+ --light:#f5f5f5;
+ --green:#25D366;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+ font-family:'Montserrat',sans-serif;
+ background:#fff;color:#171717;
+ overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+.container{width:min(1160px,92%);margin:auto}
+section{padding:85px 0}
+.section-title{text-align:center;margin-bottom:42px}
+.section-title span{
+ color:var(--red);font-size:12px;font-weight:800;
+ letter-spacing:3px;text-transform:uppercase;
+}
+.section-title h2{
+ font-size:clamp(27px,4vw,40px);
+ font-weight:900;margin:10px 0;
+}
+.section-title p{color:#777;line-height:1.7;max-width:650px;margin:auto;font-size:14px}
+.red{color:var(--red)}
+
+/* HEADER */
+header{
+ background:#101010;color:white;position:sticky;top:0;z-index:1000;
+ box-shadow:0 5px 25px #0003;
+}
+.header-inner{
+ min-height:88px;display:flex;align-items:center;
+ justify-content:space-between;gap:20px;
+}
+.brand-area{display:flex;align-items:center;gap:15px}
+.logo-frame{
+ width:66px;height:66px;border-radius:50%;padding:3px;
+ background:linear-gradient(135deg,#e50924,#fff,#e50924);
+ animation:rotateGlow 5s linear infinite;
+ flex-shrink:0;
+}
+.logo-frame img{
+ width:100%;height:100%;object-fit:cover;border-radius:50%;
+ background:#fff;
+}
+.brand-name{font-size:22px;font-weight:900;letter-spacing:1px}
+.brand-name span{color:var(--red)}
+.social-top{display:flex;gap:9px;align-items:center}
+.social-btn{
+ width:39px;height:39px;border:1px solid #ffffff35;
+ border-radius:50%;display:grid;place-items:center;
+ color:white;transition:.3s;position:relative;
+}
+.social-btn:hover{background:var(--red);border-color:var(--red);transform:translateY(-5px) scale(1.08)}
+.social-btn i{font-size:16px}
+.header-right{display:flex;align-items:center;gap:22px}
+nav{display:flex;gap:21px;font-size:12px;font-weight:700}
+nav a{transition:.3s}
+nav a:hover{color:var(--red)}
+.menu-toggle{display:none;background:none;border:0;color:white;font-size:25px}
+
+/* BUTTONS */
+.btn{
+ display:inline-flex;align-items:center;justify-content:center;gap:10px;
+ padding:15px 24px;border-radius:8px;font-size:12px;
+ font-weight:900;letter-spacing:.5px;text-transform:uppercase;
+ transition:.3s;border:0;
+}
+.btn-primary{
+ background:var(--red);color:white;
+ box-shadow:0 8px 25px #e5092445;
+ animation:ctaPulse 2.5s infinite;
+}
+.btn-primary:hover{background:#bd001b;transform:translateY(-4px)}
+.btn-outline{border:2px solid white;color:white}
+.btn-outline:hover{background:white;color:#111;transform:translateY(-3px)}
+.btn-dark{background:#111;color:white}
+.btn-dark:hover{background:var(--red);transform:translateY(-3px)}
+@keyframes ctaPulse{
+ 0%,100%{box-shadow:0 0 0 0 #e5092445}
+ 50%{box-shadow:0 0 0 9px #e5092400}
+}
+@keyframes rotateGlow{to{filter:hue-rotate(360deg)}}
+
+/* HERO */
+.hero{
+ min-height:590px;color:white;display:flex;align-items:center;
+ background:linear-gradient(100deg,#080808 0%,#171717 65%,#28000a 100%);
+ position:relative;overflow:hidden;
+}
+.hero:before{
+ content:"";position:absolute;width:500px;height:500px;
+ border:1px solid #e5092433;border-radius:50%;
+ right:-100px;top:30px;box-shadow:0 0 0 55px #e5092408,0 0 0 110px #e5092405;
+}
+.hero-grid{
+ display:grid;grid-template-columns:1.1fr .9fr;
+ align-items:center;gap:50px;position:relative;z-index:1;
+}
+.hero-copy .eyebrow{
+ color:#ff5367;font-size:12px;font-weight:800;letter-spacing:3px;
+}
+.hero h1{
+ font-size:clamp(37px,5vw,63px);line-height:1.12;
+ font-weight:900;margin:20px 0;
+}
+.hero h1 span{color:var(--red)}
+.hero-copy p{color:#ccc;line-height:1.8;font-size:15px;max-width:540px;margin-bottom:28px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.hero-logo{
+ background:#ffffff0b;border:1px solid #ffffff20;border-radius:25px;
+ padding:22px;text-align:center;backdrop-filter:blur(10px);
+ box-shadow:0 20px 70px #0007;
+}
+.hero-logo img{
+ width:min(100%,370px);aspect-ratio:1/1;object-fit:contain;
+ border-radius:15px;background:white;
+}
+.hero-logo p{color:#ddd;font-weight:800;letter-spacing:2px;margin-top:18px;font-size:12px}
+
+/* EXPERIENCE */
+.experience{background:var(--red);color:white;padding:35px 0}
+.experience-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ align-items:center;text-align:center;gap:20px;
+}
+.experience-item strong{display:block;font-size:35px;font-weight:900}
+.experience-item span{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+
+/* BENEFITS */
+.benefits{padding:35px 0;background:#f6f6f6}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.benefit{display:flex;align-items:center;gap:13px}
+.benefit i{font-size:25px;color:var(--red)}
+.benefit strong{display:block;font-size:12px}
+.benefit small{display:block;color:#777;font-size:10px;margin-top:4px}
+
+/* BRANDS */
+.brands-section{background:#fff;padding:45px 0;border-bottom:1px solid #eee}
+.brands-heading{text-align:center;margin-bottom:25px}
+.brands-heading h3{font-size:12px;letter-spacing:3px;font-weight:900}
+.brands-window{overflow:hidden;position:relative}
+.brands-track{
+ display:flex;width:max-content;align-items:center;
+ animation:brandsScroll 34s linear infinite;
+}
+.brands-window:hover .brands-track{animation-play-state:paused}
+.brand-item{
+ min-width:190px;text-align:center;padding:15px 25px;
+ font-size:21px;font-weight:900;color:#252525;
+ letter-spacing:1px;white-space:nowrap;
+}
+.brand-item:nth-child(even){color:var(--red)}
+@keyframes brandsScroll{to{transform:translateX(-50%)}}
+
+/* CATEGORIES */
+.categories{background:#fff}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.category-card{
+ border-radius:16px;overflow:hidden;position:relative;
+ min-height:300px;background:#171717;color:white;
+ box-shadow:0 10px 30px #00012;
+}
+.category-card img{width:100%;height:300px;object-fit:cover;transition:.6s}
+.category-card:hover img{transform:scale(1.08);opacity:.7}
+.category-card:after{
+ content:"";position:absolute;inset:30% 0 0;
+ background:linear-gradient(transparent,#000d);
+}
+.category-info{position:absolute;z-index:2;bottom:22px;left:22px;right:22px}
+.category-info h3{font-size:20px;font-weight:900;margin-bottom:7px}
+.category-info p{font-size:12px;color:#ddd;line-height:1.6}
+
+/* CHILDREN */
+.kids-section{
+ background:#fff7f7;position:relative;overflow:hidden;
+}
+.kids-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.kids-image{position:relative}
+.kids-image img{
+ width:100%;height:420px;object-fit:cover;border-radius:22px;
+ box-shadow:0 20px 45px #0002;
+}
+.kids-sticker{
+ position:absolute;bottom:20px;left:-15px;
+ background:var(--red);color:white;padding:18px 22px;
+ border-radius:12px;font-weight:900;
+}
+.kids-copy h2{font-size:clamp(30px,4vw,43px);font-weight:900;line-height:1.15;margin:12px 0}
+.kids-copy p{color:#666;line-height:1.9;font-size:14px;margin:17px 0}
+.kids-points{list-style:none;margin:20px 0}
+.kids-points li{margin:12px 0;font-size:13px;font-weight:700}
+.kids-points i{color:var(--red);margin-right:9px}
+
+/* CATALOG */
+.catalog{background:#f7f7f7}
+.catalog-tools{
+ display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:25px;
+}
+.filter-btn{
+ border:1px solid #ddd;background:white;padding:11px 17px;
+ border-radius:30px;font-size:11px;font-weight:800;transition:.3s;
+}
+.filter-btn.active,.filter-btn:hover{background:var(--red);color:white;border-color:var(--red)}
+.search-box{
+ display:block;width:min(400px,100%);margin:0 auto 30px;
+ padding:14px 18px;border:1px solid #ddd;border-radius:30px;
+ font-family:inherit;outline:none;
+}
+.search-box:focus{border-color:var(--red)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product-card{
+ background:white;border-radius:15px;overflow:hidden;
+ box-shadow:0 8px 25px #0000000a;transition:.3s;
+}
+.product-card:hover{transform:translateY(-7px);box-shadow:0 15px 35px #0002}
+.product-card img{width:100%;height:235px;object-fit:cover;background:#eee}
+.product-info{padding:20px}
+.product-info small{color:var(--red);font-size:10px;font-weight:900;text-transform:uppercase}
+.product-info h3{font-size:16px;margin:8px 0}
+.product-info p{color:#777;font-size:12px;line-height:1.6;margin-bottom:15px}
+.product-info .btn{width:100%;padding:12px;font-size:10px}
+.empty-message{display:none;text-align:center;color:#777;padding:30px}
+
+/* TEAM */
+.team{background:#fff}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px;max-width:900px;margin:auto}
+.team-card{
+ border:1px solid #eee;border-radius:18px;padding:30px;
+ text-align:center;box-shadow:0 12px 35px #00000008;
+ transition:.3s;
+}
+.team-card:hover{transform:translateY(-6px);border-color:#e5092444}
+.team-avatar{
+ width:110px;height:110px;border-radius:50%;margin:0 auto 20px;
+ display:grid;place-items:center;background:#fff0f1;
+ border:4px solid var(--red);color:var(--red);font-size:38px;
+}
+.team-card h3{font-size:20px;font-weight:900}
+.team-role{color:var(--red);font-size:11px;font-weight:800;margin:9px 0 15px}
+.team-card p{color:#777;font-size:13px;line-height:1.8}
+
+/* ABOUT */
+.about{background:#111;color:white}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center}
+.about-logo{
+ padding:25px;background:#fff;border-radius:20px;text-align:center;
+}
+.about-logo img{width:100%;max-width:350px;object-fit:contain}
+.about-copy h2{font-size:clamp(29px,4vw,43px);font-weight:900;margin:12px 0 20px}
+.about-copy p{color:#ccc;font-size:14px;line-height:1.9;margin-bottom:14px}
+.about-highlight{
+ display:inline-block;color:white;background:var(--red);
+ padding:13px 18px;border-radius:8px;font-size:12px;font-weight:900;
+ margin-top:10px;
+}
+
+/* CONTACT */
+.contact{background:#f7f7f7}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card{
+ background:white;padding:30px;border-radius:16px;
+ box-shadow:0 10px 30px #0000000b;
+}
+.contact-line{display:flex;gap:15px;margin:22px 0;align-items:flex-start}
+.contact-line i{color:var(--red);font-size:21px;width:25px}
+.contact-line strong{display:block;font-size:13px;margin-bottom:5px}
+.contact-line span{font-size:12px;color:#777;line-height:1.6}
+.map-frame{width:100%;height:340px;border:0;border-radius:16px}
+
+/* FOOTER */
+footer{background:#090909;color:white;padding:45px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}
+.footer-brand img{width:85px;height:85px;object-fit:contain;background:white;border-radius:50%;padding:5px}
+.footer-brand p{color:#aaa;font-size:12px;line-height:1.8;margin-top:15px;max-width:300px}
+footer h3{font-size:14px;margin-bottom:17px}
+.footer-links{display:grid;gap:12px;font-size:12px;color:#bbb}
+.footer-links a:hover{color:var(--red)}
+.footer-social{display:flex;gap:12px;margin-top:15px}
+.footer-bottom{
+ border-top:1px solid #ffffff20;margin-top:35px;padding-top:20px;
+ text-align:center;color:#777;font-size:10px;
+}
+.float-wa{
+ position:fixed;right:20px;bottom:20px;z-index:999;
+ width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+ color:white;background:#25D366;font-size:27px;
+ box-shadow:0 8px 25px #25d36666;animation:ctaPulse 2s infinite;
+}
+.float-wa:hover{transform:scale(1.1)}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important}
+}
+@media(max-width:850px){
+ .header-inner{flex-wrap:wrap;padding:12px 0}
+ .header-right{gap:12px}
+ nav{gap:12px}
+ .hero-grid{gap:25px}
+ .benefit-grid{grid-template-columns:repeat(2,1fr)}
+ .product-grid{grid-template-columns:repeat(2,1fr)}
+ .category-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+ .header-inner{min-height:75px}
+ .logo-frame{width:53px;height:53px}
+ .brand-name{font-size:18px}
+ .header-right{width:100%;justify-content:space-between;padding-bottom:10px}
+ nav{display:none;position:absolute;top:100%;left:0;right:0;background:#111;padding:20px;flex-direction:column}
+ nav.open{display:flex}
+ .menu-toggle{display:block}
+ .social-btn{width:34px;height:34px}
+ .hero{padding:65px 0}
+ .hero-grid,.kids-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .hero-logo{max-width:390px;margin:auto}
+ .experience-grid{grid-template-columns:1fr;gap:25px}
+ .experience-item strong{font-size:30px}
+ .benefit-grid{grid-template-columns:1fr 1fr;gap:20px}
+ .category-grid,.product-grid,.team-grid{grid-template-columns:1fr}
+ .category-card{min-height:270px}
+ .kids-image img{height:300px}
+ .kids-sticker{left:10px}
+ .footer-grid{grid-template-columns:1fr}
+ section{padding:65px 0}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="container navbar">
-    <a class="brand" href="#inicio">
-      <div class="logo-frame">
-        <img
-          src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
-          alt="Logotipo oficial de miÓptica">
-      </div>
-      <div>
-        <div class="brand-name">mi<span>Óptica</span></div>
-        <div class="brand-subtitle">TU VISIÓN, NUESTRA PRIORIDAD</div>
-      </div>
-    </a>
+ <div class="container header-inner">
+  <a href="#inicio" class="brand-area">
+   <div class="logo-frame">
+    <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo oficial miÓptica">
+   </div>
+   <div class="brand-name">mi<span>Óptica</span></div>
+  </a>
 
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#categorias">Productos</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto" class="nav-cta">Contáctanos</a>
-    </nav>
+  <div class="header-right">
+   <div class="social-top">
+    <a class="social-btn" href="https://www.facebook.com/share/1Fhuok7UVF/" target="_blank" rel="noopener" aria-label="Facebook miÓptica"><i class="fab fa-facebook-f"></i></a>
+    <a class="social-btn" href="https://www.instagram.com/miopticauio?cplk=NjRqYWY5OHhwOGs0" target="_blank" rel="noopener" aria-label="Instagram miÓptica"><i class="fab fa-instagram"></i></a>
+    <a class="social-btn" href="https://www.tiktok.com/@miopticauio?_r=1&_t=ZS-9BHZRwCVDjp" target="_blank" rel="noopener" aria-label="TikTok miÓptica"><i class="fab fa-tiktok"></i></a>
+    <a class="social-btn" href="https://wa.me/593998901364" target="_blank" rel="noopener" aria-label="WhatsApp miÓptica"><i class="fab fa-whatsapp"></i></a>
+   </div>
+   <nav id="mainNav">
+    <a href="#inicio">INICIO</a>
+    <a href="#catalogo">CATÁLOGO</a>
+    <a href="#infantil">NIÑOS</a>
+    <a href="#equipo">NUESTRO EQUIPO</a>
+    <a href="#contacto">CONTACTO</a>
+   </nav>
+   <button class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
   </div>
+ </div>
 </header>
 
 <main>
+<section class="hero" id="inicio">
+ <div class="container hero-grid">
+  <div class="hero-copy">
+   <span class="eyebrow">MÁS DE 20 AÑOS CUIDANDO TU VISIÓN</span>
+   <h1>Tu estilo merece una visión <span>espectacular.</span></h1>
+   <p>En miÓptica combinamos experiencia profesional, salud visual y tendencias para ayudarte a ver bien y lucir como te gusta.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="#catalogo"><i class="fas fa-glasses"></i> Ver catálogo</a>
+    <a class="btn btn-outline" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agenda tu cita</a>
+   </div>
+  </div>
+  <div class="hero-logo">
+   <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="miÓptica, logotipo oficial">
+   <p>CUIDAMOS TU VISIÓN · MEJORAMOS TU VIDA</p>
+  </div>
+ </div>
+</section>
 
-  <!-- PORTADA -->
-  <section class="hero" id="inicio">
-    <div class="container hero-content">
+<section class="experience">
+ <div class="container experience-grid">
+  <div class="experience-item"><strong>+20</strong><span>Años en el mercado ecuatoriano</span></div>
+  <div class="experience-item"><strong>+30</strong><span>Años de experiencia en optometría</span></div>
+  <div class="experience-item"><strong>100%</strong><span>Compromiso con tu salud visual</span></div>
+ </div>
+</section>
 
-      <div>
-        <div class="eyebrow">Bienvenido a miÓptica</div>
+<div class="benefits">
+ <div class="container benefit-grid">
+  <div class="benefit"><i class="fas fa-eye"></i><div><strong>Cuidado visual</strong><small>Atención profesional</small></div></div>
+  <div class="benefit"><i class="fas fa-glasses"></i><div><strong>Estilo y tendencias</strong><small>Opciones para cada personalidad</small></div></div>
+  <div class="benefit"><i class="fas fa-user-check"></i><div><strong>Asesoría personalizada</strong><small>Te ayudamos a elegir</small></div></div>
+  <div class="benefit"><i class="fas fa-heart"></i><div><strong>Experiencia y confianza</strong><small>Más de dos décadas contigo</small></div></div>
+ </div>
+</div>
 
-        <h1>
-          Tu estilo merece una
-          <span>visión espectacular.</span>
-        </h1>
+<section class="brands-section">
+ <div class="container">
+  <div class="brands-heading">
+   <h3>ESTILO Y TENDENCIAS QUE INSPIRAN</h3>
+  </div>
+  <div class="brands-window">
+   <div class="brands-track">
+    <div class="brand-item">RAY-BAN</div><div class="brand-item">GUESS</div>
+    <div class="brand-item">VOGUE</div><div class="brand-item">LACOSTE</div>
+    <div class="brand-item">POLICE</div><div class="brand-item">GUCCI</div>
+    <div class="brand-item">OAKLEY</div><div class="brand-item">PRADA</div>
+    <div class="brand-item">ARMANI</div><div class="brand-item">TOMMY HILFIGER</div>
+    <div class="brand-item">RAY-BAN</div><div class="brand-item">GUESS</div>
+    <div class="brand-item">VOGUE</div><div class="brand-item">LACOSTE</div>
+    <div class="brand-item">POLICE</div><div class="brand-item">GUCCI</div>
+    <div class="brand-item">OAKLEY</div><div class="brand-item">PRADA</div>
+    <div class="brand-item">ARMANI</div><div class="brand-item">TOMMY HILFIGER</div>
+   </div>
+  </div>
+ </div>
+</section>
 
-        <p>
-          Descubre una nueva forma de ver el mundo. Encuentra gafas,
-          armazones y lentes que combinan tecnología, comodidad y
-          estilo para acompañarte todos los días.
-        </p>
+<section class="categories">
+ <div class="container">
+  <div class="section-title">
+   <span>Encuentra tu estilo</span>
+   <h2>Una mirada que habla de ti</h2>
+   <p>Descubre opciones para acompañarte en cada momento de tu vida.</p>
+  </div>
+  <div class="category-grid">
+   <article class="category-card">
+    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=900" alt="Gafas de sol">
+    <div class="category-info"><h3>Gafas de sol</h3><p>Protección y personalidad para tus días al aire libre.</p></div>
+   </article>
+   <article class="category-card">
+    <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=900" alt="Armazones oftálmicos">
+    <div class="category-info"><h3>Armazones oftálmicos</h3><p>Diseños para expresar tu estilo todos los días.</p></div>
+   </article>
+   <article class="category-card">
+    <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=900" alt="Lentes y accesorios">
+    <div class="category-info"><h3>Lentes y accesorios</h3><p>Alternativas para complementar tu cuidado visual.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
 
-        <div class="hero-actions">
-          <a href="#catalogo" class="btn btn-red">EXPLORAR CATÁLOGO</a>
-          <a href="https://wa.me/593998901364" target="_blank" rel="noopener" class="btn btn-outline">
-            AGENDA TU CITA
-          </a>
-        </div>
-      </div>
+<section class="kids-section" id="infantil">
+ <div class="container kids-grid">
+  <div class="kids-image">
+   <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1000" alt="Niños disfrutando de sus actividades">
+   <div class="kids-sticker">¡Pequeñas miradas, grandes sueños!</div>
+  </div>
+  <div class="kids-copy">
+   <span class="red" style="font-size:12px;font-weight:900;letter-spacing:2px">ESPECIAL PARA LOS MÁS PEQUEÑOS</span>
+   <h2>La visión de tus hijos también merece <span class="red">lo mejor.</span></h2>
+   <p>En miÓptica contamos con opciones de lentes y gafas infantiles para acompañar a los niños en sus juegos, estudios y aventuras. Te ayudamos a encontrar alternativas cómodas y acordes con su personalidad.</p>
+   <ul class="kids-points">
+    <li><i class="fas fa-check-circle"></i> Diseños infantiles llenos de color y estilo.</li>
+    <li><i class="fas fa-check-circle"></i> Opciones para diferentes edades y gustos.</li>
+    <li><i class="fas fa-check-circle"></i> Asesoría para elegir la montura adecuada.</li>
+   </ul>
+   <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20quisiera%20informaci%C3%B3n%20sobre%20lentes%20y%20gafas%20infantiles." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar modelos infantiles</a>
+  </div>
+ </div>
+</section>
 
-      <div class="hero-logo-area">
-        <div class="hero-logo-frame">
-          <img
-            src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
-            alt="miÓptica - Logotipo oficial">
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- BENEFICIOS -->
-  <div class="benefits">
-    <div class="container benefit-grid">
-
-      <div class="benefit">
-        <div class="benefit-icon">✦</div>
-        <div>
-          <strong>Estilo y personalidad</strong>
-          <small>Encuentra el diseño ideal para ti.</small>
-        </div>
-      </div>
-
-      <div class="benefit">
-        <div class="benefit-icon">◈</div>
-        <div>
-          <strong>Atención personalizada</strong>
-          <small>Estamos para asesorarte.</small>
-        </div>
-      </div>
-
-      <div class="benefit">
-        <div class="benefit-icon">✓</div>
-        <div>
-          <strong>Tu comodidad primero</strong>
-          <small>Una experiencia pensada para ti.</small>
-        </div>
-      </div>
-
-    </div>
+<section class="catalog" id="catalogo">
+ <div class="container">
+  <div class="section-title">
+   <span>Explora nuestra selección</span>
+   <h2>Encuentra tus próximos lentes</h2>
+   <p>Conoce algunos estilos y consulta por WhatsApp la disponibilidad de modelos.</p>
   </div>
 
-  <!-- CARRUSEL DE MARCAS -->
-  <section class="brands-section" aria-label="Marcas de gafas">
-    <div class="container">
+  <input class="search-box" id="productSearch" type="search" placeholder="Buscar gafas, armazones, infantiles...">
 
-      <div class="brands-heading">
-        <span>Estilo y tendencias</span>
-        <h2>Marcas que inspiran tu mirada</h2>
-        <p>Descubre algunas de las marcas más reconocidas del mundo óptico.</p>
-      </div>
+  <div class="catalog-tools">
+   <button class="filter-btn active" data-filter="todos">Todos</button>
+   <button class="filter-btn" data-filter="sol">Gafas de sol</button>
+   <button class="filter-btn" data-filter="opticos">Armazones</button>
+   <button class="filter-btn" data-filter="infantil">Infantiles</button>
+   <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+  </div>
 
+  <div class="product-grid" id="productGrid">
+   <article class="product-card" data-category="sol">
+    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800" alt="Gafas de sol modernas">
+    <div class="product-info"><small>Gafas de sol</small><h3>Estilo urbano</h3><p>Diseños actuales para complementar tu look.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20gafas%20de%20sol.">Consultar por WhatsApp</a></div>
+   </article>
+   <article class="product-card" data-category="opticos">
+    <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=800" alt="Armazón óptico">
+    <div class="product-info"><small>Armazones</small><h3>Elegancia diaria</h3><p>Monturas para diferentes estilos y preferencias.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20armazones%20%C3%B3pticos.">Consultar por WhatsApp</a></div>
+   </article>
+   <article class="product-card" data-category="infantil">
+    <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800" alt="Colección infantil">
+    <div class="product-info"><small>Infantiles</small><h3>Pequeños estilos</h3><p>Opciones para acompañar a los niños.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20lentes%20infantiles.">Consultar por WhatsApp</a></div>
+   </article>
+   <article class="product-card" data-category="sol">
+    <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800" alt="Gafas de sol clásicas">
+    <div class="product-info"><small>Gafas de sol</small><h3>Clásicos que destacan</h3><p>Una opción para cada ocasión.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20ver%20gafas%20de%20sol%20disponibles.">Consultar por WhatsApp</a></div>
+   </article>
+   <article class="product-card" data-category="opticos">
+    <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?w=800" alt="Montura de diseño">
+    <div class="product-info"><small>Armazones</small><h3>Diseño y personalidad</h3><p>Encuentra una montura que hable de ti.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20monturas.">Consultar por WhatsApp</a></div>
+   </article>
+   <article class="product-card" data-category="accesorios">
+    <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=800" alt="Accesorios ópticos">
+    <div class="product-info"><small>Accesorios</small><h3>Complementos visuales</h3><p>Consulta por accesorios y complementos disponibles.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20accesorios%20%C3%B3pticos.">Consultar por WhatsApp</a></div>
+   </article>
+  </div>
+  <p class="empty-message" id="emptyMessage">No encontramos productos con esa búsqueda.</p>
+  <p style="text-align:center;color:#888;font-size:10px;margin-top:25px">Imágenes referenciales. Modelos, marcas y disponibilidad sujetos a confirmación en tienda.</p>
+ </div>
+</section>
+
+<section class="team" id="equipo">
+ <div class="container">
+  <div class="section-title">
+   <span>Experiencia y asesoría</span>
+   <h2>El equipo humano detrás de miÓptica</h2>
+   <p>Personas comprometidas con tu salud visual y con ayudarte a encontrar una imagen que refleje quién eres.</p>
+  </div>
+  <div class="team-grid">
+   <article class="team-card">
+    <div class="team-avatar"><i class="fas fa-eye"></i></div>
+    <h3>Blanca Tobar</h3>
+    <div class="team-role">LICENCIADA EN OPTOMETRÍA · GERENTE PROPIETARIA</div>
+    <p>Profesional en Optometría y gerente propietaria de miÓptica, con más de 30 años de experiencia en el campo visual. Su trayectoria y compromiso con el cuidado de la visión son parte fundamental de la historia de nuestra óptica.</p>
+   </article>
+   <article class="team-card">
+    <div class="team-avatar"><i class="fas fa-user-tie"></i></div>
+    <h3>Maryory Tova Pinzón</h3>
+    <div class="team-role">ASESORA DE IMAGEN Y TENDENCIAS ÓPTICAS</div>
+    <p>Asesora y especialista en imagen y tendencias ópticas. Te acompaña en la elección de monturas y estilos para encontrar alternativas que armonicen con tu personalidad y forma de expresarte.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="nosotros">
+ <div class="container about-grid">
+  <div class="about-logo">
+   <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo miÓptica">
+  </div>
+  <div class="about-copy">
+   <span style="color:#ff5267;font-size:12px;font-weight:900;letter-spacing:3px">NUESTRA HISTORIA</span>
+   <h2>Más de 20 años viendo el mundo contigo.</h2>
+   <p>miÓptica lleva más de dos décadas formando parte del mercado ecuatoriano, construyendo una historia de dedicación, experiencia y compromiso con el cuidado visual de sus clientes.</p>
+   <p>Creemos que ver bien también es lucir bien. Por eso unimos atención profesional, asesoría personalizada y tendencias ópticas para ofrecer una experiencia cercana y confiable.</p>
+   <div class="about-highlight">miÓptica — Cuidamos tu visión, mejoramos tu vida.</div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contacto">
+ <div class="container">
+  <div class="section-title">
+   <span>Estamos para atenderte</span>
+   <h2>Visítanos en miÓptica</h2>
+   <p>Agenda tu cita o escríbenos para recibir información sobre nuestros productos y servicios.</p>
+  </div>
+  <div class="contact-grid">
+   <div class="contact-card">
+    <h3>Información de contacto</h3>
+    <div class="contact-line"><i class="fas fa-location-dot"></i><div><strong>Ubicación</strong><span>San Rafael, Valle de los Chillos, diagonal a San Luis Shopping, Ecuador.</span></div></div>
+    <div class="contact-line"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span>+593 998 901 364</span></div></div>
+    <div class="contact-line"><i class="fas fa-clock"></i><div><strong>Atención</strong><span>Contáctanos para consultar horarios y agendar tu visita.</span></div></div>
+    <a class="btn btn-primary" style="width:100%;margin-top:15px" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agenda tu cita</a>
+    <div class="footer-social">
+     <a class="social-btn" href="https://www.facebook.com/share/1Fhuok7UVF/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+     <a class="social-btn" href="https://www.instagram.com/miopticauio?cplk=NjRqYWY5OHhwOGs0" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+     <a class="social-btn" href="https://www.tiktok.com/@miopticauio?_r=1&_t=ZS-9BHZRwCVDjp" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
     </div>
-
-    <div class="brands-window">
-      <div class="brands-track">
-
-        <!-- PRIMER GRUPO -->
-        <div class="brand-item"><span class="brand-word rayban">RAY-BAN</span></div>
-        <div class="brand-item"><span class="brand-word">GUESS</span></div>
-        <div class="brand-item"><span class="brand-word vogue">VOGUE</span></div>
-        <div class="brand-item"><span class="brand-word lacoste">LACOSTE</span></div>
-        <div class="brand-item"><span class="brand-word police">POLICE</span></div>
-        <div class="brand-item"><span class="brand-word gucci">GUCCI</span></div>
-        <div class="brand-item"><span class="brand-word oakley">OAKLEY</span></div>
-        <div class="brand-item"><span class="brand-word prada">PRADA</span></div>
-        <div class="brand-item"><span class="brand-word armani">ARMANI</span></div>
-        <div class="brand-item"><span class="brand-word">TOMMY HILFIGER</span></div>
-
-        <!-- SEGUNDO GRUPO: REPETICIÓN PARA MOVIMIENTO CONTINUO -->
-        <div class="brand-item" aria-hidden="true"><span class="brand-word rayban">RAY-BAN</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word">GUESS</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word vogue">VOGUE</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word lacoste">LACOSTE</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word police">POLICE</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word gucci">GUCCI</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word oakley">OAKLEY</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word prada">PRADA</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word armani">ARMANI</span></div>
-        <div class="brand-item" aria-hidden="true"><span class="brand-word">TOMMY HILFIGER</span></div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORÍAS -->
-  <section class="categories" id="categorias">
-    <div class="container">
-
-      <div class="section-heading">
-        <span>Encuentra tu estilo</span>
-        <h2>Explora nuestras categorías</h2>
-        <p>Diseños para cada personalidad y cada momento.</p>
-      </div>
-
-      <div class="category-grid">
-
-        <article class="category-card">
-          <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85" alt="Gafas de sol">
-          <div class="category-info">
-            <h3>Gafas de sol</h3>
-            <p>Protección y estilo para disfrutar cada día.</p>
-          </div>
-        </article>
-
-        <article class="category-card">
-          <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=900&q=85" alt="Armazones oftálmicos">
-          <div class="category-info">
-            <h3>Armazones oftálmicos</h3>
-            <p>Diseños que reflejan tu personalidad.</p>
-          </div>
-        </article>
-
-        <article class="category-card">
-          <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=900&q=85" alt="Lentes y accesorios">
-          <div class="category-info">
-            <h3>Lentes y accesorios</h3>
-            <p>Alternativas para complementar tu visión.</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CATÁLOGO -->
-  <section class="catalog" id="catalogo">
-    <div class="container">
-
-      <div class="section-heading">
-        <span>Selección miÓptica</span>
-        <h2>Descubre nuestro catálogo</h2>
-        <p>Explora algunos estilos y consulta disponibilidad por WhatsApp.</p>
-      </div>
-
-      <div class="catalog-tools">
-
-        <input
-          type="search"
-          id="searchInput"
-          class="search-input"
-          placeholder="Buscar productos..."
-          aria-label="Buscar productos">
-
-        <div class="filters">
-          <button class="filter-btn active" data-filter="todos">Todos</button>
-          <button class="filter-btn" data-filter="sol">Gafas de sol</button>
-          <button class="filter-btn" data-filter="opticos">Armazones</button>
-          <button class="filter-btn" data-filter="accesorios">Accesorios</button>
-        </div>
-
-      </div>
-
-      <div class="product-grid" id="productGrid">
-
-        <article class="product-card" data-category="sol">
-          <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85" alt="Gafas de sol modernas">
-          <div class="product-info">
-            <span class="product-tag">Gafas de sol</span>
-            <h3>Estilo urbano</h3>
-            <p>Un diseño moderno para complementar tu imagen.</p>
-            <div class="product-bottom">
-              <strong>Consultar precio</strong>
-              <button onclick="consultar('Gafas de sol - Estilo urbano')">Consultar</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="opticos">
-          <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=800&q=85" alt="Armazón oftálmico">
-          <div class="product-info">
-            <span class="product-tag">Armazones</span>
-            <h3>Diseño contemporáneo</h3>
-            <p>Personalidad y comodidad en un solo diseño.</p>
-            <div class="product-bottom">
-              <strong>Consultar precio</strong>
-              <button onclick="consultar('Armazón - Diseño contemporáneo')">Consultar</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="sol">
-          <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=85" alt="Gafas de sol elegantes">
-          <div class="product-info">
-            <span class="product-tag">Gafas de sol</span>
-            <h3>Elegancia clásica</h3>
-            <p>Un complemento versátil para tu día a día.</p>
-            <div class="product-bottom">
-              <strong>Consultar precio</strong>
-              <button onclick="consultar('Gafas de sol - Elegancia clásica')">Consultar</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="opticos">
-          <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=85" alt="Lentes de diseño">
-          <div class="product-info">
-            <span class="product-tag">Armazones</span>
-            <h3>Personalidad única</h3>
-            <p>Encuentra el estilo que mejor se adapta a ti.</p>
-            <div class="product-bottom">
-              <strong>Consultar precio</strong>
-              <button onclick="consultar('Armazón - Personalidad única')">Consultar</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="accesorios">
-          <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=800&q=85" alt="Accesorios para gafas">
-          <div class="product-info">
-            <span class="product-tag">Accesorios</span>
-            <h3>Complementos</h3>
-            <p>Detalles que acompañan y cuidan tus lentes.</p>
-            <div class="product-bottom">
-              <strong>Consultar precio</strong>
-              <button onclick="consultar('Accesorios para lentes')">Consultar</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="sol">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=85" alt="Gafas modernas">
-          <div class="product-info">
-            <span class="product-tag">Gafas de sol</span>
-            <h3>Look moderno</h3>
-            <p>Un toque de estilo para destacar donde vayas.</p>
-            <div class="product-bottom">
-              <strong>Consultar precio</strong>
-              <button onclick="consultar('Gafas de sol - Look moderno')">Consultar</button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- NOSOTROS -->
-  <section class="about" id="nosotros">
-    <div class="container about-grid">
-
-      <div class="about-logo">
-        <div class="hero-logo-frame">
-          <img
-            src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
-            alt="Identidad visual miÓptica">
-        </div>
-      </div>
-
-      <div class="about-copy">
-        <span>Conócenos</span>
-        <h2>En miÓptica, tu visión es <em>nuestra prioridad.</em></h2>
-
-        <p>
-          Creemos que ver bien también es sentirse bien. Por eso queremos
-          acompañarte a encontrar alternativas que combinen estilo,
-          comodidad y funcionalidad.
-        </p>
-
-        <p>
-          Te esperamos en San Rafael, Valle de los Chillos, diagonal a
-          San Luis Shopping. Será un gusto atenderte.
-        </p>
-
-        <a href="https://wa.me/593998901364" target="_blank" rel="noopener" class="btn btn-red">
-          COMUNICARME CON MIÓPTICA
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="container">
-
-      <div class="section-heading">
-        <span>Estamos cerca de ti</span>
-        <h2>Visítanos o escríbenos</h2>
-        <p>Será un gusto ayudarte a encontrar lo que necesitas.</p>
-      </div>
-
-      <div class="contact-grid">
-
-        <div class="contact-card">
-          <h3>📍 Nuestra ubicación</h3>
-          <p>
-            San Rafael, Valle de los Chillos.<br>
-            Diagonal a San Luis Shopping.
-          </p>
-          <p>
-            <a href="https://www.google.com/maps/search/?api=1&query=San+Luis+Shopping+San+Rafael+Ecuador" target="_blank" rel="noopener">
-              Ver ubicación en Google Maps
-            </a>
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <h3>💬 Agenda tu cita</h3>
-          <p>
-            WhatsApp:
-            <a href="https://wa.me/593998901364" target="_blank" rel="noopener">099 890 1364</a>
-          </p>
-          <p>
-            Escríbenos para consultar productos, disponibilidad y atención.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="map">
-        <iframe
-          src="https://maps.google.com/maps?q=San%20Luis%20Shopping%20San%20Rafael%20Ecuador&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mapa de referencia de San Luis Shopping, San Rafael">
-        </iframe>
-      </div>
-
-    </div>
-  </section>
-
+   </div>
+   <iframe class="map-frame" loading="lazy" allowfullscreen
+    src="https://www.google.com/maps?q=San%20Luis%20Shopping%20San%20Rafael%20Ecuador&output=embed"
+    title="Mapa de ubicación de miÓptica"></iframe>
+  </div>
+ </div>
+</section>
 </main>
 
-<!-- PIE DE PÁGINA -->
 <footer>
-  <div class="container">
-    <strong>mi<span>Óptica</span></strong>
-    <p>
-      Tu visión, nuestra prioridad.<br>
-      San Rafael · Valle de los Chillos · Ecuador
-    </p>
-    <p>© <span id="year"></span> miÓptica. Todos los derechos reservados.</p>
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-brand">
+    <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="miÓptica">
+    <p>Más de 20 años cuidando la visión de los ecuatorianos. Experiencia, asesoría y estilo en un solo lugar.</p>
+   </div>
+   <div>
+    <h3>Explora miÓptica</h3>
+    <div class="footer-links">
+     <a href="#inicio">Inicio</a>
+     <a href="#catalogo">Catálogo</a>
+     <a href="#infantil">Lentes infantiles</a>
+     <a href="#equipo">Nuestro equipo</a>
+     <a href="#contacto">Contacto</a>
+    </div>
+   </div>
+   <div>
+    <h3>Síguenos y conversemos</h3>
+    <div class="footer-links">
+     <a href="https://www.facebook.com/share/1Fhuok7UVF/" target="_blank" rel="noopener">Facebook</a>
+     <a href="https://www.instagram.com/miopticauio?cplk=NjRqYWY5OHhwOGs0" target="_blank" rel="noopener">Instagram</a>
+     <a href="https://www.tiktok.com/@miopticauio?_r=1&_t=ZS-9BHZRwCVDjp" target="_blank" rel="noopener">TikTok</a>
+     <a href="https://wa.me/593998901364" target="_blank" rel="noopener">WhatsApp: +593 998 901 364</a>
+    </div>
+   </div>
   </div>
+  <div class="footer-bottom">© 2026 miÓptica. Todos los derechos reservados. · Cuidamos tu visión, mejoramos tu vida.</div>
+ </div>
 </footer>
 
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<a
-  class="whatsapp-float"
-  href="https://wa.me/593998901364"
-  target="_blank"
-  rel="noopener"
-  aria-label="Contactar a miÓptica por WhatsApp">
-  ☎
-</a>
+<a class="float-wa" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20quisiera%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir a miÓptica por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-  // AÑO AUTOMÁTICO
-  document.getElementById("year").textContent = new Date().getFullYear();
+const filterButtons=document.querySelectorAll('.filter-btn');
+const products=document.querySelectorAll('.product-card');
+const searchInput=document.getElementById('productSearch');
+const emptyMessage=document.getElementById('emptyMessage');
+let currentFilter='todos';
 
-  // CONSULTAS POR WHATSAPP
-  function consultar(producto) {
-    const mensaje =
-      "Hola, miÓptica. Me interesa consultar sobre: " +
-      producto +
-      ". ¿Podrían darme más información?";
-
-    const url =
-      "https://wa.me/593998901364?text=" +
-      encodeURIComponent(mensaje);
-
-    window.open(url, "_blank", "noopener");
-  }
-
-  // FILTROS DEL CATÁLOGO
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const products = document.querySelectorAll(".product-card");
-  const searchInput = document.getElementById("searchInput");
-
-  let currentFilter = "todos";
-
-  function filterProducts() {
-    const search = searchInput.value.toLowerCase().trim();
-    let visible = 0;
-
-    products.forEach(product => {
-      const category = product.dataset.category;
-      const content = product.textContent.toLowerCase();
-
-      const matchesCategory =
-        currentFilter === "todos" || category === currentFilter;
-
-      const matchesSearch = content.includes(search);
-      const show = matchesCategory && matchesSearch;
-
-      product.style.display = show ? "block" : "none";
-
-      if (show) visible++;
-    });
-
-    let emptyMessage = document.querySelector(".empty-products");
-
-    if (visible === 0) {
-      if (!emptyMessage) {
-        emptyMessage = document.createElement("p");
-        emptyMessage.className = "empty-products";
-        emptyMessage.textContent =
-          "No encontramos productos con esa búsqueda.";
-
-        document.getElementById("productGrid").appendChild(emptyMessage);
-      }
-    } else if (emptyMessage) {
-      emptyMessage.remove();
-    }
-  }
-
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      filterButtons.forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
-
-      currentFilter = button.dataset.filter;
-      filterProducts();
-    });
-  });
-
-  searchInput.addEventListener("input", filterProducts);
+function filterProducts(){
+ const term=searchInput.value.toLowerCase().trim();
+ let visible=0;
+ products.forEach(product=>{
+  const category=product.dataset.category;
+  const text=product.innerText.toLowerCase();
+  const matchesCategory=currentFilter==='todos'||category===currentFilter;
+  const matchesSearch=text.includes(term);
+  const show=matchesCategory&&matchesSearch;
+  product.style.display=show?'block':'none';
+  if(show)visible++;
+ });
+ emptyMessage.style.display=visible?'none':'block';
+}
+filterButtons.forEach(button=>{
+ button.addEventListener('click',()=>{
+  filterButtons.forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');
+  currentFilter=button.dataset.filter;
+  filterProducts();
+ });
+});
+searchInput.addEventListener('input',filterProducts);
 </script>
 
 </body>
