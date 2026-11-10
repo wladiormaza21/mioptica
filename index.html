@@ -1,1 +1,1383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#e92735">
+<meta name="description" content="MiÓptica: gafas, lentes y soluciones visuales en San Rafael, Valle de los Chillos.">
+<title>MiÓptica | Tu visión, nuestro compromiso</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--red:#ed2939;
+--red-dark:#c91e2c;
+--ink:#171719;
+--muted:#686a70;
+--line:#ececef;
+--soft:#f7f7f8;
+--shadow:0 18px 55px rgba(18,18,24,.09);
+}
+
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+margin:0;
+font-family:"DM Sans",sans-serif;
+color:var(--ink);
+background:#fff;
+}
+a { color:inherit; text-decoration:none; }
+button,input { font:inherit; }
+
+.container {
+width:min(1160px,calc(100% - 40px));
+margin:auto;
+}
+
+.topbar {
+background:#171719;
+color:white;
+font-size:12px;
+padding:10px 0;
+}
+.topbar .container {
+display:flex;
+justify-content:space-between;
+gap:12px;
+flex-wrap:wrap;
+}
+
+header {
+position:sticky;
+top:0;
+z-index:20;
+background:rgba(255,255,255,.94);
+backdrop-filter:blur(14px);
+border-bottom:1px solid var(--line);
+}
+
+.nav {
+height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:24px;
+}
+
+.brand {
+display:flex;
+align-items:center;
+gap:12px;
+min-width:190px;
+}
+
+.brand img {
+width:66px;
+height:62px;
+object-fit:contain;
+}
+
+.brand strong {
+font:800 22px Manrope,sans-serif;
+letter-spacing:-1px;
+}
+
+.brand strong span { color:var(--red); }
+
+.navlinks {
+display:flex;
+align-items:center;
+gap:30px;
+font-size:14px;
+font-weight:600;
+}
+
+.navlinks a:hover { color:var(--red); }
+
+.nav-actions {
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.iconbtn {
+border:1px solid var(--line);
+background:white;
+border-radius:50%;
+width:43px;
+height:43px;
+cursor:pointer;
+font-size:17px;
+position:relative;
+}
+
+.count {
+position:absolute;
+top:-5px;
+right:-5px;
+background:var(--red);
+color:white;
+border-radius:50%;
+font-size:10px;
+min-width:18px;
+height:18px;
+display:grid;
+place-items:center;
+}
+
+.btn {
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+padding:14px 21px;
+border-radius:8px;
+background:var(--red);
+color:white;
+font-weight:700;
+font-size:14px;
+border:1px solid var(--red);
+cursor:pointer;
+transition:.2s;
+}
+
+.btn:hover {
+background:var(--red-dark);
+transform:translateY(-1px);
+}
+
+.btn.outline {
+background:transparent;
+color:var(--ink);
+border-color:#d9d9de;
+}
+
+.btn.small {
+padding:11px 15px;
+font-size:13px;
+}
+
+/* PORTADA */
+
+.hero {
+padding:72px 0 68px;
+background:linear-gradient(115deg,#fff 0%,#fff 56%,#fff5f5 100%);
+overflow:hidden;
+}
+
+.hero-grid {
+display:grid;
+grid-template-columns:1.03fr .97fr;
+align-items:center;
+gap:50px;
+}
+
+.eyebrow {
+display:inline-flex;
+align-items:center;
+gap:9px;
+color:var(--red);
+font-size:12px;
+font-weight:800;
+letter-spacing:1.6px;
+text-transform:uppercase;
+}
+
+.eyebrow:before {
+content:"";
+width:25px;
+height:2px;
+background:var(--red);
+}
+
+h1,h2,h3 { font-family:Manrope,sans-serif; }
+
+h1 {
+font-size:clamp(42px,5.3vw,68px);
+line-height:1.06;
+letter-spacing:-3px;
+margin:18px 0 20px;
+font-weight:800;
+}
+
+h1 em {
+font-style:normal;
+color:var(--red);
+}
+
+.hero-copy {
+font-size:17px;
+line-height:1.75;
+color:var(--muted);
+max-width:520px;
+}
+
+.hero-ctas {
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.hero-note {
+display:flex;
+align-items:center;
+gap:12px;
+margin-top:32px;
+color:var(--muted);
+font-size:12px;
+}
+
+.hero-note b { color:var(--ink); }
+
+.hero-visual {
+position:relative;
+min-height:420px;
+display:grid;
+place-items:center;
+}
+
+.hero-glow {
+position:absolute;
+width:390px;
+height:390px;
+border-radius:50%;
+background:#fce2e4;
+}
+
+.hero-logo {
+position:relative;
+width:min(100%,470px);
+padding:28px;
+background:white;
+border-radius:24px;
+box-shadow:var(--shadow);
+transform:rotate(1deg);
+}
+
+.hero-logo img {
+width:100%;
+display:block;
+border-radius:10px;
+}
+
+.floating-tag {
+position:absolute;
+right:0;
+bottom:36px;
+background:#171719;
+color:white;
+padding:15px 19px;
+border-radius:12px;
+box-shadow:var(--shadow);
+font-size:13px;
+}
+
+.floating-tag b {
+display:block;
+font:800 17px Manrope;
+margin-bottom:3px;
+}
+
+/* BENEFICIOS */
+
+.trust {
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+padding:23px 0;
+}
+
+.trust-grid {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.trust-item {
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+font-size:13px;
+font-weight:700;
+}
+
+.trust-icon {
+width:39px;
+height:39px;
+border-radius:50%;
+background:#fff0f1;
+color:var(--red);
+display:grid;
+place-items:center;
+font-size:17px;
+}
+
+/* SECCIONES */
+
+.section { padding:82px 0; }
+.section.soft { background:var(--soft); }
+
+.section-head {
+text-align:center;
+max-width:650px;
+margin:0 auto 38px;
+}
+
+.section-head .eyebrow { justify-content:center; }
+
+.section-head h2 {
+font-size:clamp(30px,4vw,43px);
+letter-spacing:-1.8px;
+margin:13px 0;
+}
+
+.section-head p {
+color:var(--muted);
+line-height:1.7;
+margin:0;
+}
+
+/* CATEGORÍAS */
+
+.category-grid {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.category {
+position:relative;
+min-height:225px;
+border-radius:15px;
+overflow:hidden;
+background:#eee;
+display:flex;
+align-items:end;
+padding:24px;
+color:white;
+isolation:isolate;
+}
+
+.category:before {
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,.03));
+z-index:-1;
+}
+
+.category:after {
+content:"";
+position:absolute;
+inset:0;
+background:var(--photo) center/cover;
+z-index:-2;
+transition:transform .4s;
+}
+
+.category:hover:after { transform:scale(1.06); }
+
+.category h3 {
+font-size:22px;
+margin:0 0 5px;
+}
+
+.category p {
+margin:0;
+font-size:13px;
+opacity:.85;
+}
+
+/* TIENDA */
+
+.products-toolbar {
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:16px;
+margin-bottom:24px;
+flex-wrap:wrap;
+}
+
+.filters {
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.filter {
+border:1px solid var(--line);
+background:white;
+padding:9px 15px;
+border-radius:30px;
+font-size:12px;
+font-weight:700;
+cursor:pointer;
+}
+
+.filter.active,.filter:hover {
+background:#171719;
+color:white;
+border-color:#171719;
+}
+
+.search {
+border:1px solid var(--line);
+border-radius:8px;
+padding:11px 14px;
+min-width:220px;
+outline:none;
+}
+
+.search:focus { border-color:var(--red); }
+
+.product-grid {
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.product {
+border:1px solid var(--line);
+border-radius:13px;
+overflow:hidden;
+background:white;
+transition:.2s;
+}
+
+.product:hover {
+box-shadow:var(--shadow);
+transform:translateY(-3px);
+}
+
+.product-image {
+height:205px;
+background:#f4f4f5;
+display:grid;
+place-items:center;
+overflow:hidden;
+}
+
+.product-image img {
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.35s;
+}
+
+.product:hover .product-image img { transform:scale(1.04); }
+
+.product-info { padding:16px; }
+
+.product-tag {
+font-size:10px;
+color:var(--red);
+font-weight:800;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+.product h3 {
+font-size:16px;
+margin:8px 0 5px;
+}
+
+.product-desc {
+font-size:12px;
+color:var(--muted);
+min-height:34px;
+line-height:1.5;
+}
+
+.product-bottom {
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:8px;
+margin-top:15px;
+}
+
+.price {
+font-size:13px;
+font-weight:800;
+}
+
+.add {
+border:0;
+background:#fff0f1;
+color:var(--red);
+font-weight:800;
+border-radius:7px;
+padding:9px 11px;
+cursor:pointer;
+font-size:12px;
+}
+
+.add:hover {
+background:var(--red);
+color:white;
+}
+
+.catalog-note {
+text-align:center;
+color:var(--muted);
+font-size:12px;
+margin:22px 0 0;
+}
+
+/* NOSOTROS */
+
+.about-grid {
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+gap:55px;
+align-items:center;
+}
+
+.about-mark {
+background:#fff0f1;
+border-radius:18px;
+min-height:330px;
+display:grid;
+place-items:center;
+padding:30px;
+}
+
+.about-mark img {
+width:100%;
+max-width:440px;
+}
+
+.about-copy h2 {
+font-size:clamp(30px,4vw,42px);
+letter-spacing:-1.5px;
+margin:14px 0;
+}
+
+.about-copy p {
+color:var(--muted);
+line-height:1.8;
+}
+
+.checks {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:13px;
+margin-top:24px;
+}
+
+.check {
+font-size:13px;
+font-weight:700;
+display:flex;
+gap:9px;
+align-items:center;
+}
+
+.check span {
+color:var(--red);
+font-size:17px;
+}
+
+/* CONTACTO */
+
+.visit {
+background:#171719;
+color:white;
+padding:72px 0;
+}
+
+.visit-grid {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+align-items:center;
+}
+
+.visit h2 {
+font-size:clamp(30px,4vw,42px);
+letter-spacing:-1.5px;
+margin:13px 0;
+}
+
+.visit p {
+color:#c5c5ca;
+line-height:1.7;
+}
+
+.contact-lines {
+display:grid;
+gap:15px;
+margin:25px 0;
+}
+
+.contact-line {
+display:flex;
+gap:13px;
+align-items:flex-start;
+font-size:14px;
+}
+
+.contact-line i {
+font-style:normal;
+color:#ff6671;
+font-size:18px;
+width:22px;
+}
+
+.mapbox {
+height:300px;
+border-radius:14px;
+overflow:hidden;
+background:#2b2b30;
+border:1px solid #444;
+}
+
+.mapbox iframe {
+width:100%;
+height:100%;
+border:0;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+padding:28px 0;
+background:#101012;
+color:#aaa;
+font-size:12px;
+}
+
+.footer-row {
+display:flex;
+justify-content:space-between;
+gap:18px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.footer-brand {
+color:white;
+font:800 17px Manrope;
+}
+
+.footer-brand span { color:#ff5965; }
+
+/* CARRITO */
+
+.cart-panel {
+position:fixed;
+inset:0 0 0 auto;
+width:min(420px,100%);
+background:white;
+z-index:50;
+box-shadow:-15px 0 50px #0002;
+transform:translateX(110%);
+transition:.3s;
+padding:24px;
+display:flex;
+flex-direction:column;
+}
+
+.cart-panel.open { transform:translateX(0); }
+
+.cart-head {
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid var(--line);
+padding-bottom:15px;
+}
+
+.cart-head h3 { margin:0; font-size:21px; }
+
+.close {
+border:0;
+background:#f2f2f3;
+width:35px;
+height:35px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+}
+
+.cart-items {
+overflow:auto;
+flex:1;
+padding:15px 0;
+}
+
+.cart-row {
+display:flex;
+justify-content:space-between;
+gap:10px;
+border-bottom:1px solid var(--line);
+padding:13px 0;
+font-size:13px;
+}
+
+.cart-row button {
+border:0;
+background:none;
+color:var(--red);
+cursor:pointer;
+}
+
+.cart-empty {
+color:var(--muted);
+text-align:center;
+padding:50px 0;
+}
+
+.cart-foot {
+border-top:1px solid var(--line);
+padding-top:17px;
+}
+
+.cart-foot p {
+font-size:12px;
+color:var(--muted);
+line-height:1.5;
+}
+
+.overlay {
+position:fixed;
+inset:0;
+background:#0006;
+z-index:40;
+display:none;
+}
+
+.overlay.show { display:block; }
+
+/* DISEÑO RESPONSIVE */
+
+@media(max-width:900px) {
+.navlinks { gap:15px; }
+.navlinks a:nth-child(2) { display:none; }
+.hero-grid { gap:20px; }
+.product-grid { grid-template-columns:repeat(2,1fr); }
+.about-grid { gap:28px; }
+}
+
+@media(max-width:650px) {
+.container { width:min(100% - 30px,1160px); }
+
+.topbar .container { justify-content:center; }
+.topbar span:last-child { display:none; }
+
+.nav { height:70px; }
+.brand img { width:51px; height:50px; }
+.brand strong { font-size:19px; }
+.navlinks { display:none; }
+.nav-actions .btn { display:none; }
+
+.hero { padding:48px 0 42px; }
+.hero-grid { grid-template-columns:1fr; }
+.hero-visual { min-height:280px; }
+.hero-glow { width:260px; height:260px; }
+.hero-logo { width:90%; padding:15px; }
+.floating-tag { right:0; bottom:5px; }
+
+.hero-copy { font-size:15px; }
+h1 { letter-spacing:-2px; }
+
+.trust-grid {
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.trust-item { justify-content:flex-start; }
+
+.section { padding:60px 0; }
+
+.category-grid { grid-template-columns:1fr; }
+.category { min-height:190px; }
+
+.product-grid { gap:11px; }
+.product-image { height:150px; }
+.product-info { padding:12px; }
+.product h3 { font-size:14px; }
+.product-desc { font-size:11px; }
+.product-bottom {
+align-items:flex-start;
+flex-direction:column;
+}
+.add { width:100%; }
+
+.search { width:100%; }
+.products-toolbar { align-items:stretch; }
+
+.about-grid,.visit-grid { grid-template-columns:1fr; }
+.about-mark { min-height:230px; }
+.checks { grid-template-columns:1fr; }
+
+.visit { padding:58px 0; }
+.mapbox { height:240px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="container">
+<span>📍 San Rafael · Valle de los Chillos · Quito, Ecuador</span>
+<span>Atención personalizada · Calidad y garantía</span>
+</div>
+</div>
+
+<header>
+<div class="container nav">
+
+<a class="brand" href="#inicio">
+<img src="assets/logo-mioptica.jpg" alt="Logotipo oficial MiÓptica">
+<strong>Mi<span>Óptica</span></strong>
+</a>
+
+<nav class="navlinks">
+<a href="#inicio">Inicio</a>
+<a href="#categorias">Categorías</a>
+<a href="#tienda">Tienda online</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<div class="nav-actions">
+<a class="btn small" href="https://wa.me/593998901364" target="_blank">
+Consultar por WhatsApp
+</a>
+<button class="iconbtn" onclick="openCart()" aria-label="Abrir carrito">
+🛒<span class="count" id="cartCount">0</span>
+</button>
+</div>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+
+<div>
+<div class="eyebrow">Bienvenidos a MiÓptica</div>
+
+<h1>
+Tu estilo merece<br>
+una visión <em>espectacular.</em>
+</h1>
+
+<p class="hero-copy">
+Descubre gafas y soluciones ópticas que combinan estilo,
+comodidad y calidad. Te acompañamos para encontrar
+la opción ideal para tu mirada.
+</p>
+
+<div class="hero-ctas">
+<a class="btn" href="#tienda">Explorar tienda →</a>
+<a class="btn outline"
+href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica%2C%20deseo%20agendar%20una%20cita."
+target="_blank">
+Agendar una cita
+</a>
+</div>
+
+<div class="hero-note">
+<span style="color:var(--red);font-size:20px">✦</span>
+<span>
+<b>Servicio con calidad y garantía</b><br>
+Atención cercana y asesoría personalizada.
+</span>
+</div>
+</div>
+
+<div class="hero-visual">
+<div class="hero-glow"></div>
+<div class="hero-logo">
+<img src="assets/logo-mioptica.jpg"
+alt="MiÓptica, servicio con calidad y garantía">
+</div>
+<div class="floating-tag">
+<b>MiÓptica</b>
+Tu mirada, nuestra prioridad
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="trust">
+<div class="container trust-grid">
+<div class="trust-item">
+<span class="trust-icon">✓</span>
+Asesoría personalizada
+</div>
+<div class="trust-item">
+<span class="trust-icon">◈</span>
+Calidad y garantía
+</div>
+<div class="trust-item">
+<span class="trust-icon">♡</span>
+Atención por WhatsApp
+</div>
+</div>
+</section>
+
+<section class="section" id="categorias">
+<div class="container">
+
+<div class="section-head">
+<div class="eyebrow">Encuentra tu estilo</div>
+<h2>Todo para ver y verte mejor</h2>
+<p>
+Explora nuestras categorías y encuentra el complemento
+perfecto para tu día a día.
+</p>
+</div>
+
+<div class="category-grid">
+
+<a class="category" href="#tienda"
+style="--photo:url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85')">
+<div>
+<h3>Gafas de sol</h3>
+<p>Estilo y protección para cada ocasión →</p>
+</div>
+</a>
+
+<a class="category" href="#tienda"
+style="--photo:url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=900&q=85')">
+<div>
+<h3>Armazones oftálmicos</h3>
+<p>Diseños que hablan de ti →</p>
+</div>
+</a>
+
+<a class="category" href="#tienda"
+style="--photo:url('https://images.unsplash.com/photo-1583391733958-6c78276477e8?auto=format&fit=crop&w=900&q=85')">
+<div>
+<h3>Lentes y accesorios</h3>
+<p>Opciones para tu comodidad visual →</p>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+
+<section class="section soft" id="tienda">
+<div class="container">
+
+<div class="section-head">
+<div class="eyebrow">Tienda MiÓptica</div>
+<h2>Encuentra tus próximos favoritos</h2>
+<p>
+Revisa una selección de productos. Consulta disponibilidad,
+modelos y precios directamente con nuestro equipo.
+</p>
+</div>
+
+<div class="products-toolbar">
+
+<div class="filters">
+<button class="filter active" data-filter="Todos">Todos</button>
+<button class="filter" data-filter="Gafas de sol">Gafas de sol</button>
+<button class="filter" data-filter="Armazones">Armazones</button>
+<button class="filter" data-filter="Lentes">Lentes</button>
+</div>
+
+<input class="search" id="search"
+type="search" placeholder="Buscar productos..."
+aria-label="Buscar productos">
+
+</div>
+
+<div class="product-grid" id="productGrid"></div>
+
+<p class="catalog-note">
+Los precios y la disponibilidad se confirman por WhatsApp.
+Las imágenes son referenciales.
+</p>
+
+</div>
+</section>
+
+<section class="section" id="nosotros">
+<div class="container about-grid">
+
+<div class="about-mark">
+<img src="assets/logo-mioptica.jpg" alt="Logotipo MiÓptica">
+</div>
+
+<div class="about-copy">
+<div class="eyebrow">Conócenos</div>
+
+<h2>
+Una buena visión cambia la forma de mirar el mundo.
+</h2>
+
+<p>
+En MiÓptica creemos que cuidar tu visión también es
+expresar tu estilo. Queremos ofrecerte una atención amable,
+asesoría personalizada y alternativas que se adapten
+a tus necesidades.
+</p>
+
+<p>
+Visítanos en San Rafael, Valle de los Chillos.
+Estamos diagonal a San Luis Shopping.
+</p>
+
+<div class="checks">
+<div class="check"><span>✓</span> Atención personalizada</div>
+<div class="check"><span>✓</span> Variedad de estilos</div>
+<div class="check"><span>✓</span> Calidad y garantía</div>
+<div class="check"><span>✓</span> Contacto directo</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="visit" id="contacto">
+<div class="container visit-grid">
+
+<div>
+<div class="eyebrow" style="color:#ff7b84">
+Estamos para ayudarte
+</div>
+
+<h2>Tu próxima visita comienza aquí.</h2>
+
+<p>
+Comunícate con nosotros para consultas,
+disponibilidad de productos o para coordinar tu cita.
+</p>
+
+<div class="contact-lines">
+
+<div class="contact-line">
+<i>⌖</i>
+<span>
+<b>Ubicación</b><br>
+San Rafael, Valle de los Chillos, Quito, Ecuador.<br>
+Diagonal a San Luis Shopping.
+</span>
+</div>
+
+<div class="contact-line">
+<i>☎</i>
+<span>
+<b>Teléfono y WhatsApp</b><br>
+099 890 1364 · +593 99 890 1364
+</span>
+</div>
+
+<div class="contact-line">
+<i>✉</i>
+<span>
+<b>Correo electrónico</b><br>
+mioptica-quito@hotmail.com
+</span>
+</div>
+
+<div class="contact-line">
+<i>◷</i>
+<span>
+<b>Horario de atención</b><br>
+Consulta nuestros horarios por WhatsApp.
+</span>
+</div>
+
+</div>
+
+<a class="btn"
+href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica%2C%20quiero%20realizar%20una%20consulta."
+target="_blank">
+Escríbenos por WhatsApp →
+</a>
+
+</div>
+
+<div class="mapbox">
+<iframe
+title="Mapa de San Rafael, Valle de los Chillos"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+src="https://www.google.com/maps?q=San%20Rafael%2C%20Valle%20de%20los%20Chillos%2C%20Quito%2C%20Ecuador&output=embed">
+</iframe>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container footer-row">
+<div class="footer-brand">Mi<span>Óptica</span></div>
+<div>Servicio con calidad y garantía.</div>
+<div>
+© <span id="year"></span> MiÓptica. Todos los derechos reservados.
+</div>
+</div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
+
+<div class="cart-head">
+<h3>Tu selección</h3>
+<button class="close" onclick="closeCart()" aria-label="Cerrar">×</button>
+</div>
+
+<div class="cart-items" id="cartItems"></div>
+
+<div class="cart-foot">
+<p>
+El pedido se enviará a MiÓptica por WhatsApp.
+Confirmaremos precio, disponibilidad y detalles
+antes de finalizar la compra.
+</p>
+<button class="btn" style="width:100%" onclick="checkout()">
+Enviar pedido por WhatsApp
+</button>
+</div>
+
+</aside>
+
+<script>
+
+const products = [
+
+{
+id:1,
+name:"Gafas de sol clásicas",
+cat:"Gafas de sol",
+desc:"Un diseño versátil para complementar tu estilo.",
+img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+id:2,
+name:"Gafas de sol modernas",
+cat:"Gafas de sol",
+desc:"Diseños actuales para todos los días.",
+img:"https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+id:3,
+name:"Armazón contemporáneo",
+cat:"Armazones",
+desc:"Comodidad y personalidad en un solo diseño.",
+img:"https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+id:4,
+name:"Armazón elegante",
+cat:"Armazones",
+desc:"Una opción sobria para tu estilo diario.",
+img:"https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+id:5,
+name:"Lentes oftálmicos",
+cat:"Lentes",
+desc:"Consulta alternativas según tu necesidad visual.",
+img:"https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+id:6,
+name:"Lentes de contacto",
+cat:"Lentes",
+desc:"Consulta modelos, medidas y disponibilidad.",
+img:"https://images.unsplash.com/photo-1583391733958-6c78276477e8?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+id:7,
+name:"Estilo urbano",
+cat:"Gafas de sol",
+desc:"Un complemento con carácter.",
+img:"https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+id:8,
+name:"Armazón minimalista",
+cat:"Armazones",
+desc:"Líneas limpias y estilo atemporal.",
+img:"https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
+}
+
+];
+
+let cart = [];
+let activeFilter = "Todos";
+
+function renderProducts() {
+
+const q = document.getElementById("search").value.toLowerCase();
+
+const list = products.filter(p =>
+(activeFilter === "Todos" || p.cat === activeFilter) &&
+(p.name + " " + p.cat + " " + p.desc).toLowerCase().includes(q)
+);
+
+document.getElementById("productGrid").innerHTML = list.map(p => `
+
+<article class="product">
+
+<div class="product-image">
+<img src="${p.img}" alt="${p.name}" loading="lazy"
+onerror="this.style.display='none';this.parentElement.innerHTML='<span class=&quot;product-placeholder&quot;>◉</span>'">
+</div>
+
+<div class="product-info">
+
+<div class="product-tag">${p.cat}</div>
+
+<h3>${p.name}</h3>
+
+<div class="product-desc">${p.desc}</div>
+
+<div class="product-bottom">
+<span class="price">Consultar precio</span>
+<button class="add" onclick="addToCart(${p.id})">
+＋ Agregar
+</button>
+</div>
+
+</div>
+</article>
+
+`).join("") || "<p>No encontramos productos con esa búsqueda.</p>";
+
+}
+
+document.querySelectorAll(".filter").forEach(b => {
+
+b.addEventListener("click", () => {
+
+document.querySelectorAll(".filter").forEach(x =>
+x.classList.remove("active")
+);
+
+b.classList.add("active");
+activeFilter = b.dataset.filter;
+renderProducts();
+
+});
+
+});
+
+document.getElementById("search").addEventListener("input",renderProducts);
+
+function addToCart(id) {
+
+const p = products.find(x => x.id === id);
+const item = cart.find(x => x.id === id);
+
+if(item) item.qty++;
+else cart.push({...p,qty:1});
+
+updateCart();
+openCart();
+
+}
+
+function updateCart() {
+
+document.getElementById("cartCount").textContent =
+cart.reduce((s,x) => s + x.qty,0);
+
+const el = document.getElementById("cartItems");
+
+el.innerHTML = cart.length
+? cart.map(x => `
+
+<div class="cart-row">
+
+<div>
+<b>${x.name}</b><br>
+<span style="color:#777">
+${x.cat} · Cantidad: ${x.qty}
+</span>
+</div>
+
+<button onclick="removeItem(${x.id})">Quitar</button>
+
+</div>
+
+`).join("")
+: '<div class="cart-empty">Tu selección está vacía.<br>Agrega productos de la tienda.</div>';
+
+}
+
+function removeItem(id) {
+
+cart = cart.filter(x => x.id !== id);
+updateCart();
+
+}
+
+function openCart() {
+
+document.getElementById("cartPanel").classList.add("open");
+document.getElementById("overlay").classList.add("show");
+
+}
+
+function closeCart() {
+
+document.getElementById("cartPanel").classList.remove("open");
+document.getElementById("overlay").classList.remove("show");
+
+}
+
+function checkout() {
+
+if(!cart.length) {
+alert("Agrega al menos un producto.");
+return;
+}
+
+const lines = cart.map(x =>
+`• ${x.name} (${x.cat}) - cantidad: ${x.qty}`
+).join("%0A");
+
+const msg =
+"Hola MiÓptica, quisiera consultar y realizar este pedido:%0A"
++ lines +
+"%0A¿Me pueden confirmar precios y disponibilidad?";
+
+window.open(
+"https://wa.me/593998901364?text=" + msg,
+"_blank",
+"noopener"
+);
+
+}
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+renderProducts();
+updateCart();
+
+</script>
+
+</body>
+</html>
 
