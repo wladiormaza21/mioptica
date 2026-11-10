@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111111">
-  <meta name="description" content="miÓptica - Encuentra tus gafas, lentes y el estilo que mejor se adapta a ti en San Rafael, Valle de los Chillos.">
-  <title>miÓptica | Servicio con Calidad y garantía </title>
+  <meta name="description" content="miÓptica - Gafas, lentes y armazones en San Rafael, Valle de los Chillos.">
+  <title>miÓptica | Tu visión, nuestro compromiso</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -30,9 +30,7 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Montserrat', sans-serif;
@@ -41,14 +39,8 @@
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; }
 
     .container {
       width: min(1180px, 92%);
@@ -80,7 +72,7 @@
       gap: 15px;
     }
 
-    /* MARCO ANIMADO DEL LOGOTIPO */
+    /* LOGOTIPO CON BORDE ANIMADO */
 
     .logo-frame {
       position: relative;
@@ -91,12 +83,7 @@
       isolation: isolate;
       flex-shrink: 0;
       background: linear-gradient(
-        135deg,
-        #ffffff,
-        #e50924,
-        #ffffff,
-        #850015,
-        #ffffff
+        135deg, #fff, #e50924, #fff, #850015, #fff
       );
       background-size: 300% 300%;
       animation: borderFlow 5s ease infinite;
@@ -114,7 +101,7 @@
         from 0deg,
         transparent 0deg,
         #e50924 70deg,
-        #ffffff 130deg,
+        #fff 130deg,
         transparent 190deg,
         #e50924 260deg,
         transparent 360deg
@@ -163,9 +150,7 @@
       line-height: 1;
     }
 
-    .brand-name span {
-      color: var(--red);
-    }
+    .brand-name span { color: var(--red); }
 
     .brand-subtitle {
       color: #bbb;
@@ -188,9 +173,7 @@
       transition: .3s;
     }
 
-    nav a:hover {
-      color: var(--red);
-    }
+    nav a:hover { color: var(--red); }
 
     .nav-cta {
       background: var(--red);
@@ -227,8 +210,9 @@
       border-radius: 50%;
       right: -130px;
       top: 40px;
-      box-shadow: 0 0 0 45px rgba(229,9,36,.035),
-                  0 0 0 90px rgba(229,9,36,.025);
+      box-shadow:
+        0 0 0 45px rgba(229,9,36,.035),
+        0 0 0 90px rgba(229,9,36,.025);
     }
 
     .hero-content {
@@ -259,9 +243,7 @@
       margin-bottom: 25px;
     }
 
-    .hero h1 span {
-      color: var(--red);
-    }
+    .hero h1 span { color: var(--red); }
 
     .hero p {
       color: #ccc;
@@ -324,12 +306,7 @@
       position: relative;
       isolation: isolate;
       background: linear-gradient(
-        135deg,
-        #fff,
-        #e50924,
-        #790012,
-        #fff,
-        #e50924
+        135deg, #fff, #e50924, #790012, #fff, #e50924
       );
       background-size: 300% 300%;
       animation: borderFlow 5s ease infinite;
@@ -344,13 +321,8 @@
       inset: -9px;
       border-radius: 34px;
       background: conic-gradient(
-        from 0deg,
-        transparent,
-        #e50924,
-        #fff,
-        transparent,
-        #e50924,
-        transparent
+        from 0deg, transparent, #e50924, #fff,
+        transparent, #e50924, transparent
       );
       filter: blur(14px);
       opacity: .65;
@@ -411,11 +383,164 @@
       font-size: 10px;
     }
 
-    /* SECCIONES */
+    /* NUEVO CARRUSEL DE MARCAS */
 
-    section {
-      padding: 85px 0;
+    .brands-section {
+      padding: 38px 0 42px;
+      background: #fff;
+      border-bottom: 1px solid #eeeeee;
+      overflow: hidden;
     }
+
+    .brands-heading {
+      text-align: center;
+      margin-bottom: 27px;
+    }
+
+    .brands-heading span {
+      display: block;
+      color: var(--red);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .brands-heading h2 {
+      color: #171717;
+      font-size: clamp(18px, 3vw, 25px);
+      font-weight: 900;
+      letter-spacing: -.5px;
+    }
+
+    .brands-heading p {
+      color: #888;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+
+    .brands-window {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 8%,
+        #000 92%,
+        transparent
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 8%,
+        #000 92%,
+        transparent
+      );
+    }
+
+    .brands-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: brandsScroll 34s linear infinite;
+      will-change: transform;
+    }
+
+    .brands-window:hover .brands-track {
+      animation-play-state: paused;
+    }
+
+    .brand-item {
+      min-width: 190px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 28px;
+      position: relative;
+    }
+
+    .brand-item::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 25px;
+      background: #e8e8e8;
+    }
+
+    .brand-word {
+      color: #242424;
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      white-space: nowrap;
+      transition: .3s ease;
+      filter: grayscale(1);
+      opacity: .78;
+    }
+
+    .brand-item:hover .brand-word {
+      color: var(--red);
+      transform: scale(1.1);
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    .brand-word.gucci {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .brand-word.rayban {
+      font-family: Georgia, serif;
+      font-style: italic;
+      letter-spacing: -2px;
+    }
+
+    .brand-word.vogue {
+      font-family: Georgia, serif;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .brand-word.lacoste {
+      letter-spacing: 2px;
+      font-size: 20px;
+    }
+
+    .brand-word.police {
+      letter-spacing: 3px;
+      font-size: 21px;
+    }
+
+    .brand-word.oakley {
+      font-style: italic;
+      letter-spacing: -1px;
+    }
+
+    .brand-word.prada {
+      font-family: Georgia, serif;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .brand-word.armani {
+      letter-spacing: 2px;
+      font-size: 20px;
+    }
+
+    @keyframes brandsScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* SECCIONES GENERALES */
+
+    section { padding: 85px 0; }
 
     .section-heading {
       text-align: center;
@@ -446,9 +571,7 @@
 
     /* CATEGORÍAS */
 
-    .categories {
-      background: #f8f8f8;
-    }
+    .categories { background: #f8f8f8; }
 
     .category-grid {
       display: grid;
@@ -495,9 +618,7 @@
 
     /* CATÁLOGO */
 
-    .catalog {
-      background: white;
-    }
+    .catalog { background: white; }
 
     .catalog-tools {
       display: flex;
@@ -517,9 +638,7 @@
       outline: none;
     }
 
-    .search-input:focus {
-      border-color: var(--red);
-    }
+    .search-input:focus { border-color: var(--red); }
 
     .filters {
       display: flex;
@@ -572,9 +691,7 @@
       background: #f5f5f5;
     }
 
-    .product-info {
-      padding: 20px;
-    }
+    .product-info { padding: 20px; }
 
     .product-tag {
       color: var(--red);
@@ -621,9 +738,7 @@
       cursor: pointer;
     }
 
-    .product-bottom button:hover {
-      background: #b9001a;
-    }
+    .product-bottom button:hover { background: #b9001a; }
 
     .empty-products {
       grid-column: 1 / -1;
@@ -685,9 +800,7 @@
 
     /* CONTACTO */
 
-    .contact {
-      background: #f8f8f8;
-    }
+    .contact { background: #f8f8f8; }
 
     .contact-grid {
       display: grid;
@@ -747,9 +860,7 @@
       font-weight: 900;
     }
 
-    footer strong span {
-      color: var(--red);
-    }
+    footer strong span { color: var(--red); }
 
     footer p {
       color: #999;
@@ -777,11 +888,9 @@
       transition: .3s;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
+    .whatsapp-float:hover { transform: scale(1.1); }
 
-    /* ACCESIBILIDAD Y MÓVILES */
+    /* MOVIMIENTO REDUCIDO */
 
     @media (prefers-reduced-motion: reduce) {
       *,
@@ -793,6 +902,8 @@
         transition-duration: .01ms !important;
       }
     }
+
+    /* TABLETS */
 
     @media(max-width: 850px) {
       .hero-content {
@@ -806,17 +917,11 @@
         margin-right: auto;
       }
 
-      .hero-actions {
-        justify-content: center;
-      }
+      .hero-actions { justify-content: center; }
 
-      .hero-logo-area {
-        grid-row: 1;
-      }
+      .hero-logo-area { grid-row: 1; }
 
-      .hero-logo-frame {
-        width: 260px;
-      }
+      .hero-logo-frame { width: 260px; }
 
       .about-grid {
         grid-template-columns: 1fr;
@@ -824,14 +929,11 @@
         gap: 40px;
       }
 
-      nav {
-        gap: 13px;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
+      nav { gap: 13px; }
+      nav a { font-size: 10px; }
     }
+
+    /* TELÉFONOS */
 
     @media(max-width: 600px) {
       .navbar {
@@ -854,26 +956,18 @@
         padding-bottom: 5px;
       }
 
-      nav .nav-cta {
-        padding: 9px 12px;
-      }
+      nav .nav-cta { padding: 9px 12px; }
 
-      .hero {
-        min-height: auto;
-      }
+      .hero { min-height: auto; }
 
       .hero-content {
         padding-top: 55px;
         padding-bottom: 65px;
       }
 
-      .hero h1 {
-        font-size: 38px;
-      }
+      .hero h1 { font-size: 38px; }
 
-      .hero-logo-frame {
-        width: 220px;
-      }
+      .hero-logo-frame { width: 220px; }
 
       .benefit-grid {
         grid-template-columns: 1fr;
@@ -887,9 +981,17 @@
         width: 100%;
       }
 
-      section {
-        padding: 65px 0;
+      .brands-section { padding: 32px 0; }
+
+      .brand-item {
+        min-width: 150px;
+        height: 65px;
+        padding: 0 20px;
       }
+
+      .brand-word { font-size: 20px; }
+
+      section { padding: 65px 0; }
 
       .category-grid,
       .product-grid,
@@ -897,21 +999,13 @@
         grid-template-columns: 1fr;
       }
 
-      .catalog-tools {
-        justify-content: center;
-      }
+      .catalog-tools { justify-content: center; }
 
-      .filters {
-        justify-content: center;
-      }
+      .filters { justify-content: center; }
 
-      .search-input {
-        width: 100%;
-      }
+      .search-input { width: 100%; }
 
-      .about-copy h2 {
-        font-size: 29px;
-      }
+      .about-copy h2 { font-size: 29px; }
     }
   </style>
 </head>
@@ -944,6 +1038,7 @@
 
 <main>
 
+  <!-- PORTADA -->
   <section class="hero" id="inicio">
     <div class="container hero-content">
 
@@ -980,6 +1075,7 @@
     </div>
   </section>
 
+  <!-- BENEFICIOS -->
   <div class="benefits">
     <div class="container benefit-grid">
 
@@ -1010,6 +1106,50 @@
     </div>
   </div>
 
+  <!-- CARRUSEL DE MARCAS -->
+  <section class="brands-section" aria-label="Marcas de gafas">
+    <div class="container">
+
+      <div class="brands-heading">
+        <span>Estilo y tendencias</span>
+        <h2>Marcas que inspiran tu mirada</h2>
+        <p>Descubre algunas de las marcas más reconocidas del mundo óptico.</p>
+      </div>
+
+    </div>
+
+    <div class="brands-window">
+      <div class="brands-track">
+
+        <!-- PRIMER GRUPO -->
+        <div class="brand-item"><span class="brand-word rayban">RAY-BAN</span></div>
+        <div class="brand-item"><span class="brand-word">GUESS</span></div>
+        <div class="brand-item"><span class="brand-word vogue">VOGUE</span></div>
+        <div class="brand-item"><span class="brand-word lacoste">LACOSTE</span></div>
+        <div class="brand-item"><span class="brand-word police">POLICE</span></div>
+        <div class="brand-item"><span class="brand-word gucci">GUCCI</span></div>
+        <div class="brand-item"><span class="brand-word oakley">OAKLEY</span></div>
+        <div class="brand-item"><span class="brand-word prada">PRADA</span></div>
+        <div class="brand-item"><span class="brand-word armani">ARMANI</span></div>
+        <div class="brand-item"><span class="brand-word">TOMMY HILFIGER</span></div>
+
+        <!-- SEGUNDO GRUPO: REPETICIÓN PARA MOVIMIENTO CONTINUO -->
+        <div class="brand-item" aria-hidden="true"><span class="brand-word rayban">RAY-BAN</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word">GUESS</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word vogue">VOGUE</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word lacoste">LACOSTE</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word police">POLICE</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word gucci">GUCCI</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word oakley">OAKLEY</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word prada">PRADA</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word armani">ARMANI</span></div>
+        <div class="brand-item" aria-hidden="true"><span class="brand-word">TOMMY HILFIGER</span></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
   <section class="categories" id="categorias">
     <div class="container">
 
@@ -1049,6 +1189,7 @@
     </div>
   </section>
 
+  <!-- CATÁLOGO -->
   <section class="catalog" id="catalogo">
     <div class="container">
 
@@ -1160,6 +1301,7 @@
     </div>
   </section>
 
+  <!-- NOSOTROS -->
   <section class="about" id="nosotros">
     <div class="container about-grid">
 
@@ -1194,6 +1336,7 @@
     </div>
   </section>
 
+  <!-- CONTACTO -->
   <section class="contact" id="contacto">
     <div class="container">
 
@@ -1221,7 +1364,8 @@
         <div class="contact-card">
           <h3>💬 Agenda tu cita</h3>
           <p>
-            WhatsApp: <a href="https://wa.me/593998901364" target="_blank" rel="noopener">099 890 1364</a>
+            WhatsApp:
+            <a href="https://wa.me/593998901364" target="_blank" rel="noopener">099 890 1364</a>
           </p>
           <p>
             Escríbenos para consultar productos, disponibilidad y atención.
@@ -1244,6 +1388,7 @@
 
 </main>
 
+<!-- PIE DE PÁGINA -->
 <footer>
   <div class="container">
     <strong>mi<span>Óptica</span></strong>
@@ -1255,6 +1400,7 @@
   </div>
 </footer>
 
+<!-- BOTÓN FLOTANTE WHATSAPP -->
 <a
   class="whatsapp-float"
   href="https://wa.me/593998901364"
@@ -1270,8 +1416,15 @@
 
   // CONSULTAS POR WHATSAPP
   function consultar(producto) {
-    const mensaje = "Hola, miÓptica. Me interesa consultar sobre: " + producto + ". ¿Podrían darme más información?";
-    const url = "https://wa.me/593998901364?text=" + encodeURIComponent(mensaje);
+    const mensaje =
+      "Hola, miÓptica. Me interesa consultar sobre: " +
+      producto +
+      ". ¿Podrían darme más información?";
+
+    const url =
+      "https://wa.me/593998901364?text=" +
+      encodeURIComponent(mensaje);
+
     window.open(url, "_blank", "noopener");
   }
 
@@ -1307,7 +1460,9 @@
       if (!emptyMessage) {
         emptyMessage = document.createElement("p");
         emptyMessage.className = "empty-products";
-        emptyMessage.textContent = "No encontramos productos con esa búsqueda.";
+        emptyMessage.textContent =
+          "No encontramos productos con esa búsqueda.";
+
         document.getElementById("productGrid").appendChild(emptyMessage);
       }
     } else if (emptyMessage) {
