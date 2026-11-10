@@ -2,1185 +2,1330 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ed2939">
-<meta name="description" content="MiÓptica: gafas, armazones y lentes en San Rafael, Valle de los Chillos. Servicio con calidad y garantía.">
-<title>MiÓptica | Servicio con calidad y garantía</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="miÓptica - Encuentra tus gafas, lentes y el estilo que mejor se adapta a ti en San Rafael, Valle de los Chillos.">
+  <title>miÓptica | Servicio con Calidad y garantía </title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --red:#ed2939;
-  --red-dark:#c91e2c;
-  --black:#171719;
-  --muted:#686a70;
-  --line:#ececef;
-  --soft:#f7f7f8;
-  --shadow:0 18px 55px rgba(18,18,24,.09);
-}
+  <style>
+    :root {
+      --red: #e50924;
+      --red-dark: #a90019;
+      --black: #101010;
+      --dark: #181818;
+      --white: #ffffff;
+      --gray: #f4f4f4;
+      --text: #333333;
+      --muted: #777777;
+    }
 
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
-body {
-  margin:0;
-  font-family:"DM Sans",sans-serif;
-  color:var(--black);
-  background:white;
-}
-a {color:inherit;text-decoration:none}
-button,input {font:inherit}
-.container {
-  width:min(1160px,calc(100% - 40px));
-  margin:auto;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* TOPBAR */
-.topbar {
-  background:var(--black);
-  color:white;
-  font-size:12px;
-  padding:10px 0;
-}
-.topbar .container {
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* HEADER */
-header {
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav {
-  min-height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-.brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.brand img {
-  width:75px;
-  height:65px;
-  object-fit:contain;
-}
-.brand strong {
-  font:800 23px Manrope,sans-serif;
-  letter-spacing:-1px;
-}
-.brand strong span {color:var(--red)}
-.navlinks {
-  display:flex;
-  align-items:center;
-  gap:23px;
-  font-size:13px;
-  font-weight:700;
-}
-.navlinks a:hover {color:var(--red)}
-.nav-actions {
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  padding:14px 21px;
-  border-radius:8px;
-  background:var(--red);
-  color:white;
-  font-weight:700;
-  font-size:14px;
-  border:1px solid var(--red);
-  cursor:pointer;
-  transition:.2s;
-}
-.btn:hover {
-  background:var(--red-dark);
-  transform:translateY(-2px);
-}
-.btn.outline {
-  background:transparent;
-  color:var(--black);
-  border-color:#d9d9de;
-}
-.btn.small {
-  padding:11px 15px;
-  font-size:12px;
-}
-.iconbtn {
-  border:1px solid var(--line);
-  background:white;
-  border-radius:50%;
-  width:43px;
-  height:43px;
-  cursor:pointer;
-  font-size:17px;
-  position:relative;
-}
-.count {
-  position:absolute;
-  top:-5px;
-  right:-5px;
-  background:var(--red);
-  color:white;
-  border-radius:50%;
-  font-size:10px;
-  min-width:18px;
-  height:18px;
-  display:grid;
-  place-items:center;
-}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-/* HERO */
-.hero {
-  padding:72px 0 68px;
-  background:linear-gradient(115deg,#fff 0%,#fff 56%,#fff3f4 100%);
-}
-.hero-grid {
-  display:grid;
-  grid-template-columns:1.03fr .97fr;
-  align-items:center;
-  gap:50px;
-}
-.eyebrow {
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  color:var(--red);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.6px;
-  text-transform:uppercase;
-}
-.eyebrow:before {
-  content:"";
-  width:25px;
-  height:2px;
-  background:var(--red);
-}
-h1,h2,h3 {font-family:Manrope,sans-serif}
-h1 {
-  font-size:clamp(42px,5.3vw,68px);
-  line-height:1.06;
-  letter-spacing:-3px;
-  margin:18px 0 20px;
-  font-weight:800;
-}
-h1 em {
-  font-style:normal;
-  color:var(--red);
-}
-.hero-copy {
-  font-size:17px;
-  line-height:1.75;
-  color:var(--muted);
-  max-width:520px;
-}
-.hero-ctas {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-.hero-note {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-top:32px;
-  color:var(--muted);
-  font-size:12px;
-}
-.hero-note b {color:var(--black)}
-.hero-visual {
-  position:relative;
-  min-height:420px;
-  display:grid;
-  place-items:center;
-}
-.hero-glow {
-  position:absolute;
-  width:390px;
-  height:390px;
-  border-radius:50%;
-  background:#fce2e4;
-}
-.hero-logo {
-  position:relative;
-  width:min(100%,470px);
-  padding:22px;
-  background:white;
-  border-radius:24px;
-  box-shadow:var(--shadow);
-}
-.hero-logo img {
-  width:100%;
-  display:block;
-  border-radius:10px;
-}
-.floating-tag {
-  position:absolute;
-  right:0;
-  bottom:36px;
-  background:var(--black);
-  color:white;
-  padding:15px 19px;
-  border-radius:12px;
-  box-shadow:var(--shadow);
-  font-size:13px;
-}
-.floating-tag b {
-  display:block;
-  font:800 17px Manrope;
-  margin-bottom:3px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* BENEFICIOS */
-.trust {
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:23px 0;
-}
-.trust-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.trust-item {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  font-size:13px;
-  font-weight:700;
-}
-.trust-icon {
-  width:39px;
-  height:39px;
-  border-radius:50%;
-  background:#fff0f1;
-  color:var(--red);
-  display:grid;
-  place-items:center;
-  font-size:17px;
-}
+    button {
+      font-family: inherit;
+    }
 
-/* SECCIONES */
-.section {padding:82px 0}
-.section.soft {background:var(--soft)}
-.section-head {
-  text-align:center;
-  max-width:650px;
-  margin:0 auto 38px;
-}
-.section-head .eyebrow {justify-content:center}
-.section-head h2 {
-  font-size:clamp(30px,4vw,43px);
-  letter-spacing:-1.8px;
-  margin:13px 0;
-}
-.section-head p {
-  color:var(--muted);
-  line-height:1.7;
-}
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
 
-/* CATEGORÍAS */
-.category-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.category {
-  position:relative;
-  min-height:225px;
-  border-radius:15px;
-  overflow:hidden;
-  background:#333;
-  display:flex;
-  align-items:end;
-  padding:24px;
-  color:white;
-  isolation:isolate;
-}
-.category:before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.03));
-  z-index:-1;
-}
-.category:after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:var(--photo) center/cover;
-  z-index:-2;
-  transition:transform .4s;
-}
-.category:hover:after {transform:scale(1.06)}
-.category h3 {
-  font-size:22px;
-  margin:0 0 5px;
-}
-.category p {
-  margin:0;
-  font-size:13px;
-}
+    /* ENCABEZADO */
 
-/* TIENDA */
-.products-toolbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  margin-bottom:24px;
-  flex-wrap:wrap;
-}
-.filters {
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-.filter {
-  border:1px solid var(--line);
-  background:white;
-  padding:9px 15px;
-  border-radius:30px;
-  font-size:12px;
-  font-weight:700;
-  cursor:pointer;
-}
-.filter.active,.filter:hover {
-  background:var(--black);
-  color:white;
-  border-color:var(--black);
-}
-.search {
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:11px 14px;
-  min-width:220px;
-  outline:none;
-}
-.search:focus {border-color:var(--red)}
-.product-grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-.product {
-  border:1px solid var(--line);
-  border-radius:13px;
-  overflow:hidden;
-  background:white;
-  transition:.2s;
-}
-.product:hover {
-  box-shadow:var(--shadow);
-  transform:translateY(-3px);
-}
-.product-image {
-  height:205px;
-  background:#f4f4f5;
-  display:grid;
-  place-items:center;
-  overflow:hidden;
-}
-.product-image img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.35s;
-}
-.product:hover .product-image img {transform:scale(1.04)}
-.product-info {padding:16px}
-.product-tag {
-  font-size:10px;
-  color:var(--red);
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-.product h3 {
-  font-size:16px;
-  margin:8px 0 5px;
-}
-.product-desc {
-  font-size:12px;
-  color:var(--muted);
-  min-height:34px;
-  line-height:1.5;
-}
-.product-bottom {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-  margin-top:15px;
-}
-.price {
-  font-size:13px;
-  font-weight:800;
-}
-.add {
-  border:0;
-  background:#fff0f1;
-  color:var(--red);
-  font-weight:800;
-  border-radius:7px;
-  padding:9px 11px;
-  cursor:pointer;
-  font-size:12px;
-}
-.add:hover {
-  background:var(--red);
-  color:white;
-}
-.catalog-note {
-  text-align:center;
-  color:var(--muted);
-  font-size:12px;
-  margin:22px 0 0;
-}
+    header {
+      background: rgba(12, 12, 12, .97);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 25px rgba(0,0,0,.18);
+    }
 
-/* NOSOTROS */
-.about-grid {
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:55px;
-  align-items:center;
-}
-.about-mark {
-  background:#fff0f1;
-  border-radius:18px;
-  min-height:330px;
-  display:grid;
-  place-items:center;
-  padding:30px;
-}
-.about-mark img {
-  width:100%;
-  max-width:440px;
-  height:auto;
-  object-fit:contain;
-}
-.about-copy h2 {
-  font-size:clamp(30px,4vw,42px);
-  letter-spacing:-1.5px;
-  margin:14px 0;
-}
-.about-copy p {
-  color:var(--muted);
-  line-height:1.8;
-}
-.checks {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:13px;
-  margin-top:24px;
-}
-.check {
-  font-size:13px;
-  font-weight:700;
-  display:flex;
-  gap:9px;
-  align-items:center;
-}
-.check span {
-  color:var(--red);
-  font-size:17px;
-}
+    .navbar {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-/* CONTACTO */
-.visit {
-  background:var(--black);
-  color:white;
-  padding:72px 0;
-}
-.visit-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:45px;
-  align-items:center;
-}
-.visit h2 {
-  font-size:clamp(30px,4vw,42px);
-  letter-spacing:-1.5px;
-  margin:13px 0;
-}
-.visit p {
-  color:#c5c5ca;
-  line-height:1.7;
-}
-.contact-lines {
-  display:grid;
-  gap:15px;
-  margin:25px 0;
-}
-.contact-line {
-  display:flex;
-  gap:13px;
-  align-items:flex-start;
-  font-size:14px;
-}
-.contact-line i {
-  font-style:normal;
-  color:#ff6671;
-  font-size:18px;
-  width:22px;
-}
-.mapbox {
-  height:300px;
-  border-radius:14px;
-  overflow:hidden;
-  background:#2b2b30;
-  border:1px solid #444;
-}
-.mapbox iframe {
-  width:100%;
-  height:100%;
-  border:0;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-/* FOOTER */
-footer {
-  padding:28px 0;
-  background:#101012;
-  color:#aaa;
-  font-size:12px;
-}
-.footer-row {
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.footer-brand {
-  color:white;
-  font:800 17px Manrope;
-}
-.footer-brand span {color:#ff5965}
+    /* MARCO ANIMADO DEL LOGOTIPO */
 
-/* CARRITO */
-.cart-panel {
-  position:fixed;
-  inset:0 0 0 auto;
-  width:min(420px,100%);
-  background:white;
-  z-index:50;
-  box-shadow:-15px 0 50px #0002;
-  transform:translateX(110%);
-  transition:.3s;
-  padding:24px;
-  display:flex;
-  flex-direction:column;
-}
-.cart-panel.open {transform:translateX(0)}
-.cart-head {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid var(--line);
-  padding-bottom:15px;
-}
-.cart-head h3 {margin:0;font-size:21px}
-.close {
-  border:0;
-  background:#f2f2f3;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:18px;
-}
-.cart-items {
-  overflow:auto;
-  flex:1;
-  padding:15px 0;
-}
-.cart-row {
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  border-bottom:1px solid var(--line);
-  padding:13px 0;
-  font-size:13px;
-}
-.cart-row button {
-  border:0;
-  background:none;
-  color:var(--red);
-  cursor:pointer;
-}
-.cart-empty {
-  color:var(--muted);
-  text-align:center;
-  padding:50px 0;
-}
-.cart-foot {
-  border-top:1px solid var(--line);
-  padding-top:17px;
-}
-.cart-foot p {
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.5;
-}
-.overlay {
-  position:fixed;
-  inset:0;
-  background:#0006;
-  z-index:40;
-  display:none;
-}
-.overlay.show {display:block}
+    .logo-frame {
+      position: relative;
+      width: 66px;
+      height: 66px;
+      padding: 3px;
+      border-radius: 50%;
+      isolation: isolate;
+      flex-shrink: 0;
+      background: linear-gradient(
+        135deg,
+        #ffffff,
+        #e50924,
+        #ffffff,
+        #850015,
+        #ffffff
+      );
+      background-size: 300% 300%;
+      animation: borderFlow 5s ease infinite;
+      box-shadow:
+        0 0 10px rgba(229,9,36,.45),
+        0 0 25px rgba(229,9,36,.18);
+    }
 
-/* RESPONSIVE */
-@media(max-width:900px) {
-  .navlinks {gap:12px}
-  .product-grid {grid-template-columns:repeat(2,1fr)}
-  .about-grid {gap:28px}
-}
-@media(max-width:650px) {
-  .container {width:calc(100% - 30px)}
-  .topbar .container {justify-content:center}
-  .topbar span:last-child {display:none}
-  .nav {height:70px}
-  .brand img {width:55px;height:52px}
-  .brand strong {font-size:19px}
-  .navlinks {display:none}
-  .nav-actions .btn {display:none}
-  .hero {padding:48px 0 42px}
-  .hero-grid {grid-template-columns:1fr}
-  .hero-visual {min-height:280px}
-  .hero-glow {width:260px;height:260px}
-  .hero-logo {width:90%;padding:15px}
-  .floating-tag {right:0;bottom:5px}
-  .hero-copy {font-size:15px}
-  h1 {letter-spacing:-2px}
-  .trust-grid {grid-template-columns:1fr;gap:15px}
-  .trust-item {justify-content:flex-start}
-  .section {padding:60px 0}
-  .category-grid {grid-template-columns:1fr}
-  .category {min-height:190px}
-  .product-grid {gap:11px}
-  .product-image {height:150px}
-  .product-info {padding:12px}
-  .product h3 {font-size:14px}
-  .product-desc {font-size:11px}
-  .product-bottom {
-    align-items:flex-start;
-    flex-direction:column;
-  }
-  .add {width:100%}
-  .search {width:100%}
-  .products-toolbar {align-items:stretch}
-  .about-grid,.visit-grid {grid-template-columns:1fr}
-  .about-mark {min-height:230px}
-  .checks {grid-template-columns:1fr}
-  .visit {padding:58px 0}
-  .mapbox {height:240px}
-}
-</style>
+    .logo-frame::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        #e50924 70deg,
+        #ffffff 130deg,
+        transparent 190deg,
+        #e50924 260deg,
+        transparent 360deg
+      );
+      filter: blur(7px);
+      opacity: .7;
+      z-index: -1;
+      animation: rotateGlow 7s linear infinite;
+    }
+
+    .logo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.85);
+      pointer-events: none;
+    }
+
+    .logo-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes borderFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .brand-name {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .brand-name span {
+      color: var(--red);
+    }
+
+    .brand-subtitle {
+      color: #bbb;
+      font-size: 9px;
+      letter-spacing: 3px;
+      margin-top: 7px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #eee;
+      font-size: 12px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--red);
+    }
+
+    .nav-cta {
+      background: var(--red);
+      padding: 13px 19px;
+      border-radius: 5px;
+      color: white !important;
+    }
+
+    .nav-cta:hover {
+      background: #bd001b;
+      transform: translateY(-2px);
+    }
+
+    /* PORTADA */
+
+    .hero {
+      background:
+        linear-gradient(110deg, rgba(0,0,0,.95), rgba(20,20,20,.83)),
+        radial-gradient(circle at 80% 50%, #5b0010, #111 55%);
+      color: white;
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(229,9,36,.18);
+      border-radius: 50%;
+      right: -130px;
+      top: 40px;
+      box-shadow: 0 0 0 45px rgba(229,9,36,.035),
+                  0 0 0 90px rgba(229,9,36,.025);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+
+    .eyebrow {
+      color: #ff5267;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 15px;
+      line-height: 1.9;
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 23px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .3s;
+      border: 1px solid transparent;
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-red:hover {
+      background: #bd001b;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(229,9,36,.3);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.5);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #111;
+    }
+
+    .hero-logo-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo-frame {
+      width: min(360px, 85vw);
+      aspect-ratio: 1;
+      padding: 7px;
+      border-radius: 28px;
+      position: relative;
+      isolation: isolate;
+      background: linear-gradient(
+        135deg,
+        #fff,
+        #e50924,
+        #790012,
+        #fff,
+        #e50924
+      );
+      background-size: 300% 300%;
+      animation: borderFlow 5s ease infinite;
+      box-shadow:
+        0 0 18px rgba(229,9,36,.5),
+        0 0 55px rgba(229,9,36,.2);
+    }
+
+    .hero-logo-frame::before {
+      content: "";
+      position: absolute;
+      inset: -9px;
+      border-radius: 34px;
+      background: conic-gradient(
+        from 0deg,
+        transparent,
+        #e50924,
+        #fff,
+        transparent,
+        #e50924,
+        transparent
+      );
+      filter: blur(14px);
+      opacity: .65;
+      z-index: -1;
+      animation: rotateGlow 9s linear infinite;
+    }
+
+    .hero-logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 22px;
+      display: block;
+      background: white;
+    }
+
+    /* BENEFICIOS */
+
+    .benefits {
+      background: white;
+      padding: 28px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .benefit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      text-align: left;
+    }
+
+    .benefit-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff0f2;
+      color: var(--red);
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .benefit small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* SECCIONES */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-heading span {
+      color: var(--red);
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 4px;
+      font-weight: 800;
+    }
+
+    .section-heading h2 {
+      color: var(--black);
+      font-size: clamp(27px, 4vw, 40px);
+      font-weight: 900;
+      margin-top: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+      line-height: 1.8;
+    }
+
+    /* CATEGORÍAS */
+
+    .categories {
+      background: #f8f8f8;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 7px 25px rgba(0,0,0,.06);
+      transition: .3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.12);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .category-info {
+      padding: 23px;
+      text-align: center;
+    }
+
+    .category-info h3 {
+      color: #151515;
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .category-info p {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* CATÁLOGO */
+
+    .catalog {
+      background: white;
+    }
+
+    .catalog-tools {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .search-input {
+      padding: 13px 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+      min-width: min(100%, 260px);
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--red);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      border-radius: 4px;
+      background: white;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: .3s;
+      background: white;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.09);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #f5f5f5;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-tag {
+      color: var(--red);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      color: #151515;
+      margin: 9px 0;
+    }
+
+    .product-info p {
+      font-size: 11px;
+      color: #777;
+      line-height: 1.7;
+      min-height: 38px;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 17px;
+      gap: 10px;
+    }
+
+    .product-bottom strong {
+      color: #222;
+      font-size: 12px;
+    }
+
+    .product-bottom button {
+      background: var(--red);
+      color: white;
+      border: 0;
+      padding: 11px 13px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .product-bottom button:hover {
+      background: #b9001a;
+    }
+
+    .empty-products {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #777;
+      padding: 30px;
+    }
+
+    /* NOSOTROS */
+
+    .about {
+      background: #111;
+      color: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-logo .hero-logo-frame {
+      width: min(300px, 80vw);
+    }
+
+    .about-copy span {
+      color: #ff5267;
+      font-size: 10px;
+      letter-spacing: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .about-copy h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 17px 0;
+      font-weight: 900;
+    }
+
+    .about-copy h2 em {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    .about-copy p {
+      color: #bbb;
+      font-size: 13px;
+      line-height: 2;
+      margin-bottom: 18px;
+    }
+
+    /* CONTACTO */
+
+    .contact {
+      background: #f8f8f8;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 22px rgba(0,0,0,.05);
+    }
+
+    .contact-card h3 {
+      font-size: 17px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+
+    .contact-card p {
+      color: #666;
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .contact-card a {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .map {
+      margin-top: 25px;
+      overflow: hidden;
+      border-radius: 8px;
+      height: 300px;
+      background: #ddd;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* PIE DE PÁGINA */
+
+    footer {
+      background: #101010;
+      color: white;
+      padding: 35px 0;
+      text-align: center;
+    }
+
+    footer strong {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    footer strong span {
+      color: var(--red);
+    }
+
+    footer p {
+      color: #999;
+      font-size: 10px;
+      margin-top: 12px;
+      line-height: 1.8;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1500;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.25);
+      transition: .3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* ACCESIBILIDAD Y MÓVILES */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @media(max-width: 850px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-logo-area {
+        grid-row: 1;
+      }
+
+      .hero-logo-frame {
+        width: 260px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .navbar {
+        min-height: 75px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px 0;
+      }
+
+      .brand {
+        width: 100%;
+        justify-content: center;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding-bottom: 5px;
+      }
+
+      nav .nav-cta {
+        padding: 9px 12px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding-top: 55px;
+        padding-bottom: 65px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero-logo-frame {
+        width: 220px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .benefit {
+        justify-content: flex-start;
+        max-width: 260px;
+        margin: auto;
+        width: 100%;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .category-grid,
+      .product-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .catalog-tools {
+        justify-content: center;
+      }
+
+      .filters {
+        justify-content: center;
+      }
+
+      .search-input {
+        width: 100%;
+      }
+
+      .about-copy h2 {
+        font-size: 29px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  <div class="container">
-    <span>📍 San Rafael · Valle de los Chillos · Quito, Ecuador</span>
-    <span>Atención personalizada · Calidad y garantía</span>
-  </div>
-</div>
-
 <header>
-  <div class="container nav">
+  <div class="container navbar">
     <a class="brand" href="#inicio">
-      <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo oficial MiÓptica">
-      <strong>Mi<span>Óptica</span></strong>
+      <div class="logo-frame">
+        <img
+          src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
+          alt="Logotipo oficial de miÓptica">
+      </div>
+      <div>
+        <div class="brand-name">mi<span>Óptica</span></div>
+        <div class="brand-subtitle">TU VISIÓN, NUESTRA PRIORIDAD</div>
+      </div>
     </a>
 
-    <nav class="navlinks">
+    <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#categorias">Categorías</a>
-      <a href="#tienda">Tienda online</a>
+      <a href="#categorias">Productos</a>
+      <a href="#catalogo">Catálogo</a>
       <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="nav-cta">Contáctanos</a>
     </nav>
-
-    <div class="nav-actions">
-      <a class="btn small" href="https://wa.me/593998901364" target="_blank" rel="noopener">
-        Consultar por WhatsApp
-      </a>
-      <button class="iconbtn" onclick="openCart()" aria-label="Abrir carrito">
-        🛒<span class="count" id="cartCount">0</span>
-      </button>
-    </div>
   </div>
 </header>
 
 <main>
 
-<section class="hero" id="inicio">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Bienvenidos a MiÓptica</div>
-      <h1>Tu estilo merece<br>una visión <em>espectacular.</em></h1>
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
 
-      <p class="hero-copy">
-        Descubre gafas y soluciones ópticas que combinan estilo,
-        comodidad y calidad. Te acompañamos para encontrar
-        la opción ideal para tu mirada.
-      </p>
+      <div>
+        <div class="eyebrow">Bienvenido a miÓptica</div>
 
-      <div class="hero-ctas">
-        <a class="btn" href="#tienda">Explorar tienda →</a>
-        <a class="btn outline"
-           href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica%2C%20deseo%20agendar%20una%20cita."
-           target="_blank" rel="noopener">
-          Agendar una cita
+        <h1>
+          Tu estilo merece una
+          <span>visión espectacular.</span>
+        </h1>
+
+        <p>
+          Descubre una nueva forma de ver el mundo. Encuentra gafas,
+          armazones y lentes que combinan tecnología, comodidad y
+          estilo para acompañarte todos los días.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-red">EXPLORAR CATÁLOGO</a>
+          <a href="https://wa.me/593998901364" target="_blank" rel="noopener" class="btn btn-outline">
+            AGENDA TU CITA
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-logo-area">
+        <div class="hero-logo-frame">
+          <img
+            src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
+            alt="miÓptica - Logotipo oficial">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="benefits">
+    <div class="container benefit-grid">
+
+      <div class="benefit">
+        <div class="benefit-icon">✦</div>
+        <div>
+          <strong>Estilo y personalidad</strong>
+          <small>Encuentra el diseño ideal para ti.</small>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">◈</div>
+        <div>
+          <strong>Atención personalizada</strong>
+          <small>Estamos para asesorarte.</small>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">✓</div>
+        <div>
+          <strong>Tu comodidad primero</strong>
+          <small>Una experiencia pensada para ti.</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="categories" id="categorias">
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Encuentra tu estilo</span>
+        <h2>Explora nuestras categorías</h2>
+        <p>Diseños para cada personalidad y cada momento.</p>
+      </div>
+
+      <div class="category-grid">
+
+        <article class="category-card">
+          <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85" alt="Gafas de sol">
+          <div class="category-info">
+            <h3>Gafas de sol</h3>
+            <p>Protección y estilo para disfrutar cada día.</p>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=900&q=85" alt="Armazones oftálmicos">
+          <div class="category-info">
+            <h3>Armazones oftálmicos</h3>
+            <p>Diseños que reflejan tu personalidad.</p>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=900&q=85" alt="Lentes y accesorios">
+          <div class="category-info">
+            <h3>Lentes y accesorios</h3>
+            <p>Alternativas para complementar tu visión.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalogo">
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Selección miÓptica</span>
+        <h2>Descubre nuestro catálogo</h2>
+        <p>Explora algunos estilos y consulta disponibilidad por WhatsApp.</p>
+      </div>
+
+      <div class="catalog-tools">
+
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Buscar productos..."
+          aria-label="Buscar productos">
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="sol">Gafas de sol</button>
+          <button class="filter-btn" data-filter="opticos">Armazones</button>
+          <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+        </div>
+
+      </div>
+
+      <div class="product-grid" id="productGrid">
+
+        <article class="product-card" data-category="sol">
+          <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85" alt="Gafas de sol modernas">
+          <div class="product-info">
+            <span class="product-tag">Gafas de sol</span>
+            <h3>Estilo urbano</h3>
+            <p>Un diseño moderno para complementar tu imagen.</p>
+            <div class="product-bottom">
+              <strong>Consultar precio</strong>
+              <button onclick="consultar('Gafas de sol - Estilo urbano')">Consultar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="opticos">
+          <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=800&q=85" alt="Armazón oftálmico">
+          <div class="product-info">
+            <span class="product-tag">Armazones</span>
+            <h3>Diseño contemporáneo</h3>
+            <p>Personalidad y comodidad en un solo diseño.</p>
+            <div class="product-bottom">
+              <strong>Consultar precio</strong>
+              <button onclick="consultar('Armazón - Diseño contemporáneo')">Consultar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="sol">
+          <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=85" alt="Gafas de sol elegantes">
+          <div class="product-info">
+            <span class="product-tag">Gafas de sol</span>
+            <h3>Elegancia clásica</h3>
+            <p>Un complemento versátil para tu día a día.</p>
+            <div class="product-bottom">
+              <strong>Consultar precio</strong>
+              <button onclick="consultar('Gafas de sol - Elegancia clásica')">Consultar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="opticos">
+          <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=85" alt="Lentes de diseño">
+          <div class="product-info">
+            <span class="product-tag">Armazones</span>
+            <h3>Personalidad única</h3>
+            <p>Encuentra el estilo que mejor se adapta a ti.</p>
+            <div class="product-bottom">
+              <strong>Consultar precio</strong>
+              <button onclick="consultar('Armazón - Personalidad única')">Consultar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="accesorios">
+          <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=800&q=85" alt="Accesorios para gafas">
+          <div class="product-info">
+            <span class="product-tag">Accesorios</span>
+            <h3>Complementos</h3>
+            <p>Detalles que acompañan y cuidan tus lentes.</p>
+            <div class="product-bottom">
+              <strong>Consultar precio</strong>
+              <button onclick="consultar('Accesorios para lentes')">Consultar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="sol">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=85" alt="Gafas modernas">
+          <div class="product-info">
+            <span class="product-tag">Gafas de sol</span>
+            <h3>Look moderno</h3>
+            <p>Un toque de estilo para destacar donde vayas.</p>
+            <div class="product-bottom">
+              <strong>Consultar precio</strong>
+              <button onclick="consultar('Gafas de sol - Look moderno')">Consultar</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="nosotros">
+    <div class="container about-grid">
+
+      <div class="about-logo">
+        <div class="hero-logo-frame">
+          <img
+            src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
+            alt="Identidad visual miÓptica">
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <span>Conócenos</span>
+        <h2>En miÓptica, tu visión es <em>nuestra prioridad.</em></h2>
+
+        <p>
+          Creemos que ver bien también es sentirse bien. Por eso queremos
+          acompañarte a encontrar alternativas que combinen estilo,
+          comodidad y funcionalidad.
+        </p>
+
+        <p>
+          Te esperamos en San Rafael, Valle de los Chillos, diagonal a
+          San Luis Shopping. Será un gusto atenderte.
+        </p>
+
+        <a href="https://wa.me/593998901364" target="_blank" rel="noopener" class="btn btn-red">
+          COMUNICARME CON MIÓPTICA
         </a>
       </div>
 
-      <div class="hero-note">
-        <span style="color:var(--red);font-size:20px">✦</span>
-        <span><b>Servicio con calidad y garantía</b><br>
-        Atención cercana y asesoría personalizada.</span>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="container">
+
+      <div class="section-heading">
+        <span>Estamos cerca de ti</span>
+        <h2>Visítanos o escríbenos</h2>
+        <p>Será un gusto ayudarte a encontrar lo que necesitas.</p>
       </div>
-    </div>
 
-    <div class="hero-visual">
-      <div class="hero-glow"></div>
-      <div class="hero-logo">
-        <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
-             alt="MiÓptica, servicio con calidad y garantía">
-      </div>
-      <div class="floating-tag">
-        <b>MiÓptica</b>
-        Tu mirada, nuestra prioridad
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="contact-grid">
 
-<section class="trust">
-  <div class="container trust-grid">
-    <div class="trust-item"><span class="trust-icon">✓</span>Asesoría personalizada</div>
-    <div class="trust-item"><span class="trust-icon">◈</span>Calidad y garantía</div>
-    <div class="trust-item"><span class="trust-icon">♡</span>Atención por WhatsApp</div>
-  </div>
-</section>
-
-<section class="section" id="categorias">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Encuentra tu estilo</div>
-      <h2>Todo para ver y verte mejor</h2>
-      <p>Explora nuestras categorías y encuentra el complemento perfecto para tu día a día.</p>
-    </div>
-
-    <div class="category-grid">
-      <a class="category" href="#tienda"
-         style="--photo:url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85')">
-        <div><h3>Gafas de sol</h3><p>Estilo para cada ocasión →</p></div>
-      </a>
-
-      <a class="category" href="#tienda"
-         style="--photo:url('https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=900&q=85')">
-        <div><h3>Armazones oftálmicos</h3><p>Diseños que hablan de ti →</p></div>
-      </a>
-
-      <a class="category" href="#tienda"
-         style="--photo:url('https://images.unsplash.com/photo-1583391733958-6c78276477e8?auto=format&fit=crop&w=900&q=85')">
-        <div><h3>Lentes y accesorios</h3><p>Opciones para tu comodidad visual →</p></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section soft" id="tienda">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Tienda MiÓptica</div>
-      <h2>Encuentra tus próximos favoritos</h2>
-      <p>Revisa una selección de productos. Consulta disponibilidad, modelos y precios directamente con nuestro equipo.</p>
-    </div>
-
-    <div class="products-toolbar">
-      <div class="filters">
-        <button class="filter active" data-filter="Todos">Todos</button>
-        <button class="filter" data-filter="Gafas de sol">Gafas de sol</button>
-        <button class="filter" data-filter="Armazones">Armazones</button>
-        <button class="filter" data-filter="Lentes">Lentes</button>
-      </div>
-      <input class="search" id="search" type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
-    </div>
-
-    <div class="product-grid" id="productGrid"></div>
-    <p class="catalog-note">Los precios y la disponibilidad se confirman por WhatsApp. Las imágenes son referenciales.</p>
-  </div>
-</section>
-
-<section class="section" id="nosotros">
-  <div class="container about-grid">
-    <div class="about-mark">
-      <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg"
-           alt="Logotipo MiÓptica">
-    </div>
-
-    <div class="about-copy">
-      <div class="eyebrow">Conócenos</div>
-      <h2>Una buena visión cambia la forma de mirar el mundo.</h2>
-
-      <p>
-        En MiÓptica creemos que cuidar tu visión también es expresar tu estilo.
-        Queremos ofrecerte una atención amable, asesoría personalizada
-        y alternativas que se adapten a tus necesidades.
-      </p>
-
-      <p>
-        Visítanos en San Rafael, Valle de los Chillos.
-        Estamos diagonal a San Luis Shopping.
-      </p>
-
-      <div class="checks">
-        <div class="check"><span>✓</span>Atención personalizada</div>
-        <div class="check"><span>✓</span>Variedad de estilos</div>
-        <div class="check"><span>✓</span>Calidad y garantía</div>
-        <div class="check"><span>✓</span>Contacto directo</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="visit" id="contacto">
-  <div class="container visit-grid">
-    <div>
-      <div class="eyebrow" style="color:#ff7b84">Estamos para ayudarte</div>
-      <h2>Tu próxima visita comienza aquí.</h2>
-
-      <p>Comunícate con nosotros para consultas, disponibilidad de productos o para coordinar tu cita.</p>
-
-      <div class="contact-lines">
-        <div class="contact-line">
-          <i>⌖</i>
-          <span><b>Ubicación</b><br>
-          San Rafael, Valle de los Chillos, Quito, Ecuador.<br>
-          Diagonal a San Luis Shopping.</span>
+        <div class="contact-card">
+          <h3>📍 Nuestra ubicación</h3>
+          <p>
+            San Rafael, Valle de los Chillos.<br>
+            Diagonal a San Luis Shopping.
+          </p>
+          <p>
+            <a href="https://www.google.com/maps/search/?api=1&query=San+Luis+Shopping+San+Rafael+Ecuador" target="_blank" rel="noopener">
+              Ver ubicación en Google Maps
+            </a>
+          </p>
         </div>
 
-        <div class="contact-line">
-          <i>☎</i>
-          <span><b>Teléfono y WhatsApp</b><br>
-          099 890 1364 · +593 99 890 1364</span>
+        <div class="contact-card">
+          <h3>💬 Agenda tu cita</h3>
+          <p>
+            WhatsApp: <a href="https://wa.me/593998901364" target="_blank" rel="noopener">099 890 1364</a>
+          </p>
+          <p>
+            Escríbenos para consultar productos, disponibilidad y atención.
+          </p>
         </div>
 
-        <div class="contact-line">
-          <i>✉</i>
-          <span><b>Correo electrónico</b><br>
-          mioptica-quito@hotmail.com</span>
-        </div>
-
-        <div class="contact-line">
-          <i>◷</i>
-          <span><b>Horario de atención</b><br>
-          Consulta nuestros horarios por WhatsApp.</span>
-        </div>
       </div>
 
-      <a class="btn"
-         href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica%2C%20quiero%20realizar%20una%20consulta."
-         target="_blank" rel="noopener">
-        Escríbenos por WhatsApp →
-      </a>
-    </div>
+      <div class="map">
+        <iframe
+          src="https://maps.google.com/maps?q=San%20Luis%20Shopping%20San%20Rafael%20Ecuador&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de referencia de San Luis Shopping, San Rafael">
+        </iframe>
+      </div>
 
-    <div class="mapbox">
-      <iframe
-        title="Mapa de San Rafael, Valle de los Chillos"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=San%20Rafael%2C%20Valle%20de%20los%20Chillos%2C%20Quito%2C%20Ecuador&output=embed">
-      </iframe>
     </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
 <footer>
-  <div class="container footer-row">
-    <div class="footer-brand">Mi<span>Óptica</span></div>
-    <div>Servicio con calidad y garantía.</div>
-    <div>© <span id="year"></span> MiÓptica. Todos los derechos reservados.</div>
+  <div class="container">
+    <strong>mi<span>Óptica</span></strong>
+    <p>
+      Tu visión, nuestra prioridad.<br>
+      San Rafael · Valle de los Chillos · Ecuador
+    </p>
+    <p>© <span id="year"></span> miÓptica. Todos los derechos reservados.</p>
   </div>
 </footer>
 
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
-
-<aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
-  <div class="cart-head">
-    <h3>Tu selección</h3>
-    <button class="close" onclick="closeCart()" aria-label="Cerrar">×</button>
-  </div>
-
-  <div class="cart-items" id="cartItems"></div>
-
-  <div class="cart-foot">
-    <p>El pedido se enviará a MiÓptica por WhatsApp. Confirmaremos precio, disponibilidad y detalles antes de finalizar la compra.</p>
-    <button class="btn" style="width:100%" onclick="checkout()">Enviar pedido por WhatsApp</button>
-  </div>
-</aside>
+<a
+  class="whatsapp-float"
+  href="https://wa.me/593998901364"
+  target="_blank"
+  rel="noopener"
+  aria-label="Contactar a miÓptica por WhatsApp">
+  ☎
+</a>
 
 <script>
-const WHATSAPP = "593998901364";
+  // AÑO AUTOMÁTICO
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-const products = [
-  {
-    id:1,
-    name:"Gafas de sol clásicas",
-    cat:"Gafas de sol",
-    desc:"Un diseño versátil para complementar tu estilo.",
-    img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id:2,
-    name:"Gafas de sol modernas",
-    cat:"Gafas de sol",
-    desc:"Diseños actuales para todos los días.",
-    img:"https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id:3,
-    name:"Armazón contemporáneo",
-    cat:"Armazones",
-    desc:"Comodidad y personalidad en un solo diseño.",
-    img:"https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id:4,
-    name:"Armazón elegante",
-    cat:"Armazones",
-    desc:"Una opción sobria para tu estilo diario.",
-    img:"https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id:5,
-    name:"Lentes oftálmicos",
-    cat:"Lentes",
-    desc:"Consulta alternativas según tu necesidad visual.",
-    img:"https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id:6,
-    name:"Lentes de contacto",
-    cat:"Lentes",
-    desc:"Consulta modelos y disponibilidad.",
-    img:"https://images.unsplash.com/photo-1583391733958-6c78276477e8?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id:7,
-    name:"Estilo urbano",
-    cat:"Gafas de sol",
-    desc:"Un complemento con carácter.",
-    img:"https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id:8,
-    name:"Armazón minimalista",
-    cat:"Armazones",
-    desc:"Líneas limpias y estilo atemporal.",
-    img:"https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80"
-  }
-];
-
-let cart = [];
-let activeFilter = "Todos";
-
-const productGrid = document.getElementById("productGrid");
-const searchInput = document.getElementById("search");
-
-function renderProducts() {
-  const q = searchInput.value.toLowerCase().trim();
-
-  const list = products.filter(p =>
-    (activeFilter === "Todos" || p.cat === activeFilter) &&
-    (p.name + " " + p.cat + " " + p.desc).toLowerCase().includes(q)
-  );
-
-  productGrid.innerHTML = "";
-
-  if (!list.length) {
-    productGrid.innerHTML = "<p>No encontramos productos con esa búsqueda.</p>";
-    return;
+  // CONSULTAS POR WHATSAPP
+  function consultar(producto) {
+    const mensaje = "Hola, miÓptica. Me interesa consultar sobre: " + producto + ". ¿Podrían darme más información?";
+    const url = "https://wa.me/593998901364?text=" + encodeURIComponent(mensaje);
+    window.open(url, "_blank", "noopener");
   }
 
-  list.forEach(p => {
-    const article = document.createElement("article");
-    article.className = "product";
+  // FILTROS DEL CATÁLOGO
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const products = document.querySelectorAll(".product-card");
+  const searchInput = document.getElementById("searchInput");
 
-    const imageBox = document.createElement("div");
-    imageBox.className = "product-image";
+  let currentFilter = "todos";
 
-    const img = document.createElement("img");
-    img.src = p.img;
-    img.alt = p.name;
-    img.loading = "lazy";
-    img.onerror = () => {
-      img.style.display = "none";
-      imageBox.textContent = "Imagen no disponible";
-    };
+  function filterProducts() {
+    const search = searchInput.value.toLowerCase().trim();
+    let visible = 0;
 
-    imageBox.appendChild(img);
+    products.forEach(product => {
+      const category = product.dataset.category;
+      const content = product.textContent.toLowerCase();
 
-    const info = document.createElement("div");
-    info.className = "product-info";
+      const matchesCategory =
+        currentFilter === "todos" || category === currentFilter;
 
-    const tag = document.createElement("div");
-    tag.className = "product-tag";
-    tag.textContent = p.cat;
+      const matchesSearch = content.includes(search);
+      const show = matchesCategory && matchesSearch;
 
-    const name = document.createElement("h3");
-    name.textContent = p.name;
+      product.style.display = show ? "block" : "none";
 
-    const desc = document.createElement("div");
-    desc.className = "product-desc";
-    desc.textContent = p.desc;
+      if (show) visible++;
+    });
 
-    const bottom = document.createElement("div");
-    bottom.className = "product-bottom";
+    let emptyMessage = document.querySelector(".empty-products");
 
-    const price = document.createElement("span");
-    price.className = "price";
-    price.textContent = "Consultar precio";
+    if (visible === 0) {
+      if (!emptyMessage) {
+        emptyMessage = document.createElement("p");
+        emptyMessage.className = "empty-products";
+        emptyMessage.textContent = "No encontramos productos con esa búsqueda.";
+        document.getElementById("productGrid").appendChild(emptyMessage);
+      }
+    } else if (emptyMessage) {
+      emptyMessage.remove();
+    }
+  }
 
-    const add = document.createElement("button");
-    add.className = "add";
-    add.textContent = "＋ Agregar";
-    add.addEventListener("click", () => addToCart(p.id));
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
 
-    bottom.append(price, add);
-    info.append(tag, name, desc, bottom);
-    article.append(imageBox, info);
-    productGrid.appendChild(article);
+      currentFilter = button.dataset.filter;
+      filterProducts();
+    });
   });
-}
 
-document.querySelectorAll(".filter").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach(x => x.classList.remove("active"));
-    button.classList.add("active");
-    activeFilter = button.dataset.filter;
-    renderProducts();
-  });
-});
-
-searchInput.addEventListener("input", renderProducts);
-
-function addToCart(id) {
-  const p = products.find(x => x.id === id);
-  const item = cart.find(x => x.id === id);
-
-  if (item) {
-    item.qty++;
-  } else {
-    cart.push({...p, qty:1});
-  }
-
-  updateCart();
-  openCart();
-}
-
-function updateCart() {
-  document.getElementById("cartCount").textContent =
-    cart.reduce((sum, item) => sum + item.qty, 0);
-
-  const el = document.getElementById("cartItems");
-  el.innerHTML = "";
-
-  if (!cart.length) {
-    el.innerHTML = '<div class="cart-empty">Tu selección está vacía.<br>Agrega productos de la tienda.</div>';
-    return;
-  }
-
-  cart.forEach(item => {
-    const row = document.createElement("div");
-    row.className = "cart-row";
-
-    const info = document.createElement("div");
-    const title = document.createElement("b");
-    title.textContent = item.name;
-
-    const detail = document.createElement("div");
-    detail.style.color = "#777";
-    detail.textContent = item.cat + " · Cantidad: " + item.qty;
-
-    info.append(title, detail);
-
-    const remove = document.createElement("button");
-    remove.textContent = "Quitar";
-    remove.addEventListener("click", () => removeItem(item.id));
-
-    row.append(info, remove);
-    el.appendChild(row);
-  });
-}
-
-function removeItem(id) {
-  cart = cart.filter(x => x.id !== id);
-  updateCart();
-}
-
-function openCart() {
-  document.getElementById("cartPanel").classList.add("open");
-  document.getElementById("overlay").classList.add("show");
-}
-
-function closeCart() {
-  document.getElementById("cartPanel").classList.remove("open");
-  document.getElementById("overlay").classList.remove("show");
-}
-
-function checkout() {
-  if (!cart.length) {
-    alert("Agrega al menos un producto.");
-    return;
-  }
-
-  const lines = cart.map(item =>
-    "• " + item.name + " (" + item.cat + ") - cantidad: " + item.qty
-  ).join("\n");
-
-  const message =
-    "Hola MiÓptica, quisiera consultar y realizar este pedido:\n" +
-    lines +
-    "\n¿Me pueden confirmar precios y disponibilidad?";
-
-  const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank", "noopener");
-}
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-renderProducts();
-updateCart();
+  searchInput.addEventListener("input", filterProducts);
 </script>
 
 </body>
