@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101010">
-<title>miÓptica | Servicio con Calidad y garantía</title>
+<title>miÓptica | Cuidamos tu visión, mejoramos tu vida</title>
 <meta name="description" content="miÓptica: más de 20 años cuidando la visión de los ecuatorianos. Óptica en San Rafael, Valle de los Chillos.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -166,16 +166,16 @@ nav a:hover{color:var(--red)}
 .hero-copy p{color:#555;line-height:1.8;font-size:15px;max-width:540px;margin-bottom:28px}
 .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
 
-/* ESTILOS DEL CARRUSEL DE BANNERS */
+/* ESTILOS DEL CARRUSEL DE BANNERS (IMÁGENES COMPLETAS CON CONTAIN) */
 .hero-carousel {
  width:min(100%,450px);
  aspect-ratio:1/1;
  position:relative;
  border-radius:25px;
  overflow:hidden;
- background:#ffffffaa;
+ background:#fcfcfc;
  border:1px solid #ddd;
- box-shadow:0 20px 50px rgba(0,0,0,0.12);
+ box-shadow:0 20px 50px rgba(0,0,0,0.08);
  margin:auto;
 }
 .carousel-track {
@@ -188,11 +188,15 @@ nav a:hover{color:var(--red)}
  min-width:100%;
  height:100%;
  flex-shrink:0;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:#f8f9fa;
 }
 .carousel-slide img {
  width:100%;
  height:100%;
- object-fit:cover;
+ object-fit:contain;
  display:block;
 }
 .carousel-dots {
@@ -207,8 +211,8 @@ nav a:hover{color:var(--red)}
 .carousel-dot {
  width:10px; height:10px;
  border-radius:50%;
- background:rgba(255,255,255,0.6);
- border:1px solid #111;
+ background:rgba(0,0,0,0.3);
+ border:1px solid #fff;
  cursor:pointer;
  transition:0.3s;
 }
@@ -488,7 +492,7 @@ footer h3{font-size:14px;margin-bottom:17px}
    </div>
   </div>
   
-  <!-- CARRUSEL DE BANNERS EN LA PARTE SUPERIOR -->
+  <!-- CARRUSEL DE BANNERS (IMÁGENES COMPLETAS) -->
   <div class="hero-carousel" id="heroCarousel">
    <div class="carousel-track" id="carouselTrack">
     <div class="carousel-slide">
@@ -661,7 +665,7 @@ footer h3{font-size:14px;margin-bottom:17px}
     </div>
     <h3>Blanca Tobar</h3>
     <div class="team-role">LICENCIADA EN OPTOMETRÍA · GERENTE PROPIETARIA</div>
-    <p>Profesional en Optometría y gerente propietaria de miÓptica, con más de 30 años de experiencia en el campo visual. Su trayectoria y compromiso con el cuidado de la visión son parte fundamental de la historia de nuestra óptica.</p>
+    <p>Profesional en Optometría y gerente propietaria de miÓptica, con más de 40 años de experiencia en el campo visual. Su trayectoria y compromiso con el cuidado de la visión son parte fundamental de la historia de nuestra óptica.</p>
    </article>
    <article class="team-card">
     <div class="team-avatar">
