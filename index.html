@@ -140,37 +140,35 @@ nav a:hover{color:var(--red)}
  50%{box-shadow:0 0 0 9px #e5092400}
 }
 
-/* HERO CON FONDO CLARO Y CARRUSEL DE BANNERS A PANTALLA COMPLETA */
+/* HERO CON CARRUSEL A ANCHO COMPLETO Y TEXTO ABAJO */
 .hero{
- min-height:500px;color:#171717;display:flex;align-items:center;
- background:linear-gradient(100deg,#fcfcfc 0%,#f2f2f2 65%,#fae8eb 100%);
+ color:#171717;display:flex;flex-direction:column;align-items:center;
+ background:linear-gradient(180deg,#fcfcfc 0%,#f2f2f2 70%,#fae8eb 100%);
  position:relative;overflow:hidden;
- padding:40px 0;
-}
-.hero:before{
- content:"";position:absolute;width:500px;height:500px;
- border:1px solid #e5092422;border-radius:50%;
- right:-100px;top:30px;box-shadow:0 0 0 55px #e5092405,0 0 0 110px #e5092403;
+ padding:40px 0 70px 0;
 }
 .hero-container{
- width:min(1200px,96%);
+ width:min(1200px,94%);
  margin:auto;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:45px;
  position:relative;
  z-index:1;
 }
 
-/* ESTILOS DEL CARRUSEL DE BANNERS A ANCHO COMPLETO */
+/* ESTILOS DEL CARRUSEL A ANCHO COMPLETO */
 .hero-carousel {
  width: 100%;
- max-width: 1000px;
- height: min(520px, 60vw);
+ max-width: 950px;
+ height: min(500px, 55vw);
  position: relative;
  border-radius: 20px;
  overflow: hidden;
  background: #fcfcfc;
  border: 1px solid #ddd;
  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
- margin: auto;
 }
 .carousel-track {
  display: flex;
@@ -215,6 +213,25 @@ nav a:hover{color:var(--red)}
  border-color: var(--red);
  transform: scale(1.2);
 }
+
+/* TEXTO DEL HERO UBICADO DEBAJO DEL CARRUSEL */
+.hero-copy {
+ text-align: center;
+ max-width: 800px;
+ margin: auto;
+}
+.hero-copy .eyebrow{
+ color:var(--red);font-size:12px;font-weight:800;letter-spacing:3px;
+ display: block;
+ margin-bottom: 10px;
+}
+.hero h1{
+ font-size:clamp(32px,4.5vw,54px);line-height:1.15;
+ font-weight:900;margin:15px 0;color:#111;
+}
+.hero h1 span{color:var(--red)}
+.hero-copy p{color:#555;line-height:1.8;font-size:15px;max-width:680px;margin:0 auto 25px auto}
+.hero-actions{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
 
 /* EXPERIENCE */
 .experience{background:var(--red);color:white;padding:35px 0}
@@ -413,7 +430,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  .header-inner{flex-wrap:wrap;padding:12px 0}
  .header-right{gap:12px}
  nav{gap:12px}
- .hero-carousel{height: 380px;}
+ .hero-carousel{height: 360px;}
  .benefit-grid{grid-template-columns:repeat(2,1fr)}
  .product-grid{grid-template-columns:repeat(2,1fr)}
  .category-grid{grid-template-columns:repeat(2,1fr)}
@@ -427,8 +444,8 @@ footer h3{font-size:14px;margin-bottom:17px}
  nav.open{display:flex}
  .menu-toggle{display:block}
  .social-btn{width:34px;height:34px}
- .hero{padding:30px 0}
- .hero-carousel{height: 280px;}
+ .hero{padding:25px 0 50px 0}
+ .hero-carousel{height: 260px;}
  .experience-grid{grid-template-columns:1fr;gap:25px}
  .experience-item strong{font-size:30px}
  .benefit-grid{grid-template-columns:1fr 1fr;gap:20px}
@@ -475,7 +492,8 @@ footer h3{font-size:14px;margin-bottom:17px}
 <main>
 <section class="hero" id="inicio">
  <div class="hero-container">
-  <!-- CARRUSEL DE BANNERS A PANTALLA COMPLETA -->
+  
+  <!-- CARRUSEL DE BANNERS A ANCHO COMPLETO -->
   <div class="hero-carousel" id="heroCarousel">
    <div class="carousel-track" id="carouselTrack">
     <div class="carousel-slide">
@@ -498,6 +516,18 @@ footer h3{font-size:14px;margin-bottom:17px}
     <div class="carousel-dot" data-index="3"></div>
    </div>
   </div>
+
+  <!-- ENCABEZADO DE TEXTO UBICADO DEBAJO DEL CARRUSEL -->
+  <div class="hero-copy">
+   <span class="eyebrow">MÁS DE 20 AÑOS CUIDANDO TU VISIÓN</span>
+   <h1>Tu estilo merece una visión <span>espectacular.</span></h1>
+   <p>En miÓptica combinamos experiencia profesional, salud visual y tendencias para ayudarte a ver bien y lucir como te gusta.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="#catalogo"><i class="fas fa-glasses"></i> Ver catálogo</a>
+    <a class="btn btn-outline" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agenda tu cita</a>
+   </div>
+  </div>
+
  </div>
 </section>
 
