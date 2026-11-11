@@ -158,23 +158,23 @@ nav a:hover{color:var(--red)}
  z-index:1;
 }
 
-/* ESTILOS DEL CARRUSEL A ANCHO COMPLETO */
+/* ESTILOS DEL CARRUSEL A ANCHO COMPLETO Y PROFESIONAL */
 .hero-carousel {
  width: 100%;
  max-width: 950px;
- height: min(500px, 55vw);
+ height: min(480px, 52vw);
  position: relative;
  border-radius: 20px;
  overflow: hidden;
- background: #fcfcfc;
- border: 1px solid #ddd;
- box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+ background: #111;
+ border: 1px solid rgba(0,0,0,0.08);
+ box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 .carousel-track {
  display: flex;
  width: 100%;
  height: 100%;
- transition: transform 0.6s ease-in-out;
+ transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .carousel-slide {
  min-width: 100%;
@@ -183,17 +183,19 @@ nav a:hover{color:var(--red)}
  display: flex;
  align-items: center;
  justify-content: center;
- background: #f8f9fa;
+ background: #111;
+ overflow: hidden;
 }
 .carousel-slide img {
  width: 100%;
  height: 100%;
- object-fit: contain;
+ object-fit: cover;
+ object-position: center;
  display: block;
 }
 .carousel-dots {
  position: absolute;
- bottom: 15px;
+ bottom: 18px;
  left: 0; right: 0;
  display: flex;
  justify-content: center;
@@ -203,15 +205,16 @@ nav a:hover{color:var(--red)}
 .carousel-dot {
  width: 10px; height: 10px;
  border-radius: 50%;
- background: rgba(0,0,0,0.3);
- border: 1px solid #fff;
+ background: rgba(255,255,255,0.4);
+ border: 1px solid rgba(0,0,0,0.3);
  cursor: pointer;
  transition: 0.3s;
+ box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 .carousel-dot.active {
  background: var(--red);
- border-color: var(--red);
- transform: scale(1.2);
+ border-color: #fff;
+ transform: scale(1.25);
 }
 
 /* TEXTO DEL HERO UBICADO DEBAJO DEL CARRUSEL */
@@ -445,7 +448,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  .menu-toggle{display:block}
  .social-btn{width:34px;height:34px}
  .hero{padding:25px 0 50px 0}
- .hero-carousel{height: 260px;}
+ .hero-carousel{height: 280px;}
  .experience-grid{grid-template-columns:1fr;gap:25px}
  .experience-item strong{font-size:30px}
  .benefit-grid{grid-template-columns:1fr 1fr;gap:20px}
