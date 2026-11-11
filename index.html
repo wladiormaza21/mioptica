@@ -140,7 +140,7 @@ nav a:hover{color:var(--red)}
  50%{box-shadow:0 0 0 9px #e5092400}
 }
 
-/* HERO CON CARRUSEL A ANCHO COMPLETO Y TEXTO ABAJO */
+/* HERO CON BANNER DE CANVA A ANCHO COMPLETO Y TEXTO ABAJO */
 .hero{
  color:#171717;display:flex;flex-direction:column;align-items:center;
  background:linear-gradient(180deg,#fcfcfc 0%,#f2f2f2 70%,#fae8eb 100%);
@@ -158,84 +158,19 @@ nav a:hover{color:var(--red)}
  z-index:1;
 }
 
-/* ESTILOS DEL CARRUSEL PREMIUM CON FONDO INTELIGENTE DIFUMINADO */
+/* CONTENEDOR ADAPTADO PARA EL EMBED DE CANVA */
 .hero-carousel {
  width: 100%;
  max-width: 950px;
- height: min(500px, 55vw);
  position: relative;
  border-radius: 20px;
  overflow: hidden;
- background: #0a0a0a;
- border: 1px solid rgba(0,0,0,0.1);
- box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-}
-.carousel-track {
- display: flex;
- width: 100%;
- height: 100%;
- transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.carousel-slide {
- min-width: 100%;
- height: 100%;
- flex-shrink: 0;
- display: flex;
- align-items: center;
- justify-content: center;
- background: #0c0c0c;
- position: relative;
- overflow: hidden;
+ background: #fcfcfc;
+ border: 1px solid #ddd;
+ box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* Fondo difuminado automático para adaptar cualquier tamaño de imagen elegantemente */
-.carousel-slide::before {
- content: "";
- position: absolute;
- inset: -30px;
- background-image: var(--slide-img);
- background-size: cover;
- background-position: center;
- filter: blur(30px) brightness(0.5);
- z-index: 1;
-}
-
-/* Imagen principal centrada y protegida contra recortes */
-.carousel-slide img {
- position: relative;
- z-index: 2;
- max-width: 100%;
- max-height: 100%;
- object-fit: contain;
- display: block;
- filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
-}
-
-.carousel-dots {
- position: absolute;
- bottom: 15px;
- left: 0; right: 0;
- display: flex;
- justify-content: center;
- gap: 8px;
- z-index: 10;
-}
-.carousel-dot {
- width: 10px; height: 10px;
- border-radius: 50%;
- background: rgba(255,255,255,0.4);
- border: 1px solid rgba(0,0,0,0.4);
- cursor: pointer;
- transition: 0.3s;
- box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-.carousel-dot.active {
- background: var(--red);
- border-color: #fff;
- transform: scale(1.25);
-}
-
-/* TEXTO DEL HERO UBICADO DEBAJO DEL CARRUSEL */
+/* TEXTO DEL HERO UBICADO DEBAJO DEL BANNER */
 .hero-copy {
  text-align: center;
  max-width: 800px;
@@ -451,7 +386,6 @@ footer h3{font-size:14px;margin-bottom:17px}
  .header-inner{flex-wrap:wrap;padding:12px 0}
  .header-right{gap:12px}
  nav{gap:12px}
- .hero-carousel{height: 360px;}
  .benefit-grid{grid-template-columns:repeat(2,1fr)}
  .product-grid{grid-template-columns:repeat(2,1fr)}
  .category-grid{grid-template-columns:repeat(2,1fr)}
@@ -466,7 +400,6 @@ footer h3{font-size:14px;margin-bottom:17px}
  .menu-toggle{display:block}
  .social-btn{width:34px;height:34px}
  .hero{padding:25px 0 50px 0}
- .hero-carousel{height: 280px;}
  .experience-grid{grid-template-columns:1fr;gap:25px}
  .experience-item strong{font-size:30px}
  .benefit-grid{grid-template-columns:1fr 1fr;gap:20px}
@@ -514,35 +447,18 @@ footer h3{font-size:14px;margin-bottom:17px}
 <section class="hero" id="inicio">
  <div class="hero-container">
   
-  <!-- CARRUSEL DE BANNERS A ANCHO COMPLETO -->
-  <div class="hero-carousel" id="heroCarousel">
-   <div class="carousel-track" id="carouselTrack">
-    <div class="carousel-slide" style="--slide-img: url('https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/910ee61b1b0b660698ba802a3d183412_edit_68923339305893.jpg');">
-     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/910ee61b1b0b660698ba802a3d183412_edit_68923339305893.jpg" alt="miÓptica Banner 1">
-    </div>
-    <div class="carousel-slide" style="--slide-img: url('https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/4f818a5c75b02cf363795ff3b93c1fb9_edit_68476522477574.jpg');">
-     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/4f818a5c75b02cf363795ff3b93c1fb9_edit_68476522477574.jpg" alt="miÓptica Banner 2">
-    </div>
-    <div class="carousel-slide" style="--slide-img: url('https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1a666ececc2e9d12bb8c124832b0232a_edit_69080617641614.jpg');">
-     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1a666ececc2e9d12bb8c124832b0232a_edit_69080617641614.jpg" alt="miÓptica Banner 3">
-    </div>
-    <div class="carousel-slide" style="--slide-img: url('https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794375163653.jpg');">
-     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794375163653.jpg" alt="miÓptica Banner 4">
-    </div>
-    <div class="carousel-slide" style="--slide-img: url('https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794374825979.jpg');">
-     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794374825979.jpg" alt="miÓptica Banner 5">
-    </div>
-   </div>
-   <div class="carousel-dots" id="carouselDots">
-    <div class="carousel-dot active" data-index="0"></div>
-    <div class="carousel-dot" data-index="1"></div>
-    <div class="carousel-dot" data-index="2"></div>
-    <div class="carousel-dot" data-index="3"></div>
-    <div class="carousel-dot" data-index="4"></div>
+  <!-- BANNER DE CANVA INTEGRADO -->
+  <div class="hero-carousel">
+   <div style="position: relative; width: 100%; height: 0; padding-top: 41.6667%;
+    padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 0; margin-bottom: 0; overflow: hidden;
+    border-radius: 8px; will-change: transform;">
+     <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+       src="https://www.canva.com/design/DAHalh0ycWA/E_zUHz66ela0huC3tq-EjA/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+     </iframe>
    </div>
   </div>
 
-  <!-- ENCABEZADO DE TEXTO UBICADO DEBAJO DEL CARRUSEL -->
+  <!-- ENCABEZADO DE TEXTO UBICADO DEBAJO DEL BANNER -->
   <div class="hero-copy">
    <span class="eyebrow">MÁS DE 20 AÑOS CUIDANDO TU VISIÓN</span>
    <h1>Tu estilo merece una visión <span>espectacular.</span></h1>
@@ -823,34 +739,6 @@ filterButtons.forEach(button=>{
  });
 });
 searchInput.addEventListener('input',filterProducts);
-
-// Script del Carrusel Automático de Banners
-const track = document.getElementById('carouselTrack');
-const slides = Array.from(track.children);
-const dots = document.querySelectorAll('.carousel-dot');
-let currentIndex = 0;
-
-function updateCarousel(index) {
- track.style.transform = 'translateX(-' + (index * 100) + '%)';
- dots.forEach(dot => dot.classList.remove('active'));
- dots[index].classList.add('active');
-}
-
-function nextSlide() {
- currentIndex = (currentIndex + 1) % slides.length;
- updateCarousel(currentIndex);
-}
-
-let carouselInterval = setInterval(nextSlide, 4000);
-
-dots.forEach(dot => {
- dot.addEventListener('click', (e) => {
-  clearInterval(carouselInterval);
-  currentIndex = parseInt(e.target.dataset.index);
-  updateCarousel(currentIndex);
-  carouselInterval = setInterval(nextSlide, 4000);
- });
-});
 </script>
 
 </body>
