@@ -140,86 +140,80 @@ nav a:hover{color:var(--red)}
  50%{box-shadow:0 0 0 9px #e5092400}
 }
 
-/* HERO CON FONDO CLARO Y CARRUSEL DE BANNERS */
+/* HERO CON FONDO CLARO Y CARRUSEL DE BANNERS A PANTALLA COMPLETA */
 .hero{
- min-height:590px;color:#171717;display:flex;align-items:center;
+ min-height:500px;color:#171717;display:flex;align-items:center;
  background:linear-gradient(100deg,#fcfcfc 0%,#f2f2f2 65%,#fae8eb 100%);
  position:relative;overflow:hidden;
+ padding:40px 0;
 }
 .hero:before{
  content:"";position:absolute;width:500px;height:500px;
  border:1px solid #e5092422;border-radius:50%;
  right:-100px;top:30px;box-shadow:0 0 0 55px #e5092405,0 0 0 110px #e5092403;
 }
-.hero-grid{
- display:grid;grid-template-columns:1.1fr .9fr;
- align-items:center;gap:50px;position:relative;z-index:1;
-}
-.hero-copy .eyebrow{
- color:var(--red);font-size:12px;font-weight:800;letter-spacing:3px;
-}
-.hero h1{
- font-size:clamp(37px,5vw,63px);line-height:1.12;
- font-weight:900;margin:20px 0;color:#111;
-}
-.hero h1 span{color:var(--red)}
-.hero-copy p{color:#555;line-height:1.8;font-size:15px;max-width:540px;margin-bottom:28px}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
-
-/* ESTILOS DEL CARRUSEL DE BANNERS (IMÁGENES COMPLETAS CON CONTAIN) */
-.hero-carousel {
- width:min(100%,450px);
- aspect-ratio:1/1;
- position:relative;
- border-radius:25px;
- overflow:hidden;
- background:#fcfcfc;
- border:1px solid #ddd;
- box-shadow:0 20px 50px rgba(0,0,0,0.08);
+.hero-container{
+ width:min(1200px,96%);
  margin:auto;
+ position:relative;
+ z-index:1;
+}
+
+/* ESTILOS DEL CARRUSEL DE BANNERS A ANCHO COMPLETO */
+.hero-carousel {
+ width: 100%;
+ max-width: 1000px;
+ height: min(520px, 60vw);
+ position: relative;
+ border-radius: 20px;
+ overflow: hidden;
+ background: #fcfcfc;
+ border: 1px solid #ddd;
+ box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+ margin: auto;
 }
 .carousel-track {
- display:flex;
- width:100%;
- height:100%;
- transition:transform 0.6s ease-in-out;
+ display: flex;
+ width: 100%;
+ height: 100%;
+ transition: transform 0.6s ease-in-out;
 }
 .carousel-slide {
- min-width:100%;
- height:100%;
- flex-shrink:0;
- display:flex;
- align-items:center;
- justify-content:center;
- background:#f8f9fa;
+ min-width: 100%;
+ height: 100%;
+ flex-shrink: 0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: #f8f9fa;
 }
 .carousel-slide img {
- width:100%;
- height:100%;
- object-fit:contain;
- display:block;
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+ display: block;
 }
 .carousel-dots {
- position:absolute;
- bottom:15px;
- left:0; right:0;
- display:flex;
- justify-content:center;
- gap:8px;
- z-index:5;
+ position: absolute;
+ bottom: 15px;
+ left: 0; right: 0;
+ display: flex;
+ justify-content: center;
+ gap: 8px;
+ z-index: 5;
 }
 .carousel-dot {
- width:10px; height:10px;
- border-radius:50%;
- background:rgba(0,0,0,0.3);
- border:1px solid #fff;
- cursor:pointer;
- transition:0.3s;
+ width: 10px; height: 10px;
+ border-radius: 50%;
+ background: rgba(0,0,0,0.3);
+ border: 1px solid #fff;
+ cursor: pointer;
+ transition: 0.3s;
 }
 .carousel-dot.active {
- background:var(--red);
- border-color:var(--red);
- transform:scale(1.2);
+ background: var(--red);
+ border-color: var(--red);
+ transform: scale(1.2);
 }
 
 /* EXPERIENCE */
@@ -419,7 +413,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  .header-inner{flex-wrap:wrap;padding:12px 0}
  .header-right{gap:12px}
  nav{gap:12px}
- .hero-grid{gap:25px}
+ .hero-carousel{height: 380px;}
  .benefit-grid{grid-template-columns:repeat(2,1fr)}
  .product-grid{grid-template-columns:repeat(2,1fr)}
  .category-grid{grid-template-columns:repeat(2,1fr)}
@@ -433,9 +427,8 @@ footer h3{font-size:14px;margin-bottom:17px}
  nav.open{display:flex}
  .menu-toggle{display:block}
  .social-btn{width:34px;height:34px}
- .hero{padding:65px 0}
- .hero-grid,.kids-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
- .hero-carousel{max-width:390px;margin:auto}
+ .hero{padding:30px 0}
+ .hero-carousel{height: 280px;}
  .experience-grid{grid-template-columns:1fr;gap:25px}
  .experience-item strong{font-size:30px}
  .benefit-grid{grid-template-columns:1fr 1fr;gap:20px}
@@ -481,18 +474,8 @@ footer h3{font-size:14px;margin-bottom:17px}
 
 <main>
 <section class="hero" id="inicio">
- <div class="container hero-grid">
-  <div class="hero-copy">
-   <span class="eyebrow">MÁS DE 20 AÑOS CUIDANDO TU VISIÓN</span>
-   <h1>Tu estilo merece una visión <span>espectacular.</span></h1>
-   <p>En miÓptica combinamos experiencia profesional, salud visual y tendencias para ayudarte a ver bien y lucir como te gusta.</p>
-   <div class="hero-actions">
-    <a class="btn btn-primary" href="#catalogo"><i class="fas fa-glasses"></i> Ver catálogo</a>
-    <a class="btn btn-outline" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agenda tu cita</a>
-   </div>
-  </div>
-  
-  <!-- CARRUSEL DE BANNERS (IMÁGENES COMPLETAS) -->
+ <div class="hero-container">
+  <!-- CARRUSEL DE BANNERS A PANTALLA COMPLETA -->
   <div class="hero-carousel" id="heroCarousel">
    <div class="carousel-track" id="carouselTrack">
     <div class="carousel-slide">
@@ -515,7 +498,6 @@ footer h3{font-size:14px;margin-bottom:17px}
     <div class="carousel-dot" data-index="3"></div>
    </div>
   </div>
-
  </div>
 </section>
 
