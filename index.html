@@ -358,13 +358,78 @@ nav a:hover{color:var(--red)}
 .team-role{color:var(--red);font-size:11px;font-weight:800;margin:9px 0 15px}
 .team-card p{color:#777;font-size:13px;line-height:1.8}
 
-/* ABOUT */
+/* ABOUT CON LOGOTIPO PRINCIPAL ANIMADO NEÓN */
 .about{background:#111;color:white}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center}
 .about-logo{
- padding:25px;background:#fff;border-radius:20px;text-align:center;
+ padding:5px;
+ background:linear-gradient(135deg, #e50924, #101010, #ffffff, #e50924);
+ background-size:300% 300%;
+ border-radius:24px;
+ text-align:center;
+ position:relative;
+ animation: tricolorGlow 4s ease infinite, aboutLogoNeon 3.2s ease-in-out infinite, aboutLogoFloat 4.5s ease-in-out infinite;
+ transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-.about-logo img{width:100%;max-width:350px;object-fit:contain}
+.about-logo-inner{
+ background:#ffffff;
+ border-radius:20px;
+ padding:25px;
+ position:relative;
+ overflow:hidden;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+.about-logo-inner::after{
+ content:"";
+ position:absolute;
+ top:-50%;
+ left:-140%;
+ width:70%;
+ height:200%;
+ background:linear-gradient(
+  to right,
+  rgba(255,255,255,0) 0%,
+  rgba(229, 9, 36, 0.14) 50%,
+  rgba(255,255,255,0) 100%
+ );
+ transform:rotate(25deg);
+ animation: logoShineSweep 4.5s infinite ease-in-out;
+ pointer-events:none;
+}
+.about-logo:hover{
+ transform:scale(1.03) translateY(-4px);
+ box-shadow:0 0 28px #e50924, 0 0 48px rgba(255,255,255,0.45);
+}
+.about-logo img{
+ width:100%;
+ max-width:350px;
+ object-fit:contain;
+ position:relative;
+ z-index:1;
+}
+
+@keyframes aboutLogoNeon {
+ 0%, 100% {
+  box-shadow: 0 0 18px rgba(229, 9, 36, 0.65), 0 0 32px rgba(255, 255, 255, 0.18), inset 0 0 10px rgba(0, 0, 0, 0.8);
+ }
+ 50% {
+  box-shadow: 0 0 30px rgba(229, 9, 36, 0.95), 0 0 52px rgba(255, 255, 255, 0.35), inset 0 0 14px rgba(0, 0, 0, 0.9);
+ }
+}
+
+@keyframes aboutLogoFloat {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-6px); }
+}
+
+@keyframes logoShineSweep {
+ 0% { left: -140%; }
+ 45% { left: 160%; }
+ 100% { left: 160%; }
+}
+
 .about-copy h2{font-size:clamp(29px,4vw,43px);font-weight:900;margin:12px 0 20px}
 .about-copy p{color:#ccc;font-size:14px;line-height:1.9;margin-bottom:14px}
 .about-highlight{
@@ -697,7 +762,9 @@ footer h3{font-size:14px;margin-bottom:17px}
 <section class="about" id="nosotros">
  <div class="container about-grid">
   <div class="about-logo">
-   <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo miÓptica">
+   <div class="about-logo-inner">
+    <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo miÓptica">
+   </div>
   </div>
   <div class="about-copy">
    <span style="color:#ff5267;font-size:12px;font-weight:900;letter-spacing:3px">NUESTRA HISTORIA</span>
