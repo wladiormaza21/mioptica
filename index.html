@@ -166,60 +166,61 @@ nav a:hover{color:var(--red)}
 .hero-copy p{color:#555;line-height:1.8;font-size:15px;max-width:540px;margin-bottom:28px}
 .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
 
-/* ESTILOS DEL CARRUSEL DE BANNERS (IMÁGENES COMPLETAS CON CONTAIN) */
+/* ESTILOS DEL CARRUSEL ADAPTADO AL TAMAÑO REAL DE LAS IMÁGENES */
 .hero-carousel {
- width:min(100%,450px);
- aspect-ratio:1/1;
+ width:min(100%,480px);
  position:relative;
- border-radius:25px;
+ border-radius:20px;
  overflow:hidden;
- background:#fcfcfc;
+ background:#111;
  border:1px solid #ddd;
- box-shadow:0 20px 50px rgba(0,0,0,0.08);
+ box-shadow:0 20px 50px rgba(0,0,0,0.12);
  margin:auto;
 }
 .carousel-track {
  display:flex;
  width:100%;
- height:100%;
  transition:transform 0.6s ease-in-out;
 }
 .carousel-slide {
  min-width:100%;
- height:100%;
  flex-shrink:0;
  display:flex;
  align-items:center;
  justify-content:center;
- background:#f8f9fa;
+ background:#101010;
 }
 .carousel-slide img {
  width:100%;
- height:100%;
+ height:auto;
+ max-height:500px;
  object-fit:contain;
  display:block;
 }
 .carousel-dots {
  position:absolute;
- bottom:15px;
+ bottom:12px;
  left:0; right:0;
  display:flex;
  justify-content:center;
  gap:8px;
  z-index:5;
+ background:rgba(0,0,0,0.2);
+ padding:6px 0;
+ backdrop-filter:blur(4px);
 }
 .carousel-dot {
- width:10px; height:10px;
+ width:9px; height:9px;
  border-radius:50%;
- background:rgba(0,0,0,0.3);
- border:1px solid #fff;
+ background:rgba(255,255,255,0.4);
+ border:1px solid rgba(0,0,0,0.3);
  cursor:pointer;
  transition:0.3s;
 }
 .carousel-dot.active {
  background:var(--red);
- border-color:var(--red);
- transform:scale(1.2);
+ border-color:#fff;
+ transform:scale(1.3);
 }
 
 /* EXPERIENCE */
@@ -435,7 +436,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  .social-btn{width:34px;height:34px}
  .hero{padding:65px 0}
  .hero-grid,.kids-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
- .hero-carousel{max-width:390px;margin:auto}
+ .hero-carousel{max-width:100%;margin:auto}
  .experience-grid{grid-template-columns:1fr;gap:25px}
  .experience-item strong{font-size:30px}
  .benefit-grid{grid-template-columns:1fr 1fr;gap:20px}
@@ -492,7 +493,7 @@ footer h3{font-size:14px;margin-bottom:17px}
    </div>
   </div>
   
-  <!-- CARRUSEL DE BANNERS (IMÁGENES COMPLETAS) -->
+  <!-- CARRUSEL ADAPTADO A LAS IMÁGENES -->
   <div class="hero-carousel" id="heroCarousel">
    <div class="carousel-track" id="carouselTrack">
     <div class="carousel-slide">
@@ -673,7 +674,7 @@ footer h3{font-size:14px;margin-bottom:17px}
     </div>
     <h3>Blanca Tobar</h3>
     <div class="team-role">LICENCIADA EN OPTOMETRÍA · GERENTE PROPIETARIA</div>
-    <p>Profesional en Optometría y gerente propietaria de miÓptica, con más de 30 años de experiencia en el campo visual. Su trayectoria y compromiso con el cuidado de la visión son parte fundamental de la historia de nuestra óptica.</p>
+    <p>Profesional en Optometría y gerente propietaria de miÓptica, con más de 30 años de experiencia en el campo visual. Su trayectoria y compromiso con el cuidado de la visión są parte fundamental de la historia de nuestra óptica.</p>
    </article>
    <article class="team-card">
     <div class="team-avatar">
