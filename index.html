@@ -78,7 +78,7 @@ header{
 }
 .brand-area{display:flex;align-items:center;gap:15px}
 
-/* LOGOTIPO CON GORRO NAVIDEÑO ANIMADO Y NEÓN CORPORATIVO */
+/* LOGOTIPO CON GORRO NAVIDEÑO EN EL LADO IZQUIERDO */
 .logo-wrapper{
  position:relative;
  display:inline-block;
@@ -86,17 +86,17 @@ header{
 }
 .xmas-hat {
  position: absolute;
- top: -16px;
- right: -8px;
+ top: -14px;
+ left: -10px;
  font-size: 24px;
- transform: rotate(15deg);
+ transform: rotate(-22deg);
  z-index: 10;
  animation: hatFloat 3s ease-in-out infinite;
  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 @keyframes hatFloat {
- 0%, 100% { transform: rotate(15deg) translateY(0); }
- 50% { transform: rotate(20deg) translateY(-3px); }
+ 0%, 100% { transform: rotate(-22deg) translateY(0); }
+ 50% { transform: rotate(-18deg) translateY(-3px); }
 }
 
 .logo-frame{
@@ -127,8 +127,22 @@ header{
  50% { transform: translateY(-3px); }
 }
 
-.brand-name{font-size:22px;font-weight:900;letter-spacing:1px}
+.brand-name{font-size:22px;font-weight:900;letter-spacing:1px;display:flex;align-items:center;gap:8px;}
 .brand-name span{color:var(--red)}
+
+/* ARBOLITO DE NAVIDAD CON LUCES QUE SE ENCIENDEN Y APAGAN */
+.xmas-tree-nav {
+ font-size: 22px;
+ display: inline-flex;
+ align-items: center;
+ position: relative;
+ animation: treeBounce 2s ease-in-out infinite;
+ filter: drop-shadow(0 0 6px rgba(229, 9, 36, 0.6));
+}
+@keyframes treeBounce {
+ 0%, 100% { transform: scale(1); }
+ 50% { transform: scale(1.08); }
+}
 
 /* REDES SOCIALES CON NEÓN */
 .social-top{display:flex;gap:9px;align-items:center}
@@ -564,7 +578,7 @@ footer h3{font-size:14px;margin-bottom:17px}
      <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo oficial miÓptica">
     </div>
    </div>
-   <div class="brand-name">mi<span>Óptica</span></div>
+   <div class="brand-name">mi<span>Óptica</span> <span class="xmas-tree-nav" id="xmasTree">🎄</span></div>
   </a>
 
   <div class="header-right">
@@ -894,6 +908,19 @@ for (let i = 0; i < numberOfSnowflakes; i++) {
  
  snowContainer.appendChild(snowflake);
 }
+
+// Efecto de luces parpadeantes para el arbolito navideño junto al título
+const xmasTree = document.getElementById('xmasTree');
+const treeStates = ['🎄', '🌟', '🎁', '✨'];
+let treeStateIndex = 0;
+setInterval(() => {
+ treeStateIndex = (treeStateIndex + 1) % treeStates.length;
+ xmasTree.style.opacity = '0.3';
+ setTimeout(() => {
+  xmasTree.textContent = treeStates[treeStateIndex];
+  xmasTree.style.opacity = '1';
+ }, 200);
+}, 1200);
 
 // Script de filtrado de productos
 const filterButtons=document.querySelectorAll('.filter-btn');
