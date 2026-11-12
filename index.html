@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101010">
-<title>miÓptica | Especial Navidad y Fin de Año</title>
-<meta name="description" content="miÓptica: más de 20 años cuidando la visión de los ecuatorianos. ¡Felices fiestas! Óptica en San Rafael, Valle de los Chillos.">
+<title>miÓptica | Servicio con Calidad y garantía - Especial Navidad</title>
+<meta name="description" content="miÓptica: más de 20 años cuidando la visión de los ecuatorianos. Óptica en San Rafael, Valle de los Chillos.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,8 +15,6 @@
 :root{
  --red:#e50924;
  --red-dark:#a90019;
- --gold:#d4af37;
- --pine:#0b3b24;
  --black:#101010;
  --dark:#181818;
  --white:#fff;
@@ -37,7 +35,7 @@ button{font-family:inherit;cursor:pointer}
 section{padding:85px 0}
 .section-title{text-align:center;margin-bottom:42px}
 .section-title span{
- color:var(--gold);font-size:12px;font-weight:800;
+ color:var(--red);font-size:12px;font-weight:800;
  letter-spacing:3px;text-transform:uppercase;
 }
 .section-title h2{
@@ -46,11 +44,10 @@ section{padding:85px 0}
 }
 .section-title p{color:#777;line-height:1.7;max-width:650px;margin:auto;font-size:14px}
 .red{color:var(--red)}
-.gold{color:var(--gold)}
 
-/* BARRA DE ANUNCIO NAVIDEÑO */
+/* CINTILLO NAVIDEÑO CORPORATIVO */
 .holiday-banner-top {
- background: linear-gradient(90deg, #0b3b24, #101010, #e50924);
+ background: linear-gradient(90deg, #101010, var(--red), #101010);
  color: white;
  text-align: center;
  padding: 8px 15px;
@@ -58,9 +55,9 @@ section{padding:85px 0}
  font-weight: 800;
  letter-spacing: 1.5px;
  text-transform: uppercase;
- border-bottom: 2px solid var(--gold);
+ border-bottom: 2px solid var(--red);
 }
-.holiday-banner-top span { color: var(--gold); }
+.holiday-banner-top span { color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.8); }
 
 /* HEADER */
 header{
@@ -73,19 +70,19 @@ header{
 }
 .brand-area{display:flex;align-items:center;gap:15px}
 
-/* LOGOTIPOS CON ILUMINACIÓN NEÓN NAVIDEÑA (ROJO, DORADO Y BLANCO) */
+/* LOGOTIPOS CON ILUMINACIÓN NEÓN TRICOLOR CORPORATIVA */
 .logo-frame{
  width:66px;height:66px;border-radius:50%;padding:3px;
- background:linear-gradient(135deg, #e50924, #d4af37, #ffffff, #e50924);
+ background:linear-gradient(135deg, #e50924, #101010, #ffffff, #e50924);
  background-size: 300% 300%;
  animation: tricolorGlow 4s ease infinite, logoFloat 3s ease-in-out infinite;
  flex-shrink:0;
- box-shadow: 0 0 12px rgba(212, 175, 55, 0.6), 0 0 22px rgba(229, 9, 36, 0.4), inset 0 0 8px rgba(0, 0, 0, 0.8);
+ box-shadow: 0 0 12px rgba(229, 9, 36, 0.6), 0 0 22px rgba(255, 255, 255, 0.2), inset 0 0 8px rgba(0, 0, 0, 0.8);
  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .logo-frame:hover {
  transform: scale(1.08);
- box-shadow: 0 0 22px var(--gold), 0 0 35px #ffffff;
+ box-shadow: 0 0 20px #e50924, 0 0 35px #ffffff;
 }
 .logo-frame img{
  width:100%;height:100%;object-fit:cover;border-radius:50%;
@@ -104,36 +101,35 @@ header{
 }
 
 .brand-name{font-size:22px;font-weight:900;letter-spacing:1px}
-.brand-name span{color:var(--gold)}
+.brand-name span{color:var(--red)}
 
-/* REDES SOCIALES CON NEÓN NAVIDEÑO */
+/* REDES SOCIALES CON NEÓN */
 .social-top{display:flex;gap:9px;align-items:center}
 .social-btn{
- width:39px;height:39px;border:1px solid rgba(212, 175, 55, 0.4);
+ width:39px;height:39px;border:1px solid rgba(255, 255, 255, 0.4);
  border-radius:50%;display:grid;place-items:center;
  color:white;transition:.3s;position:relative;
  background: rgba(16, 16, 16, 0.8);
- box-shadow: 0 0 8px rgba(212, 175, 55, 0.4), 0 0 15px rgba(229, 9, 36, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.9);
+ box-shadow: 0 0 8px rgba(229, 9, 36, 0.4), 0 0 15px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.9);
  animation: socialNeonPulse 3s infinite;
 }
 .social-btn:hover{
- background:var(--gold);
- color:#101010;
+ background:var(--red);
  border-color:#fff;
  transform:translateY(-5px) scale(1.1);
- box-shadow: 0 0 18px var(--gold), 0 0 30px #ffffff;
+ box-shadow: 0 0 18px #e50924, 0 0 30px #ffffff, 0 0 40px #101010;
 }
 .social-btn i{font-size:16px}
 
 @keyframes socialNeonPulse {
- 0%, 100% { box-shadow: 0 0 6px rgba(212, 175, 55, 0.4), 0 0 12px rgba(229, 9, 36, 0.2), inset 0 0 4px rgba(0,0,0,0.8); }
- 50% { box-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 20px rgba(229, 9, 36, 0.4), inset 0 0 8px rgba(0,0,0,0.9); }
+ 0%, 100% { box-shadow: 0 0 6px rgba(229, 9, 36, 0.4), 0 0 12px rgba(255, 255, 255, 0.1), inset 0 0 4px rgba(0,0,0,0.8); }
+ 50% { box-shadow: 0 0 12px rgba(229, 9, 36, 0.8), 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(0,0,0,0.9); }
 }
 
 .header-right{display:flex;align-items:center;gap:22px}
 nav{display:flex;gap:21px;font-size:12px;font-weight:700}
 nav a{transition:.3s}
-nav a:hover{color:var(--gold)}
+nav a:hover{color:var(--red)}
 .menu-toggle{display:none;background:none;border:0;color:white;font-size:25px}
 
 /* BUTTONS */
@@ -152,47 +148,52 @@ nav a:hover{color:var(--gold)}
 .btn-outline{border:2px solid #111;color:#111}
 .btn-outline:hover{background:#111;color:white;transform:translateY(-3px)}
 .btn-dark{background:#111;color:white}
-.btn-dark:hover{background:var(--gold);color:#101010;transform:translateY(-3px)}
+.btn-dark:hover{background:var(--red);transform:translateY(-3px)}
 @keyframes ctaPulse{
  0%,100%{box-shadow:0 0 0 0 #e5092445}
  50%{box-shadow:0 0 0 9px #e5092400}
 }
 
-/* HERO CON FONDO INSPIRADO EN NAVIDAD Y EFECTO NIEVE */
+/* HERO CON EFECTO DE NIEVE DINÁMICO */
 .hero{
  min-height:590px;color:#171717;display:flex;align-items:center;
- background:linear-gradient(100deg,#fcfcfc 0%,#f2f7f4 65%,#fcf0f2 100%);
+ background:linear-gradient(100deg,#fcfcfc 0%,#f2f2f2 65%,#fae8eb 100%);
  position:relative;overflow:hidden;
 }
-/* Copos de nieve decorativos simulados con CSS */
-.hero::after {
- content: "❄ ❅ ❆ ❄ ❅ ❆ ❄ ❅";
+
+/* Contenedor de nieve interactivo */
+.snow-container {
  position: absolute;
- top: 10px; left: 0; width: 100%;
- font-size: 18px;
- color: rgba(212, 175, 55, 0.25);
- letter-spacing: 40px;
- white-space: nowrap;
- animation: snowfall 15s linear infinite;
+ top: 0; left: 0; width: 100%; height: 100%;
  pointer-events: none;
+ overflow: hidden;
+ z-index: 1;
 }
-@keyframes snowfall {
- 0% { transform: translateY(-10px); }
- 100% { transform: translateY(550px); }
+.snowflake {
+ position: absolute;
+ background: #e50924;
+ border-radius: 50%;
+ opacity: 0.6;
+ animation: fall linear infinite;
+}
+@keyframes fall {
+ 0% { transform: translateY(-10px) translateX(0); }
+ 50% { transform: translateY(300px) translateX(15px); }
+ 100% { transform: translateY(620px) translateX(-15px); }
 }
 
 .hero:before{
  content:"";position:absolute;width:500px;height:500px;
- border:1px solid rgba(212, 175, 55, 0.25);border-radius:50%;
- right:-100px;top:30px;box-shadow:0 0 0 55px rgba(229, 9, 36, 0.03),0 0 0 110px rgba(11, 59, 36, 0.02);
+ border:1px solid #e5092422;border-radius:50%;
+ right:-100px;top:30px;box-shadow:0 0 0 55px #e5092405,0 0 0 110px #e5092403;
 }
 .hero-grid{
  display:grid;grid-template-columns:1.1fr .9fr;
- align-items:center;gap:50px;position:relative;z-index:1;
+ align-items:center;gap:50px;position:relative;z-index:2;
 }
 .hero-grid > *{min-width:0}
 .hero-copy .eyebrow{
- color:var(--gold);font-size:12px;font-weight:800;letter-spacing:3px;
+ color:var(--red);font-size:12px;font-weight:800;letter-spacing:3px;
 }
 .hero h1{
  font-size:clamp(37px,5vw,63px);line-height:1.12;
@@ -210,8 +211,8 @@ nav a:hover{color:var(--gold)}
  border-radius:20px;
  overflow:hidden;
  background:#101010;
- border:2px solid var(--gold);
- box-shadow:0 20px 50px rgba(212, 175, 55, 0.2);
+ border:2px solid var(--red);
+ box-shadow:0 20px 50px rgba(229, 9, 36, 0.15);
  margin:auto;
 }
 .carousel-track {
@@ -252,30 +253,30 @@ nav a:hover{color:var(--gold)}
  width:9px; height:9px;
  border-radius:50%;
  background:rgba(255,255,255,0.45);
- border:1px solid var(--gold);
+ border:1px solid var(--red);
  cursor:pointer;
  transition:0.3s;
 }
 .carousel-dot.active {
- background:var(--gold);
+ background:var(--red);
  border-color:#fff;
  transform:scale(1.3);
 }
 
 /* EXPERIENCE */
-.experience{background:var(--pine);color:white;padding:35px 0;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.experience{background:var(--red);color:white;padding:35px 0}
 .experience-grid{
  display:grid;grid-template-columns:repeat(3,1fr);
  align-items:center;text-align:center;gap:20px;
 }
-.experience-item strong{display:block;font-size:35px;font-weight:900;color:var(--gold)}
+.experience-item strong{display:block;font-size:35px;font-weight:900}
 .experience-item span{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
 
 /* BENEFITS */
 .benefits{padding:35px 0;background:#f6f6f6}
 .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .benefit{display:flex;align-items:center;gap:13px}
-.benefit i{font-size:25px;color:var(--gold)}
+.benefit i{font-size:25px;color:var(--red)}
 .benefit strong{display:block;font-size:12px}
 .benefit small{display:block;color:#777;font-size:10px;margin-top:4px}
 
@@ -327,7 +328,7 @@ nav a:hover{color:var(--gold)}
 }
 .kids-sticker{
  position:absolute;bottom:20px;left:-15px;
- background:var(--gold);color:#101010;padding:18px 22px;
+ background:var(--red);color:white;padding:18px 22px;
  border-radius:12px;font-weight:900;
 }
 .kids-copy h2{font-size:clamp(30px,4vw,43px);font-weight:900;line-height:1.15;margin:12px 0}
@@ -345,13 +346,13 @@ nav a:hover{color:var(--gold)}
  border:1px solid #ddd;background:white;padding:11px 17px;
  border-radius:30px;font-size:11px;font-weight:800;transition:.3s;
 }
-.filter-btn.active,.filter-btn:hover{background:var(--gold);color:#101010;border-color:var(--gold)}
+.filter-btn.active,.filter-btn:hover{background:var(--red);color:white;border-color:var(--red)}
 .search-box{
  display:block;width:min(400px,100%);margin:0 auto 30px;
  padding:14px 18px;border:1px solid #ddd;border-radius:30px;
  font-family:inherit;outline:none;
 }
-.search-box:focus{border-color:var(--gold)}
+.search-box:focus{border-color:var(--red)}
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .product-card{
  background:white;border-radius:15px;overflow:hidden;
@@ -360,7 +361,7 @@ nav a:hover{color:var(--gold)}
 .product-card:hover{transform:translateY(-7px);box-shadow:0 15px 35px #0002}
 .product-card img{width:100%;height:235px;object-fit:cover;background:#eee}
 .product-info{padding:20px}
-.product-info small{color:var(--gold);font-size:10px;font-weight:900;text-transform:uppercase}
+.product-info small{color:var(--red);font-size:10px;font-weight:900;text-transform:uppercase}
 .product-info h3{font-size:16px;margin:8px 0}
 .product-info p{color:#777;font-size:12px;line-height:1.6;margin-bottom:15px}
 .product-info .btn{width:100%;padding:12px;font-size:10px}
@@ -374,11 +375,11 @@ nav a:hover{color:var(--gold)}
  text-align:center;box-shadow:0 12px 35px #00000008;
  transition:.3s;
 }
-.team-card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.team-card:hover{transform:translateY(-6px);border-color:#e5092444}
 .team-avatar{
  width:130px;height:130px;border-radius:50%;margin:0 auto 20px;
  display:grid;place-items:center;background:#fff0f1;
- border:4px solid var(--gold);color:var(--red);font-size:38px;
+ border:4px solid var(--red);color:var(--red);font-size:38px;
  overflow:hidden;
 }
 .team-avatar img{
@@ -388,12 +389,12 @@ nav a:hover{color:var(--gold)}
 .team-role{color:var(--red);font-size:11px;font-weight:800;margin:9px 0 15px}
 .team-card p{color:#777;font-size:13px;line-height:1.8}
 
-/* ABOUT CON LOGOTIPO PRINCIPAL ANIMADO NEÓN NAVIDEÑO */
+/* ABOUT CON LOGOTIPO PRINCIPAL ANIMADO NEÓN */
 .about{background:#111;color:white}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center}
 .about-logo{
  padding:5px;
- background:linear-gradient(135deg, #e50924, #d4af37, #ffffff, #e50924);
+ background:linear-gradient(135deg, #e50924, #101010, #ffffff, #e50924);
  background-size:300% 300%;
  border-radius:24px;
  text-align:center;
@@ -418,7 +419,7 @@ nav a:hover{color:var(--gold)}
  background:linear-gradient(
   to right,
   rgba(255,255,255,0) 0%,
-  rgba(212, 175, 55, 0.2) 50%,
+  rgba(229, 9, 36, 0.18) 50%,
   rgba(255,255,255,0) 100%
  );
  transform:rotate(25deg);
@@ -427,7 +428,7 @@ nav a:hover{color:var(--gold)}
 }
 .about-logo:hover{
  transform:scale(1.03) translateY(-4px);
- box-shadow:0 0 28px var(--gold), 0 0 48px rgba(255,255,255,0.45);
+ box-shadow:0 0 28px #e50924, 0 0 48px rgba(255,255,255,0.45);
 }
 .about-logo img{
  width:100%;max-width:350px;object-fit:contain;position:relative;z-index:1;
@@ -435,10 +436,10 @@ nav a:hover{color:var(--gold)}
 
 @keyframes aboutLogoNeon {
  0%, 100% {
-  box-shadow: 0 0 18px rgba(212, 175, 55, 0.65), 0 0 32px rgba(229, 9, 36, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 18px rgba(229, 9, 36, 0.65), 0 0 32px rgba(255, 255, 255, 0.18), inset 0 0 10px rgba(0, 0, 0, 0.8);
  }
  50% {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.95), 0 0 52px rgba(229, 9, 36, 0.6), inset 0 0 14px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 30px rgba(229, 9, 36, 0.95), 0 0 52px rgba(255, 255, 255, 0.35), inset 0 0 14px rgba(0, 0, 0, 0.9);
  }
 }
 
@@ -469,7 +470,7 @@ nav a:hover{color:var(--gold)}
  box-shadow:0 10px 30px #0000000b;
 }
 .contact-line{display:flex;gap:15px;margin:22px 0;align-items:flex-start}
-.contact-line i{color:var(--gold);font-size:21px;width:25px}
+.contact-line i{color:var(--red);font-size:21px;width:25px}
 .contact-line strong{display:block;font-size:13px;margin-bottom:5px}
 .contact-line span{font-size:12px;color:#777;line-height:1.6}
 .map-frame{width:100%;height:340px;border:0;border-radius:16px}
@@ -481,30 +482,30 @@ footer{background:#090909;color:white;padding:45px 0 20px}
 .footer-brand p{color:#aaa;font-size:12px;line-height:1.8;margin-top:15px;max-width:300px}
 footer h3{font-size:14px;margin-bottom:17px}
 .footer-links{display:grid;gap:12px;font-size:12px;color:#bbb}
-.footer-links a:hover{color:var(--gold)}
+.footer-links a:hover{color:var(--red)}
 .footer-social{display:flex;gap:12px;margin-top:15px}
 .footer-bottom{
  border-top:1px solid #ffffff20;margin-top:35px;padding-top:20px;
  text-align:center;color:#777;font-size:10px;
 }
 
-/* WHATSAPP FLOTANTE CON ILUMINACIÓN NEÓN DORADA Y ROJA */
+/* WHATSAPP FLOTANTE CON ILUMINACIÓN NEÓN */
 .float-wa{
  position:fixed;right:20px;bottom:20px;z-index:999;
  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
  color:white;background:#25D366;font-size:27px;
- box-shadow: 0 0 12px rgba(212, 175, 55, 0.8), 0 0 22px rgba(229, 9, 36, 0.5), 0 8px 25px rgba(37, 211, 102, 0.5);
+ box-shadow: 0 0 12px rgba(229, 9, 36, 0.7), 0 0 22px rgba(255, 255, 255, 0.4), 0 8px 25px rgba(37, 211, 102, 0.5);
  animation: ctaPulse 2s infinite, waNeonGlow 3s infinite;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .float-wa:hover{
  transform:scale(1.12);
- box-shadow: 0 0 20px var(--gold), 0 0 35px #ffffff, 0 0 45px #25D366;
+ box-shadow: 0 0 20px #e50924, 0 0 35px #ffffff, 0 0 45px #25D366;
 }
 
 @keyframes waNeonGlow {
- 0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.6), 0 0 20px rgba(229, 9, 36, 0.3), 0 8px 25px rgba(37, 211, 102, 0.4); }
- 50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.9), 0 0 30px rgba(229, 9, 36, 0.6), 0 8px 25px rgba(37, 211, 102, 0.8); }
+ 0%, 100% { box-shadow: 0 0 10px rgba(229, 9, 36, 0.6), 0 0 20px rgba(255, 255, 255, 0.3), 0 8px 25px rgba(37, 211, 102, 0.4); }
+ 50% { box-shadow: 0 0 20px rgba(229, 9, 36, 0.9), 0 0 30px rgba(255, 255, 255, 0.6), 0 8px 25px rgba(37, 211, 102, 0.8); }
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -546,9 +547,9 @@ footer h3{font-size:14px;margin-bottom:17px}
 
 <body>
 
-<!-- CINTILLO NAVIDEÑO SUPERIOR -->
+<!-- CINTILLO NAVIDEÑO CORPORATIVO -->
 <div class="holiday-banner-top">
- <span>🎄 Especial Navidad:</span> Regala salud visual y estilo esta temporada en miÓptica 🎁
+ <span>❄️ Especial Navidad miÓptica:</span> Regala salud visual y estilo en estas fiestas 🎁
 </div>
 
 <header>
@@ -581,18 +582,21 @@ footer h3{font-size:14px;margin-bottom:17px}
 
 <main>
 <section class="hero" id="inicio">
+ <!-- Contenedor de nieve interactivo -->
+ <div class="snow-container" id="snowContainer"></div>
+
  <div class="container hero-grid">
   <div class="hero-copy">
    <span class="eyebrow">✨ ESPECIAL NAVIDAD Y FIN DE AÑO</span>
    <h1>Esta Navidad, regala una visión <span>espectacular.</span></h1>
-   <p>Celebra estas fiestas cuidando tu salud visual y luciendo las mejores tendencias. En miÓptica tenemos el detalle perfecto para ti y tus seres queridos.</p>
+   <p>En miÓptica combinamos más de 20 años de experiencia, salud visual y estilo navideño para ayudarte a ver bien y lucir como te gusta en estas fiestas.</p>
    <div class="hero-actions">
     <a class="btn btn-primary" href="#catalogo"><i class="fas fa-glasses"></i> Ver catálogo</a>
     <a class="btn btn-outline" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20agendar%20una%20cita%20navide%C3%B1a." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agenda tu cita</a>
    </div>
   </div>
   
-  <!-- CARRUSEL ADAPTADO CON TUS IMÁGENES -->
+  <!-- CARRUSEL DE BANNERS -->
   <div class="hero-carousel" id="heroCarousel">
    <div class="carousel-track" id="carouselTrack">
     <div class="carousel-slide">
@@ -629,9 +633,9 @@ footer h3{font-size:14px;margin-bottom:17px}
 
 <section class="experience">
  <div class="container experience-grid">
-  <div class="experience-item"><strong>+20</strong><span>Años brindando luz en Ecuador</span></div>
+  <div class="experience-item"><strong>+20</strong><span>Años en el mercado ecuatoriano</span></div>
   <div class="experience-item"><strong>+30</strong><span>Años de experiencia en optometría</span></div>
-  <div class="experience-item"><strong>100%</strong><span>Garantía en esta temporada</span></div>
+  <div class="experience-item"><strong>100%</strong><span>Compromiso con tu salud visual</span></div>
  </div>
 </section>
 
@@ -647,7 +651,7 @@ footer h3{font-size:14px;margin-bottom:17px}
 <section class="brands-section">
  <div class="container">
   <div class="brands-heading">
-   <h3>ENCUENTRA LAS MEJORES MARCAS PARA REGALAR</h3>
+   <h3>ESTILO Y TENDENCIAS QUE INSPIRAN EN NAVIDAD</h3>
   </div>
   <div class="brands-window">
    <div class="brands-track">
@@ -669,9 +673,9 @@ footer h3{font-size:14px;margin-bottom:17px}
 <section class="categories">
  <div class="container">
   <div class="section-title">
-   <span>Opciones para regalar</span>
+   <span>Encuentra tu estilo</span>
    <h2>Una mirada que habla de ti</h2>
-   <p>Descubre colecciones exclusivas para lucir impecable en las fiestas navideñas.</p>
+   <p>Descubre opciones perfectas para regalar o estrenar en estas festividades.</p>
   </div>
   <div class="category-grid">
    <article class="category-card">
@@ -684,7 +688,7 @@ footer h3{font-size:14px;margin-bottom:17px}
    </article>
    <article class="category-card">
     <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=900" alt="Lentes y accesorios">
-    <div class="category-info"><h3>Lentes y accesorios</h3><p>Alternativas perfectas para regalar en navidad.</p></div>
+    <div class="category-info"><h3>Lentes y accesorios</h3><p>Alternativas ideales para complementar tu cuidado visual.</p></div>
    </article>
   </div>
  </div>
@@ -694,18 +698,18 @@ footer h3{font-size:14px;margin-bottom:17px}
  <div class="container kids-grid">
   <div class="kids-image">
    <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1000" alt="Niños disfrutando de sus actividades">
-   <div class="kids-sticker">¡Sonrisas y alegría navideña!</div>
+   <div class="kids-sticker">¡Magia y alegría navideña!</div>
   </div>
   <div class="kids-copy">
-   <span class="gold" style="font-size:12px;font-weight:900;letter-spacing:2px">ESPECIAL NAVIDEÑO INFANTIL</span>
-   <h2>La ilusión de los niños se ve mejor en <span class="red">navidad.</span></h2>
-   <p>En miÓptica tenemos monturas infantiles coloridas y seguras para que los más pequeños disfruten sus vacaciones y regresen a clases con total comodidad.</p>
+   <span class="red" style="font-size:12px;font-weight:900;letter-spacing:2px">ESPECIAL INFANTIL NAVIDEÑO</span>
+   <h2>La visión de tus hijos merece <span class="red">lo mejor.</span></h2>
+   <p>En miÓptica contamos con opciones de lentes y gafas infantiles para acompañar a los niños en sus vacaciones y festejos. Alternativas cómodas, coloridas y seguras.</p>
    <ul class="kids-points">
     <li><i class="fas fa-check-circle"></i> Diseños infantiles llenos de color y estilo festivo.</li>
-    <li><i class="fas fa-check-circle"></i> Materiales flexibles y resistentes a las travesuras.</li>
-    <li><i class="fas fa-check-circle"></i> Asesoría profesional para consentir a tus hijos.</li>
+    <li><i class="fas fa-check-circle"></i> Opciones cómodas para diferentes edades.</li>
+    <li><i class="fas fa-check-circle"></i> Asesoría profesional para elegir la montura adecuada.</li>
    </ul>
-   <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20informaci%C3%B3n%20sobre%20lentes%20infantiles%20para%20navidad." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar modelos infantiles</a>
+   <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20quisiera%20informaci%C3%B3n%20sobre%20lentes%20infantiles%20navide%C3%B1os." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar modelos infantiles</a>
   </div>
  </div>
 </section>
@@ -713,9 +717,9 @@ footer h3{font-size:14px;margin-bottom:17px}
 <section class="catalog" id="catalogo">
  <div class="container">
   <div class="section-title">
-   <span>Catálogo festivo</span>
+   <span>Explora nuestra selección</span>
    <h2>Encuentra tus próximos lentes</h2>
-   <p>Conoce algunos estilos y consulta por WhatsApp la disponibilidad para estrenar en fiestas.</p>
+   <p>Conoce algunos estilos y consulta por WhatsApp la disponibilidad de modelos para obsequiar.</p>
   </div>
 
   <input class="search-box" id="productSearch" type="search" placeholder="Buscar gafas, armazones, infantiles...">
@@ -731,27 +735,27 @@ footer h3{font-size:14px;margin-bottom:17px}
   <div class="product-grid" id="productGrid">
    <article class="product-card" data-category="sol">
     <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800" alt="Gafas de sol modernas">
-    <div class="product-info"><small>Gafas de sol</small><h3>Estilo urbano</h3><p>Diseños actuales para complementar tu look festivo.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20gafas%20de%20sol%20navideñas.">Consultar por WhatsApp</a></div>
+    <div class="product-info"><small>Gafas de sol</small><h3>Estilo urbano</h3><p>Diseños actuales para complementar tu look festivo.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20gafas%20de%20sol.">Consultar por WhatsApp</a></div>
    </article>
    <article class="product-card" data-category="opticos">
     <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=800" alt="Armazón óptico">
-    <div class="product-info"><small>Armazones</small><h3>Elegancia diaria</h3><p>Monturas ideales para renovar tu imagen en año nuevo.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20armazones.">Consultar por WhatsApp</a></div>
+    <div class="product-info"><small>Armazones</small><h3>Elegancia diaria</h3><p>Monturas para diferentes estilos y preferencias en fiestas.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20armazones.">Consultar por WhatsApp</a></div>
    </article>
    <article class="product-card" data-category="infantil">
     <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800" alt="Colección infantil">
-    <div class="product-info"><small>Infantiles</small><h3>Pequeños estilos</h3><p>Opciones divertidas y seguras para los niños.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20lentes%20infantiles.">Consultar por WhatsApp</a></div>
+    <div class="product-info"><small>Infantiles</small><h3>Pequeños estilos</h3><p>Opciones ideales para regalar a los niños.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20lentes%20infantiles.">Consultar por WhatsApp</a></div>
    </article>
    <article class="product-card" data-category="sol">
     <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800" alt="Gafas de sol clásicas">
-    <div class="product-info"><small>Gafas de sol</small><h3>Clásicos que destacan</h3><p>Una opción perfecta para obsequiar.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20ver%20gafas%20clásicas.">Consultar por WhatsApp</a></div>
+    <div class="product-info"><small>Gafas de sol</small><h3>Clásicos que destacan</h3><p>Una opción perfecta para cada ocasión navideña.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20ver%20gafas%20de%20sol.">Consultar por WhatsApp</a></div>
    </article>
    <article class="product-card" data-category="opticos">
     <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?w=800" alt="Montura de diseño">
-    <div class="product-info"><small>Armazones</small><h3>Diseño y personalidad</h3><p>Encuentra una montura única para este cierre de año.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20información%20sobre%20monturas.">Consultar por WhatsApp</a></div>
+    <div class="product-info"><small>Armazones</small><h3>Diseño y personalidad</h3><p>Encuentra una montura única para este fin de año.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20información%20sobre%20monturas.">Consultar por WhatsApp</a></div>
    </article>
    <article class="product-card" data-category="accesorios">
     <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=800" alt="Accesorios ópticos">
-    <div class="product-info"><small>Accesorios</small><h3>Complementos visuales</h3><p>Todo lo necesario para el cuidado de tus lentes.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20accesorios.">Consultar por WhatsApp</a></div>
+    <div class="product-info"><small>Accesorios</small><h3>Complementos visuales</h3><p>Consulta por accesorios ideales para obsequiar.</p><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/593998901364?text=Hola,%20quisiera%20consultar%20por%20accesorios.">Consultar por WhatsApp</a></div>
    </article>
   </div>
   <p class="empty-message" id="emptyMessage">No encontramos productos con esa búsqueda.</p>
@@ -762,9 +766,9 @@ footer h3{font-size:14px;margin-bottom:17px}
 <section class="team" id="equipo">
  <div class="container">
   <div class="section-title">
-   <span>Experiencia y calidez</span>
+   <span>Experiencia y asesoría</span>
    <h2>El equipo humano detrás de miÓptica</h2>
-   <p>Listos para atenderte con la mejor asesoría en estas fiestas.</p>
+   <p>Comprometidas en brindarte la mejor atención y calidez en estas fiestas.</p>
   </div>
   <div class="team-grid">
    <article class="team-card">
@@ -773,7 +777,7 @@ footer h3{font-size:14px;margin-bottom:17px}
     </div>
     <h3>Blanca Tobar</h3>
     <div class="team-role">LICENCIADA EN OPTOMETRÍA · GERENTE PROPIETARIA</div>
-    <p>Profesional en Optometría y gerente propietaria de miÓptica, con más de 30 años de experiencia cuidando la salud visual de las familias ecuatorianas.</p>
+    <p>Profesional en Optometría y gerente propietaria de miÓptica, con más de 30 años de experiencia cuidando la salud visual de los ecuatorianos.</p>
    </article>
    <article class="team-card">
     <div class="team-avatar">
@@ -781,7 +785,7 @@ footer h3{font-size:14px;margin-bottom:17px}
     </div>
     <h3>Maryory Tovar Pinzón</h3>
     <div class="team-role">ASESORA DE IMAGEN Y TENDENCIAS ÓPTICAS</div>
-    <p>Especialista en imagen y tendencias. Te guía para encontrar el estilo perfecto que combine con tu personalidad en esta temporada navideña.</p>
+    <p>Especialista en imagen y tendencias ópticas. Te acompaña a elegir monturas y estilos ideales para armonizar en esta temporada.</p>
    </article>
   </div>
  </div>
@@ -795,11 +799,11 @@ footer h3{font-size:14px;margin-bottom:17px}
    </div>
   </div>
   <div class="about-copy">
-   <span style="color:var(--gold);font-size:12px;font-weight:900;letter-spacing:3px">NUESTRA HISTORIA NAVIDEÑA</span>
-   <h2>Más de 20 años celebrando el mundo junto a ti.</h2>
-   <p>miÓptica ha acompañado a los hogares ecuatorianos durante más de dos décadas, ofreciendo calidad, garantía y un servicio lleno de calidez humana.</p>
-   <p>En estas festividades, reafirmamos nuestro compromiso de ayudarte a ver bien y lucir espectacular para recibir el nuevo año.</p>
-   <div class="about-highlight">miÓptica — Servicio con Calidad y garantía. ¡Feliz Navidad!</div>
+   <span style="color:#ff5267;font-size:12px;font-weight:900;letter-spacing:3px">NUESTRA HISTORIA</span>
+   <h2>Más de 20 años viendo el mundo contigo.</h2>
+   <p>miÓptica lleva más de dos décadas formando parte del mercado ecuatoriano, construyendo una historia de dedicación, experiencia y compromiso con la visión.</p>
+   <p>En estas fechas especiales, unimos atención profesional y asesoría personalizada para ofrecerte una experiencia cercana, confiable y festiva.</p>
+   <div class="about-highlight">miÓptica — Servicio con Calidad y garantía. ¡Felices Fiestas!</div>
   </div>
  </div>
 </section>
@@ -809,15 +813,15 @@ footer h3{font-size:14px;margin-bottom:17px}
   <div class="section-title">
    <span>Estamos para atenderte</span>
    <h2>Visítanos en miÓptica</h2>
-   <p>Agenda tu cita navideña o visítanos en nuestro local.</p>
+   <p>Agenda tu cita o escríbenos para recibir información sobre nuestros servicios navideños.</p>
   </div>
   <div class="contact-grid">
    <div class="contact-card">
     <h3>Información de contacto</h3>
     <div class="contact-line"><i class="fas fa-location-dot"></i><div><strong>Ubicación</strong><span>San Rafael, Valle de los Chillos, Av. General Rumiñahui 1062 e Isla Pinta diagonal a San Luis Shopping, Ecuador.</span></div></div>
     <div class="contact-line"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span>+593 998 901 364</span></div></div>
-    <div class="contact-line"><i class="fas fa-clock"></i><div><strong>Atención</strong><span>Contáctanos para consultar horarios especiales de fiestas.</span></div></div>
-    <a class="btn btn-primary" style="width:100%;margin-top:15px" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20agendar%20una%20cita%20festiva." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agenda tu cita</a>
+    <div class="contact-line"><i class="fas fa-clock"></i><div><strong>Atención</strong><span>Contáctanos para consultar horarios especiales de temporada.</span></div></div>
+    <a class="btn btn-primary" style="width:100%;margin-top:15px" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agenda tu cita</a>
     <div class="footer-social">
      <a class="social-btn" href="https://www.facebook.com/share/1Fhuok7UVF/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
      <a class="social-btn" href="https://www.instagram.com/miopticauio?cplk=NjRqYWY5OHhwOGs0" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
@@ -837,7 +841,7 @@ footer h3{font-size:14px;margin-bottom:17px}
   <div class="footer-grid">
    <div class="footer-brand">
     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="miÓptica">
-    <p>Más de 20 años cuidando la visión de los ecuatorianos. ¡Felices fiestas y próspero año nuevo les desea miÓptica!</p>
+    <p>Más de 20 años cuidando la visión de los ecuatorianos. ¡Feliz Navidad y próspero año nuevo les desea miÓptica!</p>
    </div>
    <div>
     <h3>Explora miÓptica</h3>
@@ -859,13 +863,35 @@ footer h3{font-size:14px;margin-bottom:17px}
     </div>
    </div>
   </div>
-  <div class="footer-bottom">© 2026 miÓptica. Todos los derechos reservados. · ¡Feliz Navidad y Próspero Año Nuevo!</div>
+  <div class="footer-bottom">© 2026 miÓptica. Todos los derechos reservados. · Servicio con Calidad y garantía.</div>
  </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20quisiera%20información%20navideña." target="_blank" rel="noopener" aria-label="Escribir a miÓptica por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a class="float-wa" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20quisiera%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir a miÓptica por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <script>
+// Script de generación automática de copos de nieve corporativos
+const snowContainer = document.getElementById('snowContainer');
+const numberOfSnowflakes = 35;
+
+for (let i = 0; i < numberOfSnowflakes; i++) {
+ const snowflake = document.createElement('div');
+ snowflake.classList.add('snowflake');
+ 
+ const size = Math.random() * 6 + 4 + 'px';
+ snowflake.style.width = size;
+ snowflake.style.height = size;
+ snowflake.style.left = Math.random() * 100 + '%';
+ snowflake.style.top = -10 + 'px';
+ 
+ const duration = Math.random() * 5 + 4 + 's';
+ const delay = Math.random() * 5 + 's';
+ snowflake.style.animationDuration = duration;
+ snowflake.style.animationDelay = delay;
+ 
+ snowContainer.appendChild(snowflake);
+}
+
 // Script de filtrado de productos
 const filterButtons=document.querySelectorAll('.filter-btn');
 const products=document.querySelectorAll('.product-card');
