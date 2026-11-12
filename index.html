@@ -28,11 +28,12 @@ body{
  font-family:'Montserrat',sans-serif;
  background:#fff;color:#171717;
  overflow-x:hidden;
+ position:relative;
 }
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer}
 .container{width:min(1160px,92%);margin:auto}
-section{padding:85px 0}
+section{padding:85px 0;position:relative}
 .section-title{text-align:center;margin-bottom:42px}
 .section-title span{
  color:var(--red);font-size:12px;font-weight:800;
@@ -45,19 +46,26 @@ section{padding:85px 0}
 .section-title p{color:#777;line-height:1.7;max-width:650px;margin:auto;font-size:14px}
 .red{color:var(--red)}
 
-/* CINTILLO NAVIDEÑO CORPORATIVO */
-.holiday-banner-top {
- background: linear-gradient(90deg, #101010, var(--red), #101010);
- color: white;
- text-align: center;
- padding: 8px 15px;
- font-size: 11px;
- font-weight: 800;
- letter-spacing: 1.5px;
- text-transform: uppercase;
- border-bottom: 2px solid var(--red);
+/* NIEVE GLOBAL VISIBLE EN TODAS LAS SECCIONES */
+.snow-container {
+ position: fixed;
+ top: 0; left: 0; width: 100%; height: 100%;
+ pointer-events: none;
+ overflow: hidden;
+ z-index: 998;
 }
-.holiday-banner-top span { color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.8); }
+.snowflake {
+ position: absolute;
+ background: #e50924;
+ border-radius: 50%;
+ opacity: 0.55;
+ animation: fall linear infinite;
+}
+@keyframes fall {
+ 0% { transform: translateY(-10px) translateX(0); }
+ 50% { transform: translateY(50vh) translateX(15px); }
+ 100% { transform: translateY(105vh) translateX(-15px); }
+}
 
 /* HEADER */
 header{
@@ -70,17 +78,36 @@ header{
 }
 .brand-area{display:flex;align-items:center;gap:15px}
 
-/* LOGOTIPOS CON ILUMINACIÓN NEÓN TRICOLOR CORPORATIVA */
+/* LOGOTIPO CON GORRO NAVIDEÑO ANIMADO Y NEÓN CORPORATIVO */
+.logo-wrapper{
+ position:relative;
+ display:inline-block;
+ flex-shrink:0;
+}
+.xmas-hat {
+ position: absolute;
+ top: -16px;
+ right: -8px;
+ font-size: 24px;
+ transform: rotate(15deg);
+ z-index: 10;
+ animation: hatFloat 3s ease-in-out infinite;
+ filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+@keyframes hatFloat {
+ 0%, 100% { transform: rotate(15deg) translateY(0); }
+ 50% { transform: rotate(20deg) translateY(-3px); }
+}
+
 .logo-frame{
  width:66px;height:66px;border-radius:50%;padding:3px;
  background:linear-gradient(135deg, #e50924, #101010, #ffffff, #e50924);
  background-size: 300% 300%;
  animation: tricolorGlow 4s ease infinite, logoFloat 3s ease-in-out infinite;
- flex-shrink:0;
  box-shadow: 0 0 12px rgba(229, 9, 36, 0.6), 0 0 22px rgba(255, 255, 255, 0.2), inset 0 0 8px rgba(0, 0, 0, 0.8);
  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.logo-frame:hover {
+.logo-wrapper:hover .logo-frame {
  transform: scale(1.08);
  box-shadow: 0 0 20px #e50924, 0 0 35px #ffffff;
 }
@@ -154,34 +181,12 @@ nav a:hover{color:var(--red)}
  50%{box-shadow:0 0 0 9px #e5092400}
 }
 
-/* HERO CON EFECTO DE NIEVE DINÁMICO */
+/* HERO */
 .hero{
  min-height:590px;color:#171717;display:flex;align-items:center;
  background:linear-gradient(100deg,#fcfcfc 0%,#f2f2f2 65%,#fae8eb 100%);
  position:relative;overflow:hidden;
 }
-
-/* Contenedor de nieve interactivo */
-.snow-container {
- position: absolute;
- top: 0; left: 0; width: 100%; height: 100%;
- pointer-events: none;
- overflow: hidden;
- z-index: 1;
-}
-.snowflake {
- position: absolute;
- background: #e50924;
- border-radius: 50%;
- opacity: 0.6;
- animation: fall linear infinite;
-}
-@keyframes fall {
- 0% { transform: translateY(-10px) translateX(0); }
- 50% { transform: translateY(300px) translateX(15px); }
- 100% { transform: translateY(620px) translateX(-15px); }
-}
-
 .hero:before{
  content:"";position:absolute;width:500px;height:500px;
  border:1px solid #e5092422;border-radius:50%;
@@ -489,7 +494,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  text-align:center;color:#777;font-size:10px;
 }
 
-/* WHATSAPP FLOTANTE CON ILUMINACIÓN NEÓN */
+/* WHATSAPP FLOTANTE CON NEÓN */
 .float-wa{
  position:fixed;right:20px;bottom:20px;z-index:999;
  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
@@ -547,16 +552,17 @@ footer h3{font-size:14px;margin-bottom:17px}
 
 <body>
 
-<!-- CINTILLO NAVIDEÑO CORPORATIVO -->
-<div class="holiday-banner-top">
- <span>❄️ Especial Navidad miÓptica:</span> Regala salud visual y estilo en estas fiestas 🎁
-</div>
+<!-- CONTENEDOR GLOBAL DE NIEVE EN TODAS LAS SECCIONES -->
+<div class="snow-container" id="snowContainer"></div>
 
 <header>
  <div class="container header-inner">
   <a href="#inicio" class="brand-area">
-   <div class="logo-frame">
-    <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo oficial miÓptica">
+   <div class="logo-wrapper">
+    <div class="xmas-hat">🎅</div>
+    <div class="logo-frame">
+     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg" alt="Logotipo oficial miÓptica">
+    </div>
    </div>
    <div class="brand-name">mi<span>Óptica</span></div>
   </a>
@@ -582,9 +588,6 @@ footer h3{font-size:14px;margin-bottom:17px}
 
 <main>
 <section class="hero" id="inicio">
- <!-- Contenedor de nieve interactivo -->
- <div class="snow-container" id="snowContainer"></div>
-
  <div class="container hero-grid">
   <div class="hero-copy">
    <span class="eyebrow">✨ ESPECIAL NAVIDAD Y FIN DE AÑO</span>
@@ -870,9 +873,9 @@ footer h3{font-size:14px;margin-bottom:17px}
 <a class="float-wa" href="https://wa.me/593998901364?text=Hola%20mi%C3%93ptica,%20quisiera%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir a miÓptica por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-// Script de generación automática de copos de nieve corporativos
+// Script de generación automática de copos de nieve globales
 const snowContainer = document.getElementById('snowContainer');
-const numberOfSnowflakes = 35;
+const numberOfSnowflakes = 40;
 
 for (let i = 0; i < numberOfSnowflakes; i++) {
  const snowflake = document.createElement('div');
@@ -884,7 +887,7 @@ for (let i = 0; i < numberOfSnowflakes; i++) {
  snowflake.style.left = Math.random() * 100 + '%';
  snowflake.style.top = -10 + 'px';
  
- const duration = Math.random() * 5 + 4 + 's';
+ const duration = Math.random() * 6 + 4 + 's';
  const delay = Math.random() * 5 + 's';
  snowflake.style.animationDuration = duration;
  snowflake.style.animationDelay = delay;
