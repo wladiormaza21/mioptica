@@ -299,7 +299,7 @@ nav a:hover{color:var(--red)}
 .benefit strong{display:block;font-size:12px}
 .benefit small{display:block;color:#777;font-size:10px;margin-top:4px}
 
-/* SECCIÓN DE VIDEO / TIKTOK INTEGRADO */
+/* SECCIÓN DE VIDEO LOCAL */
 .video-showcase {
  background: linear-gradient(135deg, #101010 0%, #1a1a1a 100%);
  color: white;
@@ -371,9 +371,13 @@ nav a:hover{color:var(--red)}
  transform: translateY(-5px);
  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(229, 9, 36, 0.35);
 }
-.video-wrapper-card iframe {
+.video-wrapper-card video {
+ width: 100%;
+ max-width: 325px;
+ height: auto;
  border-radius: 12px;
- max-width: 100%;
+ outline: none;
+ display: block;
 }
 
 /* BRANDS */
@@ -735,13 +739,13 @@ footer h3{font-size:14px;margin-bottom:17px}
  </div>
 </section>
 
-<!-- SECCIÓN DE VIDEO / TIKTOK INTEGRADO (CORREGIDO CON EL REPRODUCTOR OFICIAL) -->
+<!-- SECCIÓN DE VIDEO LOCAL INTEGRADO -->
 <section class="video-showcase" id="experiencia-video">
  <div class="container video-container-grid">
   <div class="video-copy">
    <span class="eyebrow">✨ MAGIA Y TENDENCIAS EN MOVIMIENTO</span>
    <h2>Vive la experiencia <span class="red">MiÓptica</span></h2>
-   <p>Descubre nuestro espacio, la dedicación de nuestros especialistas y el contenido especial que preparamos para ti en TikTok.</p>
+   <p>Descubre nuestro espacio, la dedicación de nuestros especialistas y el contenido especial que preparamos para ti.</p>
    <ul class="video-features">
     <li><i class="fas fa-check-circle"></i> Tecnología óptica de vanguardia en San Rafael.</li>
     <li><i class="fas fa-check-circle"></i> Asesoría profesional y cálida atención personalizada.</li>
@@ -750,7 +754,10 @@ footer h3{font-size:14px;margin-bottom:17px}
    <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20vi%20su%20video%20y%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Visítanos o agenda tu cita</a>
   </div>
   <div class="video-wrapper-card">
-   <iframe height="578" width="325" src="https://www.tiktok.com/player/v1/7701341515989142804?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" title="✨ ¡MIRA EL MUNDO CON ESTILO, VIVE CADA DETALLE! 👓❤️ En miÓptica tenemos los lentes ideales para realzar tu estilo y acompañarte en cada momento. 😎✨ Descubre diseños modernos, elegantes y versátiles que combinan moda, personalidad y bienestar visual. 💎 Tu mirada merece lo mejor. Encuentra tus próximos lentes favoritos y luce una imagen que hable por ti. 📍 Visítanos en miÓptica Estamos en San Rafael, Valle de los Chillos, diagonal a San Luis Shopping. 📲 ¡Agenda tu cita hoy mismo! WhatsApp: 099 890 1364 ❤️ En miÓptica, ver bien también es verte bien. ✨ ¡Te esperamos para encontrar los lentes perfectos para ti! #miÓptica #LentesDeModa #EstiloYElegancia #SaludVisual #Óptica" allowfullscreen loading="lazy"></iframe>
+   <video controls autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/2026-10-27-083741571.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de videos.
+   </video>
   </div>
  </div>
 </section>
@@ -985,7 +992,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20quisiera%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Escribir a MiÓptica por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a class="float-wa" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20quisiera%20informaci%C3%3N." target="_blank" rel="noopener" aria-label="Escribir a MiÓptica per WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
 <script>
 // Script de generación automática de copos de nieve globales
