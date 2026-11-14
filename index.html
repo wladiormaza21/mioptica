@@ -376,6 +376,38 @@ nav a:hover{color:var(--red)}
  object-fit: cover;
  background: #000;
 }
+.video-fallback-box {
+ display: none;
+ position: relative;
+ border-radius: 14px;
+ overflow: hidden;
+ background: #111;
+ text-align: center;
+}
+.video-fallback-box img {
+ width: 100%;
+ max-height: 440px;
+ object-fit: cover;
+ display: block;
+ opacity: 0.45;
+}
+.video-fallback-overlay {
+ position: absolute;
+ inset: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: linear-gradient(to top, rgba(16,16,16,0.92), rgba(16,16,16,0.45));
+}
+.video-fallback-overlay p {
+ color: #fff;
+ font-size: 13px;
+ font-weight: 700;
+ margin-bottom: 14px;
+ max-width: 340px;
+}
 
 /* BRANDS */
 .brands-section{background:#fff;padding:45px 0;border-bottom:1px solid #eee}
@@ -751,10 +783,18 @@ footer h3{font-size:14px;margin-bottom:17px}
    <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20vi%20su%20video%20y%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Visítanos o agenda tu cita</a>
   </div>
   <div class="video-wrapper-card">
-   <video controls autoplay muted loop playsinline poster="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg">
-    <source src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/2026-10-27-083347824.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de videos.
+   <video id="promoVideo" controls autoplay muted loop playsinline preload="metadata" poster="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg">
+    <source src="2026-10-27-083347824.mp4">
+    <source src="https://media.githubusercontent.com/media/wladiormaza21/mioptica/main/2026-10-27-083347824.mp4">
+    <source src="https://raw.githubusercontent.com/wladiormaza21/mioptica/main/2026-10-27-083347824.mp4">
    </video>
+   <div class="video-fallback-box" id="videoFallback">
+    <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg" alt="Experiencia MiÓptica">
+    <div class="video-fallback-overlay">
+     <p>Tu navegador de escritorio requiere abrir el video directamente para reproducir este formato.</p>
+     <a class="btn btn-primary" href="https://raw.githubusercontent.com/wladiormaza21/mioptica/main/2026-10-27-083347824.mp4" target="_blank" rel="noopener"><i class="fas fa-play"></i> Ver video completo</a>
+    </div>
+   </div>
   </div>
  </div>
 </section>
@@ -1026,6 +1066,28 @@ setInterval(() => {
  }, 200);
 }, 1200);
 
+// Control de respaldo para el video en navegadores sin códec HEVC o MIME estricto
+const promoVideo = document.getElementById('promoVideo');
+const videoFallback = document.getElementById('videoFallback');
+const videoSources = promoVideo.querySelectorAll('source');
+let failedSources = 0;
+
+function showVideoFallback() {
+ promoVideo.style.display = 'none';
+ videoFallback.style.display = 'block';
+}
+
+videoSources.forEach(src => {
+ src.addEventListener('error', () => {
+  failedSources++;
+  if (failedSources >= videoSources.length) {
+   showVideoFallback();
+  }
+ });
+});
+
+promoVideo.addEventListener('error', showVideoFallback);
+
 // Script de filtrado de productos
 const filterButtons=document.querySelectorAll('.filter-btn');
 const products=document.querySelectorAll('.product-card');
@@ -1080,7 +1142,7 @@ dots.forEach(dot => {
  dot.addEventListener('click', (e) => {
   clearInterval(carouselInterval);
   currentIndex = parseInt(e.target.dataset.index);
-  updateCardCarousel: updateCarousel(currentIndex);
+  updateCarousel(currentIndex);
   carouselInterval = setInterval(nextSlide, 4000);
  });
 });
