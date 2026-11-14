@@ -299,7 +299,7 @@ nav a:hover{color:var(--red)}
 .benefit strong{display:block;font-size:12px}
 .benefit small{display:block;color:#777;font-size:10px;margin-top:4px}
 
-/* SECCIÓN DE VIDEO DESTACADO PROFESIONAL Y ESTÉTICO */
+/* SECCIÓN DE VIDEO / TIKTOK DESTACADO PROFESIONAL */
 .video-showcase {
  background: linear-gradient(135deg, #101010 0%, #1a1a1a 100%);
  color: white;
@@ -356,74 +356,24 @@ nav a:hover{color:var(--red)}
 .video-wrapper-card {
  background: #181818;
  border-radius: 20px;
- padding: 12px;
+ padding: 16px;
  border: 2px solid rgba(229, 9, 36, 0.4);
  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(229, 9, 36, 0.2);
  position: relative;
  overflow: hidden;
+ text-align: center;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .video-wrapper-card:hover {
  transform: translateY(-5px);
  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(229, 9, 36, 0.35);
 }
-.video-wrapper-card video {
- width: 100%;
- height: auto;
- max-height: 500px;
- display: block;
- border-radius: 14px;
- object-fit: cover;
- background: #000;
-}
-
-/* Tarjeta elegante interactiva si el navegador de escritorio bloquea medios locales */
-.video-interactive-banner {
- display: none;
- position: relative;
+.tiktok-embed-container {
  border-radius: 14px;
  overflow: hidden;
- background: #111;
- text-align: center;
-}
-.video-interactive-banner img {
- width: 100%;
- max-height: 440px;
- object-fit: cover;
- display: block;
- filter: brightness(0.65);
-}
-.video-interactive-overlay {
- position: absolute;
- inset: 0;
+ background: #000;
  display: flex;
- flex-direction: column;
- align-items: center;
  justify-content: center;
- padding: 24px;
- background: linear-gradient(to top, rgba(16,16,16,0.95), rgba(16,16,16,0.4));
-}
-.video-play-btn-pulse {
- width: 68px;
- height: 68px;
- background: var(--red);
- color: white;
- border-radius: 50%;
- display: grid;
- place-items: center;
- font-size: 24px;
- box-shadow: 0 0 25px rgba(229,9,36,0.8);
- animation: ctaPulse 2s infinite;
- margin-bottom: 15px;
- transition: transform 0.3s;
-}
-.video-play-btn-pulse:hover { transform: scale(1.15); }
-.video-interactive-overlay span {
- color: #fff;
- font-size: 13px;
- font-weight: 800;
- letter-spacing: 1px;
- text-transform: uppercase;
 }
 
 /* BRANDS */
@@ -785,13 +735,13 @@ footer h3{font-size:14px;margin-bottom:17px}
  </div>
 </section>
 
-<!-- SECCIÓN DE VIDEO DESTACADO PROFESIONAL -->
+<!-- SECCIÓN DE VIDEO / TIKTOK INTEGRADO -->
 <section class="video-showcase" id="experiencia-video">
  <div class="container video-container-grid">
   <div class="video-copy">
-   <span class="eyebrow">✨ MAGIA Y TECNOLOGÍA EN MOVIMIENTO</span>
+   <span class="eyebrow">✨ MAGIA Y TENDENCIAS EN MOVIMIENTO</span>
    <h2>Vive la experiencia <span class="red">MiÓptica</span></h2>
-   <p>Descubre nuestro espacio, la dedicación de nuestros especialistas y el ambiente festivo que preparamos para ti en estas fechas especiales.</p>
+   <p>Descubre nuestro espacio, la dedicación de nuestros especialistas y el contenido especial que preparamos para ti en TikTok.</p>
    <ul class="video-features">
     <li><i class="fas fa-check-circle"></i> Tecnología óptica de vanguardia en San Rafael.</li>
     <li><i class="fas fa-check-circle"></i> Asesoría profesional y cálida atención personalizada.</li>
@@ -800,18 +750,13 @@ footer h3{font-size:14px;margin-bottom:17px}
    <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20vi%20su%20video%20y%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Visítanos o agenda tu cita</a>
   </div>
   <div class="video-wrapper-card">
-   <video id="promoVideo" controls autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg">
-    <source src="2026-10-27-083741571.mp4" type="video/mp4">
-    <source src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/2026-10-27-083741571.mp4" type="video/mp4">
-   </video>
-   <div class="video-interactive-banner" id="videoFallback">
-    <a href="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/2026-10-27-083741571.mp4" target="_blank" rel="noopener" style="display:block; position:relative;">
-     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg" alt="Reproducir video MiÓptica">
-     <div class="video-interactive-overlay">
-      <div class="video-play-btn-pulse"><i class="fas fa-play"></i></div>
-      <span>Reproducir Experiencia MiÓptica</span>
-     </div>
-    </a>
+   <div class="tiktok-embed-container">
+    <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSpXnuprS/" data-video-id="ZSpXnuprS" style="max-width: 605px;min-width: 325px; margin: 0 auto; border-radius: 12px; overflow:hidden;">
+     <section> 
+      <a target="_blank" href="https://www.tiktok.com/@miopticauio?refer=embed">@miopticauio</a>
+     </section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
    </div>
   </div>
  </div>
@@ -1083,15 +1028,6 @@ setInterval(() => {
   xmasTree.style.opacity = '1';
  }, 200);
 }, 1200);
-
-// Control automático de respaldo inteligente para asegurar la visualización en navegadores de PC
-const promoVideo = document.getElementById('promoVideo');
-const videoFallback = document.getElementById('videoFallback');
-
-promoVideo.addEventListener('error', () => {
- promoVideo.style.display = 'none';
- videoFallback.style.display = 'block';
-});
 
 // Script de filtrado de productos
 const filterButtons=document.querySelectorAll('.filter-btn');
