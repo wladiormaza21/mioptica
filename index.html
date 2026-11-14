@@ -299,6 +299,84 @@ nav a:hover{color:var(--red)}
 .benefit strong{display:block;font-size:12px}
 .benefit small{display:block;color:#777;font-size:10px;margin-top:4px}
 
+/* SECCIÓN DE VIDEO DESTACADO PROFESIONAL */
+.video-showcase {
+ background: linear-gradient(135deg, #101010 0%, #1a1a1a 100%);
+ color: white;
+ padding: 80px 0;
+ position: relative;
+ overflow: hidden;
+}
+.video-showcase::before {
+ content: "";
+ position: absolute;
+ width: 400px; height: 400px;
+ background: rgba(229, 9, 36, 0.08);
+ border-radius: 50%;
+ top: -100px; right: -100px;
+ filter: blur(60px);
+ pointer-events: none;
+}
+.video-container-grid {
+ display: grid;
+ grid-template-columns: 1fr 1.1fr;
+ gap: 50px;
+ align-items: center;
+ position: relative;
+ z-index: 2;
+}
+.video-copy h2 {
+ font-size: clamp(28px, 4vw, 42px);
+ font-weight: 900;
+ line-height: 1.15;
+ margin: 15px 0 20px;
+}
+.video-copy h2 span { color: var(--red); }
+.video-copy p {
+ color: #ccc;
+ font-size: 15px;
+ line-height: 1.8;
+ margin-bottom: 25px;
+}
+.video-features {
+ list-style: none;
+ margin-bottom: 30px;
+}
+.video-features li {
+ margin: 12px 0;
+ font-size: 13px;
+ font-weight: 700;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ color: #eee;
+}
+.video-features li i { color: var(--red); font-size: 16px; }
+
+.video-wrapper-card {
+ background: #181818;
+ border-radius: 20px;
+ padding: 12px;
+ border: 2px solid rgba(229, 9, 36, 0.4);
+ box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(229, 9, 36, 0.2);
+ position: relative;
+ overflow: hidden;
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.video-wrapper-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(229, 9, 36, 0.35);
+}
+.video-wrapper-card video {
+ width: 100%;
+ height: auto;
+ max-height: 500px;
+ display: block;
+ border-radius: 14px;
+ object-fit: cover;
+ background: #000;
+}
+
 /* BRANDS */
 .brands-section{background:#fff;padding:45px 0;border-bottom:1px solid #eee}
 .brands-heading{text-align:center;margin-bottom:25px}
@@ -535,6 +613,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  .header-right{gap:12px}
  nav{gap:12px}
  .hero-grid{gap:25px}
+ .video-container-grid{grid-template-columns:1fr;gap:30px}
  .benefit-grid{grid-template-columns:repeat(2,1fr)}
  .product-grid{grid-template-columns:repeat(2,1fr)}
  .category-grid{grid-template-columns:repeat(2,1fr)}
@@ -590,6 +669,7 @@ footer h3{font-size:14px;margin-bottom:17px}
    </div>
    <nav id="mainNav">
     <a href="#inicio">INICIO</a>
+    <a href="#experiencia-video">EXPERIENCIA</a>
     <a href="#catalogo">CATÁLOGO</a>
     <a href="#infantil">NIÑOS</a>
     <a href="#equipo">NUESTRO EQUIPO</a>
@@ -653,6 +733,29 @@ footer h3{font-size:14px;margin-bottom:17px}
   <div class="experience-item"><strong>+20</strong><span>Años en el mercado ecuatoriano</span></div>
   <div class="experience-item"><strong>+30</strong><span>Años de experiencia en optometría</span></div>
   <div class="experience-item"><strong>100%</strong><span>Compromiso con tu salud visual</span></div>
+ </div>
+</section>
+
+<!-- SECCIÓN DE VIDEO DESTACADO PROFESIONAL -->
+<section class="video-showcase" id="experiencia-video">
+ <div class="container video-container-grid">
+  <div class="video-copy">
+   <span class="eyebrow">✨ MAGIA Y TECNOLOGÍA EN MOVIMIENTO</span>
+   <h2>Vive la experiencia <span class="red">MiÓptica</span></h2>
+   <p>Descubre nuestro espacio, la dedicación de nuestros especialistas y el ambiente festivo que preparamos para ti en estas fechas especiales.</p>
+   <ul class="video-features">
+    <li><i class="fas fa-check-circle"></i> Tecnología óptica de vanguardia en San Rafael.</li>
+    <li><i class="fas fa-check-circle"></i> Asesoría profesional y cálida atención personalizada.</li>
+    <li><i class="fas fa-check-circle"></i> Espacios diseñados para tu comodidad y estilo.</li>
+   </ul>
+   <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20vi%20su%20video%20y%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Visítanos o agenda tu cita</a>
+  </div>
+  <div class="video-wrapper-card">
+   <video controls autoplay muted loop playsinline poster="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/FB_IMG_1794277524713.jpg">
+    <source src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/2026-10-27-083347824.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de videos.
+   </video>
+  </div>
  </div>
 </section>
 
@@ -864,6 +967,7 @@ footer h3{font-size:14px;margin-bottom:17px}
     <h3>Explora MiÓptica</h3>
     <div class="footer-links">
      <a href="#inicio">Inicio</a>
+     <a href="#experiencia-video">Experiencia</a>
      <a href="#catalogo">Catálogo</a>
      <a href="#infantil">Lentes infantiles</a>
      <a href="#equipo">Nuestro equipo</a>
@@ -976,7 +1080,7 @@ dots.forEach(dot => {
  dot.addEventListener('click', (e) => {
   clearInterval(carouselInterval);
   currentIndex = parseInt(e.target.dataset.index);
-  updateCarousel(currentIndex);
+  updateCardCarousel: updateCarousel(currentIndex);
   carouselInterval = setInterval(nextSlide, 4000);
  });
 });
