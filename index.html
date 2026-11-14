@@ -299,7 +299,7 @@ nav a:hover{color:var(--red)}
 .benefit strong{display:block;font-size:12px}
 .benefit small{display:block;color:#777;font-size:10px;margin-top:4px}
 
-/* SECCIÓN DE VIDEO / TIKTOK DESTACADO PROFESIONAL */
+/* SECCIÓN DE TIKTOK DESTACADO PROFESIONAL */
 .video-showcase {
  background: linear-gradient(135deg, #101010 0%, #1a1a1a 100%);
  color: white;
@@ -356,7 +356,7 @@ nav a:hover{color:var(--red)}
 .video-wrapper-card {
  background: #181818;
  border-radius: 20px;
- padding: 16px;
+ padding: 14px;
  border: 2px solid rgba(229, 9, 36, 0.4);
  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(229, 9, 36, 0.2);
  position: relative;
@@ -368,13 +368,80 @@ nav a:hover{color:var(--red)}
  transform: translateY(-5px);
  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(229, 9, 36, 0.35);
 }
-.tiktok-embed-container {
+
+/* TARJETA INTERACTIVA DE TIKTOK GARANTIZADA */
+.tiktok-interactive-card {
+ position: relative;
  border-radius: 14px;
  overflow: hidden;
- background: #000;
- display: flex;
- justify-content: center;
+ background: #111;
+ display: block;
+ text-align: center;
+ border: 1px solid rgba(255,255,255,0.1);
 }
+.tiktok-interactive-card img {
+ width: 100%;
+ max-height: 420px;
+ object-fit: cover;
+ display: block;
+ filter: brightness(0.65);
+ transition: transform 0.5s ease;
+}
+.tiktok-interactive-card:hover img {
+ transform: scale(1.03);
+}
+.tiktok-card-overlay {
+ position: absolute;
+ inset: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 24px;
+ background: linear-gradient(to top, rgba(16,16,16,0.95), rgba(16,16,16,0.35));
+}
+.tiktok-play-icon {
+ width: 72px;
+ height: 72px;
+ background: #e50924;
+ color: white;
+ border-radius: 50%;
+ display: grid;
+ place-items: center;
+ font-size: 26px;
+ box-shadow: 0 0 25px rgba(229,9,36,0.8);
+ animation: ctaPulse 2s infinite;
+ margin-bottom: 15px;
+ transition: transform 0.3s;
+}
+.tiktok-interactive-card:hover .tiktok-play-icon {
+ transform: scale(1.15);
+}
+.tiktok-card-overlay h3 {
+ color: #fff;
+ font-size: 16px;
+ font-weight: 900;
+ margin-bottom: 6px;
+ letter-spacing: 0.5px;
+}
+.tiktok-card-overlay p {
+ color: #ccc;
+ font-size: 12px;
+ margin-bottom: 16px;
+}
+.tiktok-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ background: #000;
+ color: #fff;
+ padding: 8px 16px;
+ border-radius: 20px;
+ font-size: 11px;
+ font-weight: 800;
+ border: 1px solid rgba(229,9,36,0.5);
+}
+.tiktok-badge i { color: #e50924; font-size: 14px; }
 
 /* BRANDS */
 .brands-section{background:#fff;padding:45px 0;border-bottom:1px solid #eee}
@@ -735,7 +802,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  </div>
 </section>
 
-<!-- SECCIÓN DE VIDEO / TIKTOK INTEGRADO -->
+<!-- SECCIÓN DE VIDEO / TIKTOK INTERACTIVO -->
 <section class="video-showcase" id="experiencia-video">
  <div class="container video-container-grid">
   <div class="video-copy">
@@ -750,14 +817,15 @@ footer h3{font-size:14px;margin-bottom:17px}
    <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20vi%20su%20video%20y%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Visítanos o agenda tu cita</a>
   </div>
   <div class="video-wrapper-card">
-   <div class="tiktok-embed-container">
-    <blockquote class="tiktok-embed" cite="https://vt.tiktok.com/ZSpXnuprS/" data-video-id="ZSpXnuprS" style="max-width: 605px;min-width: 325px; margin: 0 auto; border-radius: 12px; overflow:hidden;">
-     <section> 
-      <a target="_blank" href="https://www.tiktok.com/@miopticauio?refer=embed">@miopticauio</a>
-     </section>
-    </blockquote>
-    <script async src="https://www.tiktok.com/embed.js"></script>
-   </div>
+   <a class="tiktok-interactive-card" href="https://vt.tiktok.com/ZSpXnuprS/" target="_blank" rel="noopener" aria-label="Ver video en TikTok">
+    <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg" alt="Video en TikTok MiÓptica">
+    <div class="tiktok-card-overlay">
+     <div class="tiktok-play-icon"><i class="fab fa-tiktok"></i></div>
+     <h3>Experiencia MiÓptica en TikTok</h3>
+     <p>Toca para reproducir el video en alta definición</p>
+     <div class="tiktok-badge"><i class="fas fa-play-circle"></i> Ver video oficial</div>
+    </div>
+   </a>
   </div>
  </div>
 </section>
@@ -949,6 +1017,7 @@ footer h3{font-size:14px;margin-bottom:17px}
      <a class="social-btn" href="https://www.facebook.com/share/1Fhuok7UVF/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
      <a class="social-btn" href="https://www.instagram.com/miopticauio?cplk=NjRqYWY5OHhwOGs0" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
      <a class="social-btn" href="https://www.tiktok.com/@miopticauio?_r=1&_t=ZS-9BHZRwCVDjp" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+     <a class="social-btn" href="https://wa.me/593998901364" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
     </div>
    </div>
    <iframe class="map-frame" loading="lazy" allowfullscreen
