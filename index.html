@@ -376,60 +376,6 @@ nav a:hover{color:var(--red)}
  object-fit: cover;
  background: #000;
 }
-/* Contenedor estético de respaldo interactivo en caso de navegador de PC sin códec de video móvil */
-.video-interactive-banner {
- display: none;
- position: relative;
- border-radius: 14px;
- overflow: hidden;
- background: #111;
- text-align: center;
-}
-.video-interactive-banner img {
- width: 100%;
- max-height: 440px;
- object-fit: cover;
- display: block;
- filter: brightness(0.6);
- transition: transform 0.5s ease;
-}
-.video-interactive-banner:hover img {
- transform: scale(1.03);
-}
-.video-interactive-overlay {
- position: absolute;
- inset: 0;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- padding: 24px;
- background: linear-gradient(to top, rgba(16,16,16,0.95), rgba(16,16,16,0.4));
-}
-.video-play-btn-pulse {
- width: 68px;
- height: 68px;
- background: var(--red);
- color: white;
- border-radius: 50%;
- display: grid;
- place-items: center;
- font-size: 24px;
- box-shadow: 0 0 25px rgba(229,9,36,0.8);
- animation: ctaPulse 2s infinite;
- margin-bottom: 15px;
- transition: transform 0.3s;
-}
-.video-play-btn-pulse:hover {
- transform: scale(1.15);
-}
-.video-interactive-overlay span {
- color: #fff;
- font-size: 14px;
- font-weight: 800;
- letter-spacing: 1px;
- text-transform: uppercase;
-}
 
 /* BRANDS */
 .brands-section{background:#fff;padding:45px 0;border-bottom:1px solid #eee}
@@ -790,7 +736,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  </div>
 </section>
 
-<!-- SECCIÓN DE VIDEO / EXPERIENCIA VISUAL OPTIMIZADA -->
+<!-- SECCIÓN DE VIDEO DESTACADO CON VIDEO 1 OPTIMIZADO -->
 <section class="video-showcase" id="experiencia-video">
  <div class="container video-container-grid">
   <div class="video-copy">
@@ -805,19 +751,11 @@ footer h3{font-size:14px;margin-bottom:17px}
    <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20vi%20su%20video%20y%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Visítanos o agenda tu cita</a>
   </div>
   <div class="video-wrapper-card">
-   <video id="promoVideo" controls autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg">
-    <source src="2026-10-27-083347824.mp4" type="video/mp4">
-    <source src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/2026-10-27-083347824.mp4" type="video/mp4">
+   <video controls autoplay muted loop playsinline preload="auto" poster="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg">
+    <source src="video_1.mp4" type="video/mp4">
+    <source src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/video_1.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de videos.
    </video>
-   <div class="video-interactive-banner" id="videoFallback">
-    <a href="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/2026-10-27-083347824.mp4" target="_blank" rel="noopener" style="display:block; position:relative;">
-     <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg" alt="Reproducir video MiÓptica">
-     <div class="video-interactive-overlay">
-      <div class="video-play-btn-pulse"><i class="fas fa-play"></i></div>
-      <span>Reproducir Experiencia MiÓptica</span>
-     </div>
-    </a>
-   </div>
   </div>
  </div>
 </section>
@@ -1088,22 +1026,6 @@ setInterval(() => {
   xmasTree.style.opacity = '1';
  }, 200);
 }, 1200);
-
-// Control automático inteligente para garantizar compatibilidad visual total en PC y móviles
-const promoVideo = document.getElementById('promoVideo');
-const videoFallback = document.getElementById('videoFallback');
-
-promoVideo.addEventListener('error', () => {
- promoVideo.style.display = 'none';
- videoFallback.style.display = 'block';
-});
-
-// Forzar intento de reproducción automática
-promoVideo.play().catch(() => {
- // Si el navegador bloquea el autoplay con sonido, se asegura que mantenga el mute o muestre controles interactivos limpios
- promoVideo.muted = true;
- promoVideo.play();
-});
 
 // Script de filtrado de productos
 const filterButtons=document.querySelectorAll('.filter-btn');
