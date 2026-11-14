@@ -299,7 +299,7 @@ nav a:hover{color:var(--red)}
 .benefit strong{display:block;font-size:12px}
 .benefit small{display:block;color:#777;font-size:10px;margin-top:4px}
 
-/* SECCIÓN DE TIKTOK DESTACADO PROFESIONAL */
+/* SECCIÓN DE VIDEO / TIKTOK INTEGRADO */
 .video-showcase {
  background: linear-gradient(135deg, #101010 0%, #1a1a1a 100%);
  color: white;
@@ -363,85 +363,18 @@ nav a:hover{color:var(--red)}
  overflow: hidden;
  text-align: center;
  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 .video-wrapper-card:hover {
  transform: translateY(-5px);
  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(229, 9, 36, 0.35);
 }
-
-/* TARJETA INTERACTIVA DE TIKTOK GARANTIZADA */
-.tiktok-interactive-card {
- position: relative;
- border-radius: 14px;
- overflow: hidden;
- background: #111;
- display: block;
- text-align: center;
- border: 1px solid rgba(255,255,255,0.1);
+.video-wrapper-card iframe {
+ border-radius: 12px;
+ max-width: 100%;
 }
-.tiktok-interactive-card img {
- width: 100%;
- max-height: 420px;
- object-fit: cover;
- display: block;
- filter: brightness(0.65);
- transition: transform 0.5s ease;
-}
-.tiktok-interactive-card:hover img {
- transform: scale(1.03);
-}
-.tiktok-card-overlay {
- position: absolute;
- inset: 0;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- padding: 24px;
- background: linear-gradient(to top, rgba(16,16,16,0.95), rgba(16,16,16,0.35));
-}
-.tiktok-play-icon {
- width: 72px;
- height: 72px;
- background: #e50924;
- color: white;
- border-radius: 50%;
- display: grid;
- place-items: center;
- font-size: 26px;
- box-shadow: 0 0 25px rgba(229,9,36,0.8);
- animation: ctaPulse 2s infinite;
- margin-bottom: 15px;
- transition: transform 0.3s;
-}
-.tiktok-interactive-card:hover .tiktok-play-icon {
- transform: scale(1.15);
-}
-.tiktok-card-overlay h3 {
- color: #fff;
- font-size: 16px;
- font-weight: 900;
- margin-bottom: 6px;
- letter-spacing: 0.5px;
-}
-.tiktok-card-overlay p {
- color: #ccc;
- font-size: 12px;
- margin-bottom: 16px;
-}
-.tiktok-badge {
- display: inline-flex;
- align-items: center;
- gap: 8px;
- background: #000;
- color: #fff;
- padding: 8px 16px;
- border-radius: 20px;
- font-size: 11px;
- font-weight: 800;
- border: 1px solid rgba(229,9,36,0.5);
-}
-.tiktok-badge i { color: #e50924; font-size: 14px; }
 
 /* BRANDS */
 .brands-section{background:#fff;padding:45px 0;border-bottom:1px solid #eee}
@@ -802,7 +735,7 @@ footer h3{font-size:14px;margin-bottom:17px}
  </div>
 </section>
 
-<!-- SECCIÓN DE VIDEO / TIKTOK INTERACTIVO -->
+<!-- SECCIÓN DE VIDEO / TIKTOK INTEGRADO MEDIANTE IFRAME OFICIAL -->
 <section class="video-showcase" id="experiencia-video">
  <div class="container video-container-grid">
   <div class="video-copy">
@@ -817,15 +750,7 @@ footer h3{font-size:14px;margin-bottom:17px}
    <a class="btn btn-primary" href="https://wa.me/593998901364?text=Hola%20Mi%C3%93ptica,%20vi%20su%20video%20y%20deseo%20agendar%20una%20cita." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Visítanos o agenda tu cita</a>
   </div>
   <div class="video-wrapper-card">
-   <a class="tiktok-interactive-card" href="https://vt.tiktok.com/ZSpXnuprS/" target="_blank" rel="noopener" aria-label="Ver video en TikTok">
-    <img src="https://raw.githubusercontent.com/wladiormaza21/mioptica/refs/heads/main/1794455765082.jpg" alt="Video en TikTok MiÓptica">
-    <div class="tiktok-card-overlay">
-     <div class="tiktok-play-icon"><i class="fab fa-tiktok"></i></div>
-     <h3>Experiencia MiÓptica en TikTok</h3>
-     <p>Toca para reproducir el video en alta definición</p>
-     <div class="tiktok-badge"><i class="fas fa-play-circle"></i> Ver video oficial</div>
-    </div>
-   </a>
+   <iframe height="578" width="325" src="https://www.tiktok.com/player/v1/7701341515989142804?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" title="✨ ¡MIRA EL MUNDO CON ESTILO, VIVE CADA DETALLE! 👓❤️ En miÓptica tenemos los lentes ideales para realzar tu estilo y acompañarte en cada momento. 😎✨ Descubre diseños modernos, elegantes y versátiles que combinan moda, personalidad y bienestar visual. 💎 Tu mirada merece lo mejor. Encuentra tus próximos lentes favoritos y luce una imagen que hable por ti. 📍 Visítanos en miÓptica Estamos en San Rafael, Valle de los Chillos, diagonal a San Luis Shopping. 📲 ¡Agenda tu cita hoy mismo! WhatsApp: 099 890 1364 ❤️ En miÓptica, ver bien también es verte bien. ✨ ¡Te esperamos para encontrar los lentes perfectos para ti! #miÓptica #LentesDeModa #EstiloYElegancia #SaludVisual #Óptica" allowfullscreen loading="lazy"></iframe>
   </div>
  </div>
 </section>
